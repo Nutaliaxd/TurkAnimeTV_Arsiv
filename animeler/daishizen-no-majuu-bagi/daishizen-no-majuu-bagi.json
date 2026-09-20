@@ -1,0 +1,25 @@
+[
+ {
+  "player": "HDVID",
+  "path": "ajax/videosec&b=cW1JQTBNcEV6SkhFeVVEM0xIajNPQT09Ojp5ZnEwMnBBSF9kZ0l5WGxy&v=VFU0bzUvZC85OE55UGNOWjVZbTNtZz09OjpWZXhON21tTlo2a2g3ZEto&f=T1FqNGppOHBHTytzakoycXNGdlBndz09OjpZVGVCSHFZdE94TW9kN0Fr",
+  "fansub": "90KLT",
+  "mask": "/player/SzNlNU4zcm9DcWE1SWFqcEhLcjF6T0N0QzZBTGxERG5QNFZ2VEZlbVYybDFWT0NqWm5FVm85emUwSnNpSmcwZjo6VWtvOHVkVm11MGdjd2xDSQ"
+ },
+ {
+  "player": "ODNOKLASSNIKI",
+  "path": "ajax/videosec&b=QmNET1pUeVBkQzMyL3RpallmM0NUUT09OjpEd1VUcTIyRUdhbnpqLUhL&v=QTZUcHNlblpaM3VZZVdQQVZhdjc5Zz09OjppUC1md1J1ZTB1VlAwalcy&f=MGlFOGVOb3pSb05ndFpCSHpvUE5HZz09OjpIalM1bHJhZzV5MUNiNFBy",
+  "fansub": "90KLT",
+  "url": "https://odnoklassniki.ru/videoembed/6937936988896"
+ },
+ {
+  "player": "YOUTUBE",
+  "path": "ajax/videosec&b=MDVMUjVEZ20wMmFkQUNURGtaekNyQT09Ojp2M1ZxRF9DUElWdDNXVVRL&v=VWJkZ2xtR1VLcDdnUk5HMTlKMVNrZz09OjpSQW1HV1lBcXZ1SlkyUlQw&f=WldkMDlRTDkycVdYeU1KNVhLZWN2UT09OjpLLVJlY2ZhLVFMWm56NlhI",
+  "fansub": "90KLT",
+  "url": "https://www.youtube.com/embed/bbWKPEOooSI"
+ },
+ {
+  "player": "ALUCARD(BETA)",
+  "fansub": "90KLT",
+  "mask": "/player/N2Z2bS9Fb3M1b0FodEJXclYzY1ZEL2pjeVlKNjcyeTJiRUhqVUkyVHAwUT06OnZpcFQ0U2xaeTgtZlRvaVM"
+ }
+]
