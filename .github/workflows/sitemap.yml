@@ -1,0 +1,46 @@
+name: Otomatik Sitemap Oluşturucu
+
+on:
+  push:
+    branches:
+      - main # veya master (ana dalınızın adı neyse)
+    paths:
+      - 'assets/data.js' # Sadece veritabanı güncellendiğinde tetiklenir
+      - 'sitemap_uret.py'
+  workflow_dispatch: # Actions sekmesinden manuel tetikleme butonu ekler
+  schedule:
+    - cron: '0 0 * * 0' # Her Pazar gece yarısı düzenli çalışır (isteğe bağlı)
+
+permissions:
+  contents: write # Botun depoya commit atabilmesi için gerekli izin
+
+jobs:
+  generate-sitemap:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Depoyu Klonla
+        uses: actions/checkout@v4
+
+      - name: Python Kurulumu
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Sitemap Betiğini Çalıştır
+        run: |
+          # Kendi site adresinizi aşağıya yazın.
+          # Bölüm sayfalarını da dahil etmek için sonundaki --bolumler parametresini tutun.
+          python sitemap_uret.py https://siteadresin.com --bolumler
+
+      - name: Sitemap Dosyalarını Commit Et ve Pushla
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Üretilen sitemap.xml ve sitemap-1.xml gibi tüm dosyaları ekle
+          git add sitemap*.xml
+          
+          # Eğer dosyada değişiklik yoksa hata vermemesi için "|| echo..." kullanıyoruz
+          git commit -m "Otomatik sitemap güncellendi" || echo "Sitemap'te değişiklik yok, commit atlanıyor."
+          git push
