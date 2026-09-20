@@ -226,11 +226,10 @@ function kaldirilanSet(){
   if (!_tumKld) _tumKld = new Set([...GLOBAL_KLD, ...yerelKaldirilanSet()]);
   return _tumKld;
 }
-function linkKaldir(u){
-  const s = yerelKaldirilanSet(); s.add(u);
-  try{ localStorage.setItem(KLD_KEY, JSON.stringify([...s])); }catch(e){}
-  _tumKld = null;
-}
+let _geriAl = [];   // bu oturumda × ile kaldırılanlar (son kaldırılan sonda)
+function _yerelKaydet(){ try{ localStorage.setItem(KLD_KEY, JSON.stringify([...yerelKaldirilanSet()])); }catch(e){} _tumKld = null; }
+function linkKaldir(u){ yerelKaldirilanSet().add(u); _geriAl.push(u); _yerelKaydet(); }
+function linkGeriAl(){ const u = _geriAl.pop(); if (u==null) return null; yerelKaldirilanSet().delete(u); _yerelKaydet(); return u; }
 function bekleyenKaldirilan(){ return [...yerelKaldirilanSet()].filter(u=>!GLOBAL_KLD.has(u)); }
 function kaldirilanSay(){ return bekleyenKaldirilan().length; }
 function kaldirilanFiltre(links){ const k = kaldirilanSet(); return links.filter(l=>!k.has(l.url)); }
@@ -693,6 +692,7 @@ function renderOptions(slug, data, bolumId){
       <button class="btn" id="epIndir">⬇ Bu bölümü indir</button>
       <label class="tgl"><input type="checkbox" id="oluTgl" ${olu?'checked':''}> ölüleri göster</label>
       <span style="color:var(--tx3);font-size:13px">${shown.length} seçenek${deadCount?` · ${deadCount} ölü gizli`:''}${filtreli?' · filtreli':''}</span>
+      ${ADMIN&&_geriAl.length?`<button class="btn ghost" id="geriBtn" title="son kaldırdığın linki geri getir">↩ geri al (${_geriAl.length})</button>`:''}
       ${ADMIN&&kaldirilanSay()?`<button class="btn ghost" id="exportBtn" title="henüz repoya eklenmemiş kaldırmaları el_degisiklikleri.json olarak indir">değişiklikleri dışa aktar (${kaldirilanSay()})</button>`:''}
     </div>
     ${chipRowHtml('Player', pCount, optSelPlayers, 'p')}
@@ -714,6 +714,8 @@ function renderOptions(slug, data, bolumId){
     if (!ilkUrl){ alert('Bu bölümde indirilebilir url linki yok.'); return; }
     copyText(ytCmd(ilkUrl.url, num+'. Bolum.mp4')).then(()=> flashDone(ei,'kopyalandı ✓',1500,'⬇ Bu bölümü indir'));
   };
+  const gb = $('#geriBtn');
+  if (gb) gb.onclick = ()=>{ linkGeriAl(); renderOptions(slug, data, bolumId); };
   const ex = $('#exportBtn');
   if (ex) ex.onclick = ()=>{
     const payload = {kaldirilan_url: bekleyenKaldirilan(), tarih: new Date().toISOString()};
@@ -806,11 +808,12 @@ function renderPlayer(slug, data, bolumId, playerName, idxStr){
       <span>${esc(cur.l.fansub)}</span>
     </div>
     ${cands.length>1?`<div class="fansub-chips">${cands.map((c,ci)=>`
-      <button class="fchip ${ci===idx?'on':''}" data-ci="${ci}">
+      <button class="fchip ${ci===idx?'on':''}" data-ci="${c.i}">
         ${esc(c.l.fansub)} ${dot(c.l.durum)} <span class="tag ${tipClass(c.l.tip)}">${esc(c.l.tip)}</span>
       </button>`).join('')}</div>`:''}
     ${src?`<div class="src"><span class="lbl">Kaynak:</span><a href="${esc(src)}" target="_blank" rel="noopener noreferrer">${esc(src)}</a></div>`:''}
     ${dlGrp?`<div class="src"><span class="lbl">İndir:</span>${dlGrp}</div>`:''}
+    ${ADMIN?`<div class="src"><span class="lbl">Yönetici:</span><button class="btn ghost" id="oluBtn">☠ Bu link ölü — gizle</button><span style="color:var(--tx3);font-size:12px">bu tarayıcıda gizler; herkese açmak için bölüm sayfasından dışa aktar</span></div>`:''}
     <div class="src">
       <span class="lbl">Konsol komutu:</span>
       <button class="copybtn" data-cmd="${esc(cmd)}">${esc(cmd)}</button>
@@ -824,6 +827,14 @@ function renderPlayer(slug, data, bolumId, playerName, idxStr){
   });
   const rv = appEl().querySelector('[data-act="resolve"]');
   if (rv) rv.onclick = ()=> showResolve(rv, rv.dataset.url);
+  const ob = $('#oluBtn');
+  if (ob) ob.onclick = ()=>{
+    linkKaldir(rawUrl);
+    const kalan = cands.filter(c=> c.l.url!==rawUrl);   // aynı player'da başka aday varsa ona geç
+    location.hash = kalan.length
+      ? `#/anime/${encodeURIComponent(slug)}/${bolumId}/${playerName}/${kalan[0].i}`
+      : `#/anime/${encodeURIComponent(slug)}/${bolumId}`;
+  };
   bindCopy();
 }
 
