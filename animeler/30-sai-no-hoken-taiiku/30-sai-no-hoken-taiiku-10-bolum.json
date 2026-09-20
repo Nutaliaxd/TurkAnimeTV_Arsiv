@@ -1,0 +1,91 @@
+[
+ {
+  "player": "AMATERASU(BETA)",
+  "path": "ajax/videosec&b=OFVjZ3JycmxIZHFPNlVLVXpYeEhFQT09OjpQbVlpNl9DOUh1SnE3Z04y&v=SGdiYmFUanBMNkhTMXF6YnBKVDlsZz09OjpJaEZiMnpMVzBkUWtkTzBM&f=UHV5QVhjK29qbTQ2OW5VUWc3bnB5UT09Ojo0ek1IYWJsWVJYc1JsS3U3",
+  "fansub": "PuzzleSubs",
+  "mask": "/player/ZnhYNXV1M3pJQ3F4L25ucXNqVk16KzRZVmxKR0liSkJYS3Q1ZXFCK3pEVT06OnVTa2NKNEJUdjcweXlBMTA"
+ },
+ {
+  "player": "BANKAI(BETA)",
+  "path": "ajax/videosec&b=b1F6VC9va2pqN0tVUWZqVVFvd0JRdz09Ojo3NGRvSlJPNE52eGVsYXQ4&v=d1VFbUVLT3pCQTNnYXFzaVhubHE4Zz09Ojp3Q2lXQ3RlSENadHJab2ZZ&f=TG40L3pNakt4YzRoU1lhZWZLMmFDQT09OjpsN3pBc2E5amxTY1RrTk5o",
+  "fansub": "PuzzleSubs",
+  "mask": "/player/dEZvdTRyLysrMUpYMHB5dGwvbzh3KzI0NTBCd2Qrc3luTjNuZXUxVmFVQmgxcEx0SENYWVFYWjVjUG8xb3ErVTo6NnMzUEFNcUZGUlYtUW9DSw"
+ },
+ {
+  "player": "GDRIVE",
+  "path": "ajax/videosec&b=UklMVW9vZHUybG9JT25qM2wrYUwxdz09OjpVRGF5QW8wNC1EbUE2d1Y3&v=Z2RVU3ZUL1NRUWMxaE14dVpHR2dmUT09OjpXR2x1V2d0REpRNkhlY2M0&f=OE5TaTc0ZzhJckloRXFVQitjY1RkZz09Ojo2blo0bTE3ejdrbUJlczh1",
+  "fansub": "PuzzleSubs",
+  "url": "https://drive.google.com/file/d/1h0vRegdsmI5NOlvfE6l55v5DolnQZL9N/preview"
+ },
+ {
+  "player": "MAIL",
+  "path": "ajax/videosec&b=ckpDaDhVUnBrR1NGeS92QmIyUEZOUT09Ojo4a3ZmYmpNMnVmbUY4alRh&v=NmxydWFwREI2TWh0b3pRTTQrMTB5UT09OjpYVTZOMGJWdEd1dUp5RWti&f=VnpUY2h1cFQrUWpLL2wwWEZtY2tVZz09OjotOUprQURSLThNcVp6ektQ",
+  "fansub": "PuzzleSubs",
+  "url": "https://my.mail.ru/video/embed/9165530183271192784"
+ },
+ {
+  "player": "ODNOKLASSNIKI",
+  "path": "ajax/videosec&b=RTJBZDRHaVk5eklUeGN5emd3R1FUdz09OjpsbXFJelRxT2lvSTlOdWhX&v=dnQ2TGcvVDNDckF6dHpENzlrSDlmQT09Ojo0S21YMldndFZLcFhOdkRV&f=U0RsMEZVb09zZUl0UlNwZkl4L1BWdz09OjpRVUZhSExTYzdGcDN4NjZk",
+  "fansub": "PuzzleSubs",
+  "url": "https://odnoklassniki.ru/videoembed/23283501755"
+ },
+ {
+  "player": "ODNOKLASSNIKI",
+  "path": "ajax/videosec&b=N2JGNWNRVkRoU1dzUmhEbjBvOWVydz09OjpSajNVUXV6N3FXZnU0Y29N&v=N0taTkZTSEtaNmdwY0tjVnJpalpGQT09OjpsZlBXelJWYXpJWDdDM2Zw&f=RGpoUmpKY1lFR00rZngzZDl3NE80QT09OjpLRXJsX0hlaDdwODhlbExB",
+  "fansub": "PuzzleSubs",
+  "url": "https://odnoklassniki.ru/videoembed/2377271216752"
+ },
+ {
+  "player": "ODNOKLASSNIKI",
+  "path": "ajax/videosec&b=am1sUmkzVkFIMThqWGNnTktlazFCUT09OjpWbzVBSVZlTF9KWWk0MkRX&v=UWFMRzM0UXpzakxhcWEwenBjSzNlZz09OjpnWGh6YzR3VzBFUEpSaVBm&f=Rlo4aDNNK09BRy83L05xME92SGhSUT09OjpLY0ZlSFZYb3JaSzVRTTFk",
+  "fansub": "PuzzleSubs",
+  "url": "https://odnoklassniki.ru/videoembed/3202337409624"
+ },
+ {
+  "player": "SIBNET",
+  "path": "ajax/videosec&b=WU45OTBHL2UwR1dzT2FLNEg0S3Vtdz09OjpVQndqR1lQUzZSYmdtMHpW&v=VFVuMDlDYVpiRFptOEd2NFhndGVIUT09Ojo4ZHR1cHRIQjU4MVA2SFhP&f=Q1ZUd1FtUmxiK0RjOWgzcGxKbVlRdz09OjpidGJQUlp4cjdVSGNwWTZf",
+  "fansub": "PuzzleSubs",
+  "url": "https://video.sibnet.ru/shell.php?videoid=4507421"
+ },
+ {
+  "player": "VK",
+  "path": "ajax/videosec&b=Uy9nNi8vNjFJMUN1VGwvcEdFZkZwQT09Ojo3anVld3RHN1dLVEdOZFJO&v=SXBmZHdWTXJ0RWFSVEpoUlNOenpvUT09OjpVNnRCS2VnNVJUenNBN2Fw&f=RktzOFpYTERMSER0TGVWVjZRaTUyQT09OjozZFNCM0ZWSHpIYmVrRXNK",
+  "fansub": "PuzzleSubs",
+  "url": "https:https://href.li/?https://vk.com/video_ext.php?oid=201672524&id=171356819&hash=b8ec450ba20c9472&hd=1"
+ },
+ {
+  "player": "CLONE",
+  "path": "ajax/videosec&b=NzBjU0wrOWkzNncwOXlkeDY3S2hFUT09OjpKVjlGcTNZb3RWNEtqYlVP&v=a2NHTDdhZDNwOVZSdHlYY25hbHMyZz09OjptdnVRRHUxMmJ0VklpVkxB&f=cjRQYjJ2TmF5UE0wMHZyeDVnSm96QT09OjowWlA3RVV2Nm1UZ192YWZ6",
+  "fansub": "PuzzleSubs",
+  "url": "https://short.icu/?v=S9eLt3ZJi"
+ },
+ {
+  "player": "DAILYMOTION",
+  "path": "ajax/videosec&b=K2RmY1BrRVg4SVdSamsxWWlhN3E3dz09OjphcXk5YV9qckNRamxzQlhR&v=V1FKcHlDWXlQTjAxUFJsMGdIV3pJdz09OjpZQWFkamFzVU43QTBvUmFG&f=YmE0VjkxQ0FERHBjSTFiUE5KY2ptUT09OjprYktVS092dEV0N3M0VVRa",
+  "fansub": "PuzzleSubs",
+  "url": "https://www.dailymotion.com/embed/video/x2idzl4"
+ },
+ {
+  "player": "MP4UPLOAD",
+  "path": "ajax/videosec&b=Yk9WdkJwZjRJa1BlQ3dFZERadU1EUT09OjpOYUpqRlNrek91eFZTTVpr&v=SU5oTWtMbFcrbWRDdURERmlrMmNPUT09OjpzMjFuUEttSG1uVDZIcnpW&f=MXluZFBtMkFaL081UEFqOWUxcERGZz09OjpoTUNvdTUtYm5zcGhrbTFl",
+  "fansub": "PuzzleSubs",
+  "url": "https://www.mp4upload.com/embed-hwmqwzk1kjb6.html"
+ },
+ {
+  "player": "UQLOAD",
+  "path": "ajax/videosec&b=RU9vTkUzVGczR0dkMzB4aWRZRk9BZz09Ojowc0NkQ3lSaUNraXhqVHVD&v=MzcyancwTXkzc2RUSEVrem8yWmJ6QT09OjpVTHVUUzI2UUg0QUh6c0kw&f=U0hQWkE0ZlRvVSs2QkFnVDhpaU5rUT09Ojo3QTZYeWQ3akV1Z0VmeU4t",
+  "fansub": "PuzzleSubs",
+  "url": "https://uqload.com/embed-vn1efsokwcae.html"
+ },
+ {
+  "player": "VUDEA",
+  "path": "ajax/videosec&b=N0l2d09zaEd4dHNJSW1lZzlFUTZvZz09Ojo4RzRwWWFWdHZFNmswTFZ6&v=aThubWxQK1NmTnU2OG5xdjJrRDB0UT09OjpYUlc0ZkZVX1FicXJZVmtK&f=Nnd3eUwyVVlGb00rUTJSVEl5MWlLUT09OjpfYVVpU3RGTTMyb1NpRTJS",
+  "fansub": "PuzzleSubs",
+  "url": "https://vudeo.io/embed-sn0dua92xwwa.html"
+ },
+ {
+  "player": "ALUCARD(BETA)",
+  "fansub": "PuzzleSubs",
+  "mask": "/player/bWlPa044R0dFNzY3MDExTDNERDcySnVBUUQ3eGlmck4vdEZhNzVKQWFJaz06OkNrX2dvM3pBSTFmNFl1Y00"
+ }
+]
