@@ -1,0 +1,79 @@
+[
+ {
+  "player": "AMATERASU(BETA)",
+  "path": "ajax/videosec&b=aFlSQnhudllxSzVPTWFDM05xR250Zz09OjpjT2h5QTJabXYwSmRra1NG&v=VnlaWHBHc1FHMEhaU0JqOWNNNHU1Zz09OjowenI4Mm1SSW1uRVFSbE9z&f=OW8xamZUYWIvQVFzKzAvVmVrbGF1QT09OjpyRTZOVE95aDZHeEJRWEJo",
+  "fansub": "AMT",
+  "mask": "/player/Y0ErNmRaUzlRN2gxYW1MRzkxTm0yOTUxTEd3ZUVqQ3VEb2xmQUZmSWVtWT06Okdod3h5T2FBWDZVd1Nsd2I"
+ },
+ {
+  "player": "BANKAI(BETA)",
+  "path": "ajax/videosec&b=N2l6c0pQL3dSQzBnazJsaEpTMGVDdz09OjpIYTlGTlRGbElsQzd1WmFk&v=S2RSKy90YjJyL3p0ZUNqREw3MUdMZz09OjpHcUFMdGo3QmVGMXkwLUhD&f=WDBXOU1aOXM0SEpvNmY5NU01VW4zUT09Ojp6NEN2ZGlXMHNDTzVPWmo5",
+  "fansub": "AMT",
+  "mask": "/player/VUxnZnJNYnlqa2lkdDBNM1RJdlp5MENhamZKYk44cFJSa3N4WXhLT2JtU3UvYmNCUG1oWUtzSHhLZ3ljVnVtbzo6NG8zNmM4QjhyUEN3RWEySQ"
+ },
+ {
+  "player": "GDRIVE",
+  "path": "ajax/videosec&b=Z1g2T2NDWlNUSVB1ZXRBOU9VK1dqdz09OjpNck9NNk4wcXZVWmVVT2pJ&v=eXYycytEZlEwMmNCUEdmSHJQck1kdz09OjpFNHFBUkxDeFVyNTkyNkdQ&f=Zk4rMTI0Sk1JNzEyZXB1VE9qcHF2QT09OjptOER1N1lqbG01Z0Z3NmNY",
+  "fansub": "AMT",
+  "url": "https://drive.google.com/file/d/1FLlxE-9WYEqt4fTkMzCV8_HaHX-uYpXA/preview"
+ },
+ {
+  "player": "MAIL",
+  "path": "ajax/videosec&b=UFVjTWE2MFBnMlBWWVJNZlAybDNmUT09Ojo2aGxXUHBsajAzMUxsWVFv&v=aEc1YW1SRzJMUjdQaXhzcHkzMnBqUT09Ojo5bTRjWlViWlYwSVF1R3Fi&f=U1R3dmthUUFNN3RaWkZrWWxqT0ZpQT09OjpJalZnNjYwaWdoUjBqVWFH",
+  "fansub": "AMT",
+  "url": "https://videoapi.my.mail.ru/videos/embed/mail/siyahbeyaz113/503/607.html"
+ },
+ {
+  "player": "ODNOKLASSNIKI",
+  "path": "ajax/videosec&b=TGtRVEZUUXliTXJDalk4RUwxdVVkdz09OjpuUjIyZUk5eWNvUWlQenBE&v=dGUxUEl6SVIrOXVaNy9id0NxdHJVZz09OjprbW1rX25JVi0wMk9rVzRv&f=dXVLVXoyUW05NVd5SXBvdEZISVFMdz09Ojpjb0lKblRqQlgzUmxNWTJ3",
+  "fansub": "AMT",
+  "url": "https://odnoklassniki.ru/videoembed/25894652647"
+ },
+ {
+  "player": "ODNOKLASSNIKI",
+  "path": "ajax/videosec&b=TGNZUUtodWcvV3I1TU1QU0dYZXZCdz09Ojo3aXlsdklGV3g2SDNydWla&v=RnZMZ2s0L2lUOUtSa0UvUnJtbDVXUT09OjprWmJOakQydHRrWmJGWnBp&f=Z25oaEQrQjNTT3JPSmd2bGI3MFgwQT09OjpLYnc5UFJldk10UHJfd0k1",
+  "fansub": "AMT",
+  "url": "https://odnoklassniki.ru/videoembed/2420267027165"
+ },
+ {
+  "player": "ODNOKLASSNIKI",
+  "path": "ajax/videosec&b=K2ZUWVYzclBGZEh2dWtIK3pOdzFXZz09OjpGQVI0QklpWkdQMWZMel85&v=ZUlKOU1meDZ1NEJiQ2JGQk5DLzFsUT09OjpQaEE0S1BNSlhzaXlibl9x&f=WWprakM0azNCeEVoSC9LaHhDaTMxQT09OjpnWl9RU1FjSUxEalBON3Ry",
+  "fansub": "AMT",
+  "url": "https://odnoklassniki.ru/videoembed/972083432157"
+ },
+ {
+  "player": "SIBNET",
+  "path": "ajax/videosec&b=Uy91cnJXUmNhclFzekxLM2ZHMHJ5QT09OjpDWGZXSjExVGFaRkU5VWRQ&v=S0VCbm9GeXBXcGNtNVJjajRiY1BXUT09OjpiUldXMHE3NnBiOEpGMGRw&f=QVhJbWtpM2RLZ3R6SnRUWGtSazB2QT09OjpHM3FlWTdybF9oU2p1Yzkz",
+  "fansub": "AMT",
+  "url": "https://video.sibnet.ru/shell.php?videoid=1080282"
+ },
+ {
+  "player": "CLONE",
+  "path": "ajax/videosec&b=U3MzOExRQVA0a1RENzVFNitLYWM2dz09OjphVUhTX1VhQ0dVSDJrdVBk&v=SDdRQWdqWjFnK0E4b2J3d0pMOFNvZz09OjpQZFFUdmczRXcyNlBIV0dH&f=VGJkbDRnZy93V2RZRWtkSE5XS1ZCZz09OjpicjRIVXlacUFBdktSN0gt",
+  "fansub": "AMT",
+  "url": "https://short.icu/?v=UWN4kug6J"
+ },
+ {
+  "player": "MP4UPLOAD",
+  "path": "ajax/videosec&b=Z2tFMUh3Sk9mSXhhOEwyNHh1elZGdz09OjpmNXRJNndhWk1BVFE4NzNV&v=d2pZdWhyK3R4UElnMzhvWDVSaGFCUT09OjpYd0MzVXJBeUMxZGhwQklq&f=K1hpdk1oMWxQMUNLNXdpQ0VpRVh6Zz09OjpkbVdYVmdTcXdteTh6UEph",
+  "fansub": "AMT",
+  "url": "https://www.mp4upload.com/embed-3sg6mpuopb7n.html"
+ },
+ {
+  "player": "MP4UPLOAD",
+  "path": "ajax/videosec&b=Qit2TE11WjdlazZVTVhXOWYvTlljdz09OjpmWWE2SjVlUXQyYUoxenQy&v=QzZoMmV2UjdWVndGb2RrbmpYa1VrQT09OjplUUsteHNsOHhxMjloVmVf&f=SmRmT3FMdWJrcnNPTzJYNHRtSFR4QT09OjpDdlFFdmhYVmpaMjZNNnJ0",
+  "fansub": "AMT",
+  "url": "https://www.mp4upload.com/embed-402l2ph0ib7y.html"
+ },
+ {
+  "player": "VUDEA",
+  "path": "ajax/videosec&b=ZjJ4SWxqY2lhb2p6bzAvQjFtejRyZz09OjpkWHU1WU9KakpDYTBucHlS&v=UG1hTHVYYW9GSnlielpyYTZ5QzQrUT09Ojo2aERLZWhNUGhnLTBEajRZ&f=dkRldTNPK3ZvSHQ4OWNOYnB5b0Z3UT09OjpFNGJpeFc2TU42UnpGSndE",
+  "fansub": "AMT",
+  "url": "https://vudeo.io/embed-f7btxisu52j0.html"
+ },
+ {
+  "player": "ALUCARD(BETA)",
+  "fansub": "AMT",
+  "mask": "/player/SGxNV1RIYUZWMWI4SEFCOWhhQ2UwUEs0TG1MM0pJL3ZSUnJLcXlEYXlQQT06OndFQzFoZFdsNlQxSUhfNEE"
+ }
+]

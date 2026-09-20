@@ -1,0 +1,79 @@
+[
+ {
+  "player": "AMATERASU(BETA)",
+  "path": "ajax/videosec&b=SW1mUjlHd25yY3BycFZERW9NS3l1Zz09OjpUdDE3RzJHaVhaSDlJMWtP&v=OThuYzd3enRlNVNETkNJRXZTV3prQT09OjpUeGNsQmRnYkRvc2E3LU00&f=YVh4OFZBN0QwNGVVRFlXTkFlS0g3QT09OjpTOWIzVzhUbXp5cnBKYllu",
+  "fansub": "AnimeOU",
+  "mask": "/player/VFNFQ1hGc3d0dEV3MzAvZUNZVHZ2bjN3S1pBcnBmaEtFN1I0M2gwZWE0bz06OnFIUC1yWnJBenA2cTZWTGU"
+ },
+ {
+  "player": "BANKAI(BETA)",
+  "path": "ajax/videosec&b=RWs5eFVtUmJNU1hTVmE1d3diZlZ6dz09OjpGRTVQVHJXbkVwTWRyVEp2&v=eUw5Q1E3RG5MN2ZmR1dhNHFPYlg2UT09Ojp3OHRaQzdxNkE5VkhEQkUy&f=UHg4RVkzVHF0eHBWRGdhUGFyeHR6Zz09Ojo2TTg0cXpSNXd6Z0FrcVha",
+  "fansub": "AnimeOU",
+  "mask": "/player/dHVYRDN0cFBRL2tGN3RvNk1JRk85dXI5QmhmaDBaQU9WcFduQjJreWl1N2NOenBxd05sS2tUVDZBa0Q5VXNMaTo6a19lVzhKbUZrVEExNDNXZA"
+ },
+ {
+  "player": "GDRIVE",
+  "path": "ajax/videosec&b=b1EvNktOVzlEVHNIQ3lCYTBOd3pSQT09OjpwdjJLYTY3QnNDQl85ZERv&v=MjJ3TEl6b2g5QWk0dURtbEgwcW9DUT09Ojp6MVdhWF96UDBGYmpia2hF&f=MUs5SDVzdUVHSmNwcVlyYy94cnpYdz09OjpBU2hxWXhlUHQwZjhsd2x2",
+  "fansub": "AnimeOU",
+  "url": "https://drive.google.com/file/d/1vnRgwbZ1GlmfyJ2RoWG5vfiETyA8fyER/preview"
+ },
+ {
+  "player": "MAIL",
+  "path": "ajax/videosec&b=dDJzT2h0Qk9VUG1ZTWU0VENBZ29BQT09Ojo4N1pzYkx1VldmLWtDY1Ni&v=dS9XSUpiVWUvWWRTZ2Mwa2xkNWxnQT09OjpqUHFTa296QnE4dXFGWU5M&f=Q2t3dzZJNmV0U1FKQ3NYNGdPRFltdz09OjpBY1RGZHlVSE5ZcWF5NHJ0",
+  "fansub": "AnimeOU",
+  "url": "https://my.mail.ru/video/embed/7706652796388378410"
+ },
+ {
+  "player": "ODNOKLASSNIKI",
+  "path": "ajax/videosec&b=akhRSHdyNlI2Yyt3YzdwN2xBemxLZz09Ojpoek1XQ2hwVGZZSFpyV1Qt&v=RTdZRWZ3bFV0d0dVY2RTdnN2TTZJQT09OjpEd1ZtblhBQU5QczdldXRa&f=TlRuc005a0Rsa3lWR3E1dDg1dk96Zz09OjpIME9Vd1Bwa1lud2Q4M0tG",
+  "fansub": "AnimeOU",
+  "url": "https://odnoklassniki.ru/videoembed/2127772519046"
+ },
+ {
+  "player": "ODNOKLASSNIKI",
+  "path": "ajax/videosec&b=WElVdng4YXJnaVNVTEtERk5vUisvZz09OjpnVG4xTVgyZ1M2Q3Q1eS1o&v=bmtOSmcrS1BBNU95UlV4QTI0TFMyZz09Ojpqd3BCVTNYWEg1OExjci1p&f=MjFYYVlsaDBwRVFVV0R0WnVMNktVZz09OjpjWlcxMnZMVm1GODVEMnpQ",
+  "fansub": "AnimeOU",
+  "url": "https://odnoklassniki.ru/videoembed/84119063271"
+ },
+ {
+  "player": "SIBNET",
+  "path": "ajax/videosec&b=VGd5eUx1VDBNd2xLNGJqeEVUTXlPUT09OjoyLXNHOTNfajM4QVcyUy1x&v=QlRTajB2RExHY0pZZGRqWDF2M0FrQT09OjpPeFZsQWdZWGdLU1pJSmZh&f=MDBKMURBSjJseWc3dStuVjMyMDZLZz09Ojo0N1lSZmZYVlVRMHBlc0Vy",
+  "fansub": "AnimeOU",
+  "url": "https://video.sibnet.ru/shell.php?videoid=2582807"
+ },
+ {
+  "player": "VK",
+  "path": "ajax/videosec&b=UnFHamhCRU16SmJBbFNWMFVhQk1yZz09OjotRmJiREFJV0xTTDdETS16&v=YVlsMS94Y3FFWTFKdHE1RDc3UHdsdz09OjpIMmFSUEVwaXJ6UUV0Uy1q&f=SlJnNDVHZ1ZZaFJDc3NBRHpUSkdTUT09Ojpfc0JPd2VXUGViaUZLczI1",
+  "fansub": "AnimeOU",
+  "url": "https:https://href.li/?https://vk.com/video_ext.php?oid=249107847&id=169211243&hash=a3536400346f154b&hd=1"
+ },
+ {
+  "player": "CLONE",
+  "path": "ajax/videosec&b=N2pOeGIzeU5ISEk3RWFSZzU4WldYdz09OjpGSmR4ZXpDZWM2UVFOOGFf&v=QVM1Sm5ZWGFRN2hERDl2c2hReW5xZz09OjpMUlM5ZTY0NklyOGJHVFRi&f=eHZxZDJZZTZlTVJ2dFRTaGxhOXAxQT09OjppMjk1eW5kblR1Rk1RcmlT",
+  "fansub": "AnimeOU",
+  "url": "https://short.icu/?v=XnlODSJ7Q"
+ },
+ {
+  "player": "SENDVID",
+  "path": "ajax/videosec&b=cGJWdTI4ZHJiMWMxU0EwWm5sT0kvQT09OjpwaktRMHluZUdQVGpyeUtF&v=QURxdGFtK0JxYkJtR0hWK3NtSXl6UT09OjplSE9XTnJDeU1lTGxFMXZP&f=c1drN0JiWkc0TEdIZUJwSUtyZFBrQT09OjpSWUl2YWZtdzg2RkRJQXRs",
+  "fansub": "AnimeOU",
+  "url": "https://sendvid.com/embed/ospj2o1d"
+ },
+ {
+  "player": "VOE",
+  "path": "ajax/videosec&b=ZEQvVE4rWWsrRFFkTXEvdnUzUXNSQT09OjpZaWR4ZGR1X3pZX2lGQXZR&v=RGUyODZSZWc3bFB4YnFhbWkwRUpuZz09OjpVWXZYNHhNWmpHek9vMC1W&f=ZFdaSldJeUE1K0J6UysyQkIwOXhaUT09OjpCai0xcjl0eXhyZmNqRmtT",
+  "fansub": "AnimeOU",
+  "url": "https://voe.sx/e/1ro0if5x26b3"
+ },
+ {
+  "player": "VUDEA",
+  "path": "ajax/videosec&b=RExJN2VLKzdLMGJpd0JYeXJaR1ZIQT09OjpjRFJ5aDBFZzBfdjhJOXcw&v=YXZJdDNPNWpWVDFBY0ZrSjN3Y0pKUT09OjpWdUZ4VDl1VHJkM2dmS1dk&f=MFdIMjF2Sm1QU29uTEVkUW9UTHUrdz09Ojp2X201dzROZVI0OHNnUXR0",
+  "fansub": "AnimeOU",
+  "url": "https://vudeo.io/embed-d1u3fei8jde3.html"
+ },
+ {
+  "player": "ALUCARD(BETA)",
+  "fansub": "AnimeOU",
+  "mask": "/player/eHlCOThQcmFBZHBEWmRrRkRWZlBNTGprOXBIM3VDZU1lOVllTFBXcWJLcz06OnN0eU5lRk90dkk3a1ozWVo"
+ }
+]
