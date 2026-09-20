@@ -1,0 +1,54 @@
+[
+ {
+  "player": "SIBNET",
+  "path": "ajax/videosec&b=ZmZNQVpMOTdJM24zNXJUWEJKYmxBdz09OjpGeXQyc3A3T0NaNzBKWk1Z&v=WEIyMk0wMVJMNkhiUldtREczeWN5UT09OjoyM1QzWDNOemhVMnpGRUU3&f=WU5CTEVPVGlYQ3R3L2xkRWFKWjF3UT09OjpVVlBGbEticTFMMEdaTUJq",
+  "fansub": "Adonis",
+  "url": "https://video.sibnet.ru/shell.php?videoid=5923662"
+ },
+ {
+  "player": "BANKAI(BETA)",
+  "path": "ajax/videosec&b=a3g2c2JiOGpkQ0pYOTdaRjZ6Wk15UT09Ojpjd3R4czMzZHNya2Foa0Ja&v=clZRK2dmUFF2UHpFUUtvTWRWTXhUZz09OjowX1VtRWtSX1c1ak5TM1lf&f=VVJqSjYxcFJhWFc4VmQ1LzdWaUQvUT09OjpTUTVwRmhheEItSmhxWXp1",
+  "fansub": "Seicode",
+  "mask": "/player/TWFGallwS1p3N2dKeFlRVjZvUVJLMjkwVkJtZnlYT3VzVmZVMUUzYVhoS2svQk0wUU1kSU1Bcm5UZ3VWQ05JSjo6RzBKVUQ0TlVUcVo0VFc5eg"
+ },
+ {
+  "player": "GDRIVE",
+  "path": "ajax/videosec&b=UnBpa3pRQ2JoOHZoQk1SN3o2TVRiZz09OjpYLXNGUFlNOFVqc0VyaDJH&v=cDk0c293Z2Yva3BLVURodk1YZUk3UT09OjpoUVZfeUhXTFROQ09ERTdS&f=eHB2eVl6UmtYK3EzQXc2Zm9LNUpTQT09Ojp0Q2tKbHpYSkYxaVo5VzlT",
+  "fansub": "Seicode",
+  "url": "https://drive.google.com/file/d/13V-CkdvnduzY_Xpnp6VGWqx4VsNoKPWc/preview"
+ },
+ {
+  "player": "ODNOKLASSNIKI",
+  "path": "ajax/videosec&b=YTk4Yyt3eUp3VGlFcVJQeGJyajNIdz09OjpvOFZQanczbUY1OUdsOUtD&v=OWE3VjgwNmY4c1dXWXR2RTRDa01Ndz09OjpfQUpMbW1va2gtaGc0ZWFf&f=OHRCaTN6V3had2NxSHlEdFhpVDAzUT09OjpUVmotRUVCZFBkQktMTWhB",
+  "fansub": "Seicode",
+  "url": "https://odnoklassniki.ru/videoembed/10010476350197"
+ },
+ {
+  "player": "CLONE",
+  "path": "ajax/videosec&b=ZkM2TGNrb0hGeWFkV2ZiR3hOSUZOQT09OjpNbms0dEtzQUxPeDd6NHRq&v=YXhBOVdKUitTVS9LTzFVMUZxSllrQT09OjpfNDQ2X2lMUkVhZjVvU3A5&f=M2U2V0ZvMk9lQzhyOHBveXE3UVBHUT09Ojpva3k1S2hjMG9KTnZDVkZG",
+  "fansub": "Seicode",
+  "url": "https://short.icu/e0dI3vf6d"
+ },
+ {
+  "player": "DAILYMOTION",
+  "path": "ajax/videosec&b=SVRKUUtYN0VjYzZTRjRzZGM1QVVDZz09OjpSNHNtR3lKd09WSWFoV3VD&v=bzVmTjVoR1J1MXBtTlNHQmhjWjRFZz09OjpGUWRMYVptZFlfVUV0ZjFN&f=QndlRUxzbjVUeVpsci91MkxmUG9uUT09OjpoVjBTMkctVXNDT2NteW5L",
+  "fansub": "Seicode",
+  "url": "https://www.dailymotion.com/embed/video/k2zJ880WWEsVQ2D6HY"
+ },
+ {
+  "player": "VOE",
+  "path": "ajax/videosec&b=YTBoVUNJdXFDM1dWbXNtdWwwWitWUT09OjpORVF6Z2hFTXhVd1B2XzUx&v=Q3RPSTZtNjVlS0Y3U1ZtY1hlbFJkZz09OjpaTUtQd25fSFpnOGE1MlVw&f=T3lxeTFBcXpSMkRHWFpWNmppcWlCZz09OjpPVHROcjRXbHQ0Z1dCcEVm",
+  "fansub": "Seicode",
+  "url": "https://voe.sx/e/eyb9gstmkvmo"
+ },
+ {
+  "player": "AMATERASU(BETA)",
+  "fansub": "Adonis",
+  "mask": "/player/M2NLT0J4R3pIVHl0RWFURlJXUlFMc3RTWWpaWU5BWGpZUURxeW1HOVFiQT06OnM1VmxTV2gySk9sR1ZiaUQ"
+ },
+ {
+  "player": "ALUCARD(BETA)",
+  "fansub": "Seicode",
+  "mask": "/player/ZmdOcVNIZzVPb1JsT05ydDBRcitZNlFUT2JoTi8yMExEVktabnV3czRsVT06Ol9QckJTR0xtR1RQOFdpTjk"
+ }
+]
