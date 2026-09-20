@@ -274,6 +274,18 @@ h1.anime-title{font:800 26px/1.25 var(--fd);letter-spacing:-.4px;margin-bottom:v
   .els-body{max-height:44vh}
 }
 
+/* ===== bağlantılı seriler ===== */
+.rel-card{position:relative}
+.rel-tag{position:absolute;top:8px;right:8px;z-index:1;background:rgba(0,0,0,.66);border:1px solid rgba(255,255,255,.18);color:#fff;border-radius:var(--rad-pill);padding:2px 8px;font-size:10.5px;font-weight:700}
+
+/* ===== yorumlar (giscus) ===== */
+.yorumlar{margin-top:34px;border-top:1px solid var(--line);padding-top:var(--sp-4)}
+.yorumlar h2{font:700 18px var(--fd);letter-spacing:-.2px;display:flex;align-items:center;gap:var(--sp-2);margin-bottom:var(--sp-3)}
+.yorumlar h2 i{color:var(--ac)}
+.yorumlar .gis{min-height:120px}
+.yorumlar .gis-note{color:var(--tx3);font-size:12.5px;background:var(--card);border:1px solid var(--line);border-radius:var(--rad-sm);padding:10px var(--sp-3)}
+.yorumlar .gis-yukle{color:var(--tx2);font-size:12.5px;display:flex;align-items:center;gap:var(--sp-2);padding:10px 0}
+
 /* ===== alt gezinme (mobil) ===== */
 .bnav{display:none}
 
@@ -945,7 +957,10 @@ function renderAnime(slug, data){
       ${pagerHTML(epPage, data.length, EP_PAGE)}
       ${pages>1?`<div class="jump">Bölüme git: <input id="jumpNo" inputmode="numeric"> <button id="jumpGo">Git</button></div>`:''}
     `:`<div class="empty"><div class="big"><i class="fa-solid fa-film"></i></div>Bu animede bölüm kaydı yok.</div>`}
+    ${relatedHtml(slug)}
+    ${yorumlarHtml('anime/'+slug)}
   `;
+  mountGiscus();
   const tgl = $('#oluTgl');
   if (tgl) tgl.onchange = ()=>{ oluGoster.set(tgl.checked); renderAnime(slug, data); };
   const ib = $('#indirBtn');
@@ -1048,6 +1063,122 @@ function pickBest(items){
   let best = items[0];
   for (const x of items) if (score(x) < score(best)) best = x;
   return best;
+}
+
+/* ============ bağlantılı seriler (OVA / film / diğer sezonlar) ============ */
+const REL_DROP = new Set(['season','seasons','1st','2nd','3rd','4th','5th','6th','7th','8th','9th','10th',
+  'final','part','cour','movie','movies','film','the','animation','ova','ona','tv','special','specials',
+  'recap','recaps','picture','drama','edition','memorial','hen','gaiden','omake','shorts','short','mini','ii','iii','iv']);
+
+function relKey(slug){
+  const t = String(slug||'').split('-');
+  while (t.length>1 && (REL_DROP.has(t[t.length-1]) || /^\d+$/.test(t[t.length-1]))) t.pop();
+  return t.join('-');
+}
+function relTag(a){
+  const s = (String(a.slug)+' '+String(a.baslik||'')).toLowerCase();
+  if (/final[- ]season|saishuushou|saishuu-shou/.test(s)) return 'Final';
+  let m = s.match(/(\d+)(?:st|nd|rd|th)[- ]season/) || s.match(/season[- ](\d+)/) || s.match(/[- ](\d+)(?:st|nd|rd|th)[- ]/);
+  if (m) return m[1]+'. Sezon';
+  if (/\b(movie|film)\b/.test(s)) return 'Film';
+  if (/\bova\b/.test(s)) return 'OVA';
+  if (/\bona\b/.test(s)) return 'ONA';
+  if (/special/.test(s)) return 'Özel';
+  if (/recap|soush?uuhen/.test(s)) return 'Özet';
+  if (/\bpart[- ](\d+)\b/.test(s)) return 'Part '+RegExp.$1;
+  return null;
+}
+/* "86" → "86 2nd Season" gibi doğrudan devam eki taşıyan slug'lar */
+const REL_SEQ = /^(?:\d+|2nd|3rd|4th|5th|6th|7th|8th|9th|10th|season|seasons|final|part|cour|movie|movies|film|ova|ona|special|specials|recap|recaps|tv|the|gaiden|hen|ii|iii|iv|v)$/;
+function relSeq(uzun, kisa){
+  if (!uzun.startsWith(kisa+'-')) return false;
+  return REL_SEQ.test(uzun.slice(kisa.length+1).split('-')[0]);
+}
+function relatedOf(slug){
+  const key = relKey(slug);
+  if (!key || key.length < 2) return [];
+  const genis = key.indexOf('-')!==-1 || key.length >= 6;   // tek ve kısa kök için sadece birebir eşleşme
+  const out = [];
+  for (const a of ANIME){
+    if (a.slug === slug) continue;
+    const k2 = relKey(a.slug);
+    const ayni = k2===key
+      || (genis && a.slug.startsWith(key+'-'))
+      || (k2.length>=6 && k2.indexOf('-')!==-1 && slug.startsWith(k2+'-'))
+      || relSeq(a.slug, slug) || relSeq(slug, a.slug);
+    if (ayni) out.push(a);
+  }
+  out.sort((a,b)=> String(a.slug).localeCompare(String(b.slug),'tr'));
+  return out.slice(0, 18);
+}
+function relCard(a){
+  const tag = relTag(a);
+  return `<a class="card rel-card" href="#/anime/${encodeURIComponent(a.slug)}">
+    ${tag?`<span class="rel-tag">${esc(tag)}</span>`:''}
+    ${poster(a)}<span class="ct">${esc(a.baslik||a.slug)}</span>
+    <span class="cs">${esc(a.eps?a.eps+' bölüm':'bölüm yok')}</span></a>`;
+}
+function relatedHtml(slug){
+  const rel = relatedOf(slug);
+  if (!rel.length) return '';
+  return `<div class="sh"><h2>Bağlantılı seriler</h2><span style="color:var(--tx3);font-size:12.5px">${rel.length} seri</span></div>
+    <div class="rail">${rel.map(relCard).join('')}</div>`;
+}
+
+/* ============ yorumlar (giscus — GitHub Discussions) ============ */
+const GISCUS = {
+  repo: 'KerimDemirkaynak/Yorumlar',
+  repoId: 'R_kgDOPPm0QA',
+  category: 'Yorumlar',
+  categoryId: 'DIC_kwDOPPm0QM4CtM73',
+  theme: 'transparent_dark',
+  lang: 'tr'
+};
+function yorumlarHtml(term){
+  return `<section class="yorumlar">
+    <h2><i class="fa-regular fa-comments"></i> Yorumlar</h2>
+    <div class="gis" id="gis" data-term="${esc(term)}">
+      <div class="gis-yukle"><i class="fa-solid fa-spinner fa-spin"></i> Yorumlar hazırlanıyor…</div>
+    </div>
+  </section>`;
+}
+let _gisObs = null;
+function mountGiscus(){
+  const box = document.getElementById('gis');
+  if (!box) return;
+  if (_gisObs){ _gisObs.disconnect(); _gisObs = null; }
+  if (location.protocol === 'file:'){
+    box.innerHTML = `<div class="gis-note">Yorumlar yalnızca site bir sunucudan (http/https) açıldığında yüklenir; yerel dosya olarak açıldığında GitHub oturumu çalışmaz.</div>`;
+    return;
+  }
+  const yukle = ()=>{
+    const term = box.dataset.term || '';
+    box.innerHTML = '';
+    const s = document.createElement('script');
+    s.src = 'https://giscus.app/client.js';
+    s.setAttribute('data-repo', GISCUS.repo);
+    s.setAttribute('data-repo-id', GISCUS.repoId);
+    s.setAttribute('data-category', GISCUS.category);
+    s.setAttribute('data-category-id', GISCUS.categoryId);
+    s.setAttribute('data-mapping', 'specific');     // her bölüm/seri kendi başlığını alsın
+    s.setAttribute('data-term', term);
+    s.setAttribute('data-strict', '0');
+    s.setAttribute('data-reactions-enabled', '1');
+    s.setAttribute('data-emit-metadata', '0');
+    s.setAttribute('data-input-position', 'top');
+    s.setAttribute('data-theme', GISCUS.theme);
+    s.setAttribute('data-lang', GISCUS.lang);
+    s.setAttribute('data-loading', 'lazy');
+    s.setAttribute('crossorigin', 'anonymous');
+    s.async = true;
+    s.onerror = ()=>{ box.innerHTML = `<div class="gis-note">Yorumlar yüklenemedi (giscus'a erişilemiyor).</div>`; };
+    box.appendChild(s);
+  };
+  if (!('IntersectionObserver' in window)){ yukle(); return; }
+  _gisObs = new IntersectionObserver((girisler, obs)=>{
+    if (girisler.some(g=>g.isIntersecting)){ obs.disconnect(); _gisObs = null; yukle(); }
+  }, {rootMargin: '400px'});
+  _gisObs.observe(box);
 }
 
 /* sağdaki bölüm listesi: seçili bölüme kaydır + filtre kutusu */
@@ -1242,11 +1373,13 @@ function renderEpisode(slug, data, bolumId, playerName, idxStr){
           <button class="copybtn" data-cmd="${esc(cmd)}">${esc(cmd)}</button>
         </div>
         ${advancedHtml}
+        ${yorumlarHtml('anime/'+slug+'/'+bolumId)}
       </div>
     </div>
   `;
 
   bindEpSide();
+  mountGiscus();
 
   const tgl = $('#oluTgl');
   if (tgl) tgl.onchange = ()=>{ oluGoster.set(tgl.checked); renderEpisode(slug, data, bolumId, curPName, String(curIdx)); };
