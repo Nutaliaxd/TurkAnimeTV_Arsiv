@@ -1,0 +1,43 @@
+[
+ {
+  "player": "HDVID",
+  "path": "ajax/videosec&b=Z21JeUtaeStNT24wN2lVcyttNE85Zz09OjoyMkVxRDNVdmx4US1BZ0M2&v=OEVqR3lyM043ajJyVEhGUGt4TlU5UT09OjpVdXpnbVRyUml2d3duMkxW&f=b2hBTm8yVkIybnlUcThkQ092ZmN3QT09Ojp4X29Oa3VsbTV2Nl9MSUxa",
+  "fansub": "AMT",
+  "mask": "/player/U3pCVVBIUjVXMjRRYW1SUmhDdzgwdmpBcGEwMGZuaGpXTkJuRFIvNktxbU5vMkd4eHlEZ1lyaVNZRW1VTXRwbDo6ckFaQmNtQ1dZNWJjMU1GSw"
+ },
+ {
+  "player": "MAIL",
+  "path": "ajax/videosec&b=eVp5QW1YUTZkN3hJLytmVlNJVWNSdz09OjpPc3Naa3AwMmRlOEI0LWZY&v=ZHBhMGxmY1Yza0VHNFMzY0M1MVNtQT09OjpFSnJxSHdzMk5rdWRoTHpZ&f=L1FyWEFKR2g2aWU5bUtIOThBNWdIZz09OjpLdzVJcW8teWRJeWZNWFJf",
+  "fansub": "AMT",
+  "url": "https://my.mail.ru/video/embed/7571497515682367941"
+ },
+ {
+  "player": "ODNOKLASSNIKI",
+  "path": "ajax/videosec&b=eWJjRDU5SFlJVWhWRmFOODNyVHdyZz09OjphOXVaTDRCTW1SRmhmdEtD&v=RXdwR2JQWUczMUE4QXlQS3ZPc0Vadz09OjozeUVUZlUtTHhieHNKaUJ3&f=WlVXaU4vRks0WUhsTmNlMThUaWhhZz09OjptNUJCWWEtd05INEFRclRS",
+  "fansub": "AMT",
+  "url": "https://odnoklassniki.ru/videoembed/2791996852848"
+ },
+ {
+  "player": "MP4UPLOAD",
+  "path": "ajax/videosec&b=b0YrOWNTeTJjaytEeklsQjVaRGFoQT09OjpmVXlpQXNSY0FsWmRYSnJy&v=VnpFdlhmNERoU1V0YzlIMVM1MzFQQT09OjpqNHdVd1Ixc0o4cDdUZlBt&f=TDM5VkZlQmtNcElrNzNkNG84UTliQT09OjptcElUMXB0ZEpORW1xdlV1",
+  "fansub": "AMT",
+  "url": "https://www.mp4upload.com/embed-k73ppjsdrudu.html"
+ },
+ {
+  "player": "STREAMSB",
+  "path": "ajax/videosec&b=VTVyZTZhK1UvT1N5MVFnanF3a0xXZz09OjpxUndrMnZ5ZnpyVm5BRzV4&v=c1hQVk1ER3A1QVpuN1E2b0toa2RVQT09OjpsVVNaQW1HYklWQ3NmeTV6&f=NjJ3akJUek03MFBTaWNiL2ZVangvdz09Ojp1NU1LdF93aWktTnFOaURH",
+  "fansub": "AMT",
+  "url": "https://sbfast.com/embed-w8n26t7uxd0i.html"
+ },
+ {
+  "player": "VUDEA",
+  "path": "ajax/videosec&b=RXRyVzNHNkpnZ1FyV0ZaajRNSFhyUT09Ojpud25aNXhMT1J3eFRFa2JP&v=a1RsS3dhdE1YRytTS3ZCcmUvc0hwZz09Ojp4NG1nRnRZbGpwaEJIbjR4&f=ZjEzclM4OVhIZmxRUlBDNkZveVArdz09OjpEWGE2aWdyeHRSbUNqVkc1",
+  "fansub": "AMT",
+  "url": "https://vudeo.io/embed-77c4lz5ohmfh.html"
+ },
+ {
+  "player": "ALUCARD(BETA)",
+  "fansub": "AMT",
+  "mask": "/player/dWJENkNHZkY0ajhiZ0g5U1U0MWs2RHZIT0kyZjlKdzVhQkNEMEk5OGliaz06OmlIc2lucnBZbVZscWszemM"
+ }
+]

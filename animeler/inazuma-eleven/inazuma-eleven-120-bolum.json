@@ -1,0 +1,43 @@
+[
+ {
+  "player": "MAIL",
+  "path": "ajax/videosec&b=T0FuV1FJNzdTSnc1NDhUeCtzT3ppQT09OjotbGh0SkwtM3YydXpyX2xk&v=ei9RM29ZNFZMeWdDUHE5ZWh6d2dpUT09OjpKT3cyNFA0YlhTTWliRm10&f=NVVYOFROMlVXR2ZwU0RuUHhLYjdlUT09OjpTcGlBd08xYjFSZDczMUc5",
+  "fansub": "AMT",
+  "url": "https://my.mail.ru/video/embed/7571497515682368009"
+ },
+ {
+  "player": "ODNOKLASSNIKI",
+  "path": "ajax/videosec&b=VzI2dmRuZ3J4c1J0WitVTW9vYjcwdz09OjpMVmpLbU00TXduSmhtZ04w&v=L1VsVFJBSCtnekNLMml1d0hrV2FCdz09OjpVZHVfanloTjZHdnlFUW9T&f=bXNPVERQNDViRUhTaElSM1QrNUlGdz09Ojo1V2NaYWVoZURaVHZWZllp",
+  "fansub": "AMT",
+  "url": "https://odnoklassniki.ru/videoembed/2792330496624"
+ },
+ {
+  "player": "MP4UPLOAD",
+  "path": "ajax/videosec&b=Ky82YlR1cU5Vcjk2T1lMK3lNTFFBZz09Ojpzc0NTQWlucjZQUEFmSDNX&v=dlVnTFp1WUV1K0Jmb3doMGJNQzRYZz09OjpWWm1PdUREZWo5R2NSTHhi&f=c0UxbU5aVzQ4VDdUY2QxU0tMVGtYQT09OjoyZExqNXIybDNMRVp1X25F",
+  "fansub": "AMT",
+  "url": "https://www.mp4upload.com/embed-tqgxqnfinbz6.html"
+ },
+ {
+  "player": "STREAMSB",
+  "path": "ajax/videosec&b=SGFvUndzd1VIUS9xTlpCRXFiYUJqQT09OjpYVE9yUXdxVGFwZ0tQWmVx&v=aFhCMVJEbzVSQnFaWW5ZbHlFazVzdz09OjpXamhnU252RDNmNEpnaThI&f=Ym5ZZFVsNCs4YU9iT2dpa0ZXNnk2dz09Ojp2RndXSFk2NWwyNWdmMFVn",
+  "fansub": "AMT",
+  "url": "https://sbfast.com/embed-3yw1q73jjjfa.html"
+ },
+ {
+  "player": "UQLOAD",
+  "path": "ajax/videosec&b=OHlyR2ExV2tWc0FvT01CalVrZ085UT09OjpXU0FmanR0dEhqS0hxNzBh&v=MWhsdkxJZEE0bTdKWUZ0dWVLTElodz09Ojo3SG1wc1ozdWhTVDFjMlBF&f=UGFxZStUbGhkVGhvUHR3cVhXVU9iQT09OjpTWWNXeHFuSEdDVjhRUUJj",
+  "fansub": "AMT",
+  "url": "https://uqload.com/embed-6cvhr29kmftz.html"
+ },
+ {
+  "player": "VUDEA",
+  "path": "ajax/videosec&b=bnEzM0xGODFtWW5WREE5TFBOWm1jZz09OjpoM1hOb21FMWxFUWtuN3lT&v=NnhENEUxKzVhelZvdm5XYmo3bWlFdz09OjpLVENIbzlxRkFEaVR0aV9n&f=NjRXYUJlblhrbG5CdUxHdHJTTTBVdz09OjpaNldKd0ZjVE45RGdlTHhl",
+  "fansub": "AMT",
+  "url": "https://vudeo.io/embed-pz04aw3r23ht.html"
+ },
+ {
+  "player": "ALUCARD(BETA)",
+  "fansub": "AMT",
+  "mask": "/player/L1JPd0VoVHVnR2piV0xuQkZXSXROK013SnYrZFFQM04wSmZzbjNpNXpVUT06OmRGbTFVOGh2LTZTaW9iblg"
+ }
+]

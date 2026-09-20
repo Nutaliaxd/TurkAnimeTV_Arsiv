@@ -1,0 +1,37 @@
+[
+ {
+  "player": "MAIL",
+  "path": "ajax/videosec&b=MStVa1FKKzVFVEZrdjlPQ0E1QVNodz09Ojo2TEE2Nk5aamVTTHVDc0FY&v=b1JzdHdoa21aUFA0VkRTZWxQaHRaQT09OjpuZl9uNE05Ujh2ajB2LVJN&f=UjQreW1Xb0ppMlpXSTBLbGF4eGdmdz09OjpSWElBdDNQMzVDVVplcUhM",
+  "fansub": "AMT",
+  "url": "https://my.mail.ru/video/embed/7571497515682367975"
+ },
+ {
+  "player": "ODNOKLASSNIKI",
+  "path": "ajax/videosec&b=S0Fnd0Mwc0JNR2FVWEFjeUpOR3hldz09OjpTUG5KRlFmOENuZGRNNldC&v=M0tNaUlZUEkzdXRoZC80bmNiNDc2QT09OjpJZGE3SVQyMjF2UmNNX3cy&f=NkZaSmNMcXRFMkpjT000L3o0Qkcrdz09OjpvZ05yM2ZIMzgzQVVTa091",
+  "fansub": "AMT",
+  "url": "https://odnoklassniki.ru/videoembed/2792049478256"
+ },
+ {
+  "player": "MP4UPLOAD",
+  "path": "ajax/videosec&b=SVgzU0pWekpqOUxNT0Vvc2FDR0Fwdz09Ojo5akl6c09IMzVxM0JNTzFJ&v=VFh3WXhBYUhCbXNON2lYZmpBZERFQT09OjpkY3NkY1ltaWFuMkNCM2M2&f=bm0rekRxemErNldodDFpSit2UlhOdz09OjpmRTZ2WVNTV2FFWGNRSEVF",
+  "fansub": "AMT",
+  "url": "https://www.mp4upload.com/embed-eszs981zlzo4.html"
+ },
+ {
+  "player": "STREAMSB",
+  "path": "ajax/videosec&b=ZE5aQVg1WHRBUk0rSnlWd1BwMFpaZz09OjpQRVgtWUVBdlowYjE4Ymkz&v=UitybkZxYUczOVNqd0ZhQWJIeU5FUT09OjphcXN0ZXhnWU94RUVMN0lq&f=aUVMMkRiR1FDa3ZGSm5Dak5PblQyUT09OjpNY1gyX196T0dSSE1KU2Nu",
+  "fansub": "AMT",
+  "url": "https://sbfast.com/embed-f09s0ozfeupz.html"
+ },
+ {
+  "player": "VUDEA",
+  "path": "ajax/videosec&b=V053N0VXM0IwbGY2TFhGOGZ4MkdJZz09OjpGSkxYNkY3N0J3T01IS2pz&v=WFY2ZUdpT255N0FmMVdqVHJGeW1HZz09OjpXRkVaNVg3YTZIQm9rUlJF&f=L1RvdTNZL2ZMSERjZFZOZEEzTnphZz09OjozS00zeWRuVmdmTWRudHJX",
+  "fansub": "AMT",
+  "url": "https://vudeo.io/embed-aqkhb4fp63ei.html"
+ },
+ {
+  "player": "ALUCARD(BETA)",
+  "fansub": "AMT",
+  "mask": "/player/NFhxa3AzQnlFWWFxRGN2bkJpM0lPMjc4NDd1aGhKSkpXMklSaldIbnNiTT06OlZualBkX1lDYVc2TmxsSnk"
+ }
+]
