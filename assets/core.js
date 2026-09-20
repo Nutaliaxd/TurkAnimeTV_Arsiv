@@ -456,9 +456,165 @@ function pagerHTML(page, total, perPage, hrefFn){
 const HUES = [178,205,232,268,318,350,18,42,96,150];
 function hueOf(s){ let h=0; for (let i=0;i<s.length;i++) h=(h*31+s.charCodeAt(i))>>>0; return HUES[h%HUES.length]; }
 function initials(t){ const w=String(t||'?').replace(/[^\p{L}\p{N} ]/gu,' ').trim().split(/\s+/); return ((w[0]||'?')[0]+((w[1]||'')[0]||'')).toUpperCase(); }
-function poster(a){
-  const h = hueOf(a.slug), t = a.baslik||a.slug;
-  return `<div class="poster" data-slug="${esc(a.slug)}" style="--h:${h};--g:${(h+35)%360}"><span class="pl">${esc(initials(t))}</span>${a.eps!=null?`<span class="pn">${a.eps} bölüm</span>`:''}</div>`;
+/* ============ kapak görselleri: yerel dosya → olmazsa canlı AniList ============
+   1) Önce build-time kapağı  assets/covers/<slug>.avif  (statik dosya, limit yok, anında).
+   2) Dosya yoksa/yüklenmezse AniList GraphQL'den (graphql.anilist.co) çekilir. Görünen kapaklar
+      TEK istekte toplanır (alias'lı toplu sorgu), istekler aralıklı gider (AniList limiti düşük),
+      sonuç localStorage'a yazılır → aynı ziyaretçi bir daha aynı seri için istek atmaz.
+      İstekleri ziyaretçinin tarayıcısı attığı için limit siteye değil ziyaretçinin IP'sine işler.
+   3) İkisi de olmazsa renkli baş harf kutusu kalır.
+   Yerel dosyası olmayan seriler 1 gün boyunca tekrar denenmez (404 gürültüsü olmasın).
+   (Jikan bu zincirden çıkarıldı: genel API'si 1 Ekim 2026'da kapanıyor, Ağustos sonundan beri de kesintili.) */
+function coverUrl(slug){ return 'assets/covers/' + encodeURIComponent(slug) + '.avif'; }
+/* KAPAK-BEGIN */
+const KAPAK = (()=>{
+  const API = 'https://graphql.anilist.co', CDN = 'https://s4.anilist.co/file/anilistcdn/media/anime/cover/';
+  const K_OK = 'al_ok1', K_NO = 'al_no1', K_LM = 'al_lm1';
+  const NO_TTL = 3*864e5, LM_TTL = 864e5;                        // AniList'te bulunamayanlar 3 gün, yerel dosyası olmayanlar 1 gün sonra tekrar denenir
+  const BATCH = 10, GAP = 2200, PER_MIN = 24, MAX_TRY = 3;       // tek istekte 10 seri; en fazla dakikada 24 istek
+  const warn = (...a)=>{ try { console.warn('[kapak]', ...a); } catch(e){} };
+  try { ['jk_ok1','jk_no1','jk_lm1'].forEach(k => localStorage.removeItem(k)); } catch(e){}   // eski Jikan önbelleği
+  const load = k => { try { return JSON.parse(localStorage.getItem(k)) || {}; } catch(e){ return {}; } };
+  const ok = load(K_OK), no = load(K_NO), lm = load(K_LM);
+  { const t0 = Date.now(); for (const s in no) if (t0 - no[s] > NO_TTL) delete no[s]; for (const s in lm) if (t0 - lm[s] > LM_TTL) delete lm[s]; }
+  let saveT = 0;
+  function flush(){
+    try { localStorage.setItem(K_OK, JSON.stringify(ok)); localStorage.setItem(K_NO, JSON.stringify(no)); localStorage.setItem(K_LM, JSON.stringify(lm)); }
+    catch(e){ try { localStorage.removeItem(K_NO); localStorage.removeItem(K_LM); localStorage.setItem(K_OK, JSON.stringify(ok)); } catch(_){} }
+  }
+  const save = ()=>{ clearTimeout(saveT); saveT = setTimeout(flush, 1500); };
+  addEventListener('pagehide', flush);
+
+  const strip = u => u && u.indexOf(CDN) === 0 ? u.slice(CDN.length) : u;
+  const url   = (v, big)=>{ const p = Array.isArray(v) ? (big && v[1] ? v[1] : v[0]) : v; return /^https?:/.test(p) ? p : CDN + p; };
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+  const jobs = new Map(), queue = [];
+  let running = false, last = 0, stamps = [];
+  async function gate(){                                         // hız sınırı: istekler arası GAP ms + dakikada PER_MIN
+    for (;;){
+      const now = Date.now();
+      stamps = stamps.filter(t => now - t < 60000);
+      const w = Math.max(last + GAP - now, stamps.length >= PER_MIN ? stamps[0] + 60000 - now : 0);
+      if (w <= 0) break;
+      await sleep(w);
+    }
+    last = Date.now(); stamps.push(last);
+  }
+  /* slugs → {slug: [küçük, büyük] | ''(bulunamadı)} | {retry:ms} | null(hata) */
+  async function fetchBatch(slugs){
+    const vars = {}, defs = [], parts = [];
+    slugs.forEach((s, i)=>{
+      vars['s'+i] = String(titleOf(s)).slice(0, 120); defs.push('$s'+i+':String');
+      parts.push('m'+i+':Media(search:$s'+i+',type:ANIME,isAdult:false){coverImage{large extraLarge}}');
+    });
+    const r = await fetch(API, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      body: JSON.stringify({query: 'query(' + defs.join(',') + '){' + parts.join(' ') + '}', variables: vars})
+    });
+    if (r.status === 429) return {retry: Math.min(65, +r.headers.get('Retry-After') || 30) * 1000};
+    let j = null; try { j = await r.json(); } catch(e){}
+    /* AniList, gruptaki bir başlık bulunamazsa HTTP 404 döner ama gövdede diğerlerinin sonucu (data) vardır → normal */
+    if (!j || !j.data){ warn('AniList yanıtı kullanılamadı', r.status, j && j.errors); return null; }
+    const out = {};
+    slugs.forEach((s, i)=>{
+      const m = j.data['m'+i], c = m && m.coverImage, a = c && (c.large || c.extraLarge);
+      out[s] = a ? [strip(a), strip(c.extraLarge || a)] : '';
+    });
+    return out;
+  }
+  async function pump(){
+    if (running) return;
+    running = true;
+    await sleep(150);                                            // aynı anda görünen kapakları tek istekte topla
+    while (queue.length){
+      const batch = [];
+      while (queue.length && batch.length < BATCH){
+        const slug = queue.shift(), job = jobs.get(slug);
+        if (!job) continue;
+        for (const im of job.imgs) if (!im.isConnected) job.imgs.delete(im);
+        if (!job.imgs.size){ jobs.delete(slug); continue; }      // sayfa değişti / açılır liste kapandı: istek harcama
+        batch.push(slug);
+      }
+      if (!batch.length) break;
+      let res = null;
+      try { await gate(); res = await fetchBatch(batch); } catch(e){ warn('AniList isteği başarısız', e); res = null; }
+      if (res && res.retry){                                     // 429: bekle, aynı grubu başa koy
+        for (const slug of batch.reverse()){
+          const job = jobs.get(slug);
+          if (job && ++job.tries < MAX_TRY) queue.unshift(slug); else jobs.delete(slug);
+        }
+        warn('AniList hız sınırı (429), ' + Math.round(res.retry/1000) + ' sn bekleniyor');
+        await sleep(res.retry);
+        continue;
+      }
+      for (const slug of batch){
+        const job = jobs.get(slug); jobs.delete(slug);
+        if (!job || !res || res[slug] === undefined) continue;   // hata: önbelleğe yazma, sonra yine denenir
+        const v = res[slug];
+        if (v === ''){ no[slug] = Date.now(); for (const im of job.imgs) im.remove(); continue; }   // AniList'te de yok → baş harf kutusu
+        ok[slug] = v;
+        for (const im of job.imgs) if (im.isConnected) im.src = url(v, im.dataset.big === '1');
+      }
+      save();
+    }
+    running = false;
+  }
+  function want(el){                                             // el = .poster[data-jk]
+    const slug = el.dataset.jk, img = el.querySelector('img');
+    if (!img) return;
+    if (ok[slug]){ img.src = url(ok[slug], img.dataset.big === '1'); return; }
+    if (no[slug]) return;
+    let job = jobs.get(slug);
+    if (!job){
+      job = {imgs: new Set(), tries: 0}; jobs.set(slug, job);
+      if (img.dataset.big === '1') queue.unshift(slug); else queue.push(slug);   // büyük (öne çıkan) kapak öne geçer
+    }
+    job.imgs.add(img);
+    pump();
+  }
+  const io = 'IntersectionObserver' in window
+    ? new IntersectionObserver(es => { for (const e of es) if (e.isIntersecting){ io.unobserve(e.target); want(e.target); } }, {rootMargin: '300px'})
+    : null;
+  function scan(){
+    document.querySelectorAll('.poster[data-jk]:not([data-jkw])').forEach(el => { el.dataset.jkw = '1'; io ? io.observe(el) : want(el); });
+  }
+  let st = 0;                                                    // sayfa kodu innerHTML ile yeniden çizse de yeni kapaklar yakalanır
+  new MutationObserver(()=>{ if (!st) st = setTimeout(()=>{ st = 0; scan(); }, 60); })
+    .observe(document.body || document.documentElement, {childList: true, subtree: true});
+  scan();
+
+  /* yerel kapak yüklenemedi → aynı <img> AniList sonucuna geçer */
+  function miss(img){
+    const el = img.closest && img.closest('.poster');
+    if (!el || img.dataset.fb){ img.remove(); return; }         // ikinci hata: vazgeç, baş harf kutusu kalsın
+    const slug = el.dataset.slug;
+    img.dataset.fb = '1';
+    lm[slug] = Date.now(); save();
+    if (no[slug]){ img.remove(); return; }
+    el.dataset.jk = slug;
+    if (ok[slug]){ img.src = url(ok[slug], img.dataset.big === '1'); return; }
+    el.dataset.jkw = '1';
+    io ? io.observe(el) : want(el);
+  }
+
+  return { url, miss, cached: s => ok[s] || '', missing: s => !!no[s], localMissing: s => !!lm[s] };
+})();
+/* KAPAK-END */
+function poster(a, o){
+  o = o || {};
+  const h = hueOf(a.slug), t = a.baslik||a.slug, s = esc(a.slug);
+  const big = o.big ? ' data-big="1"' : '';
+  let img = '', jk = '';
+  if (!KAPAK.localMissing(a.slug)){                               // 1) yerel kapak; olmazsa KAPAK.miss → canlı AniList
+    img = `<img src="${coverUrl(a.slug)}" alt="" loading="lazy" decoding="async"${big} onload="this.classList.add('on')" onerror="KAPAK.miss(this)">`;
+  } else {                                                        // yerel dosya yok (biliniyor) → doğrudan AniList
+    const v = KAPAK.cached(a.slug), ev = `onload="this.classList.add('on')" onerror="this.remove()"`;
+    if (v) img = `<img src="${KAPAK.url(v, o.big)}" alt="" loading="lazy" decoding="async"${big} ${ev}>`;
+    else if (!KAPAK.missing(a.slug)){ img = `<img alt="" decoding="async"${big} ${ev}>`; jk = ` data-jk="${s}"`; }
+  }
+  return `<div class="poster" data-slug="${s}"${jk} style="--h:${h};--g:${(h+35)%360}"><span class="pl">${esc(initials(t))}</span>${a.eps!=null?`<span class="pn">${a.eps} bölüm</span>`:''}${img}</div>`;
 }
 function card(a){
   return `<a class="card" href="${animeUrl(a.slug)}">${poster(a)}<span class="ct">${esc(a.baslik||a.slug)}</span><span class="cs">${esc(a.top.slice(0,2).join(', ')||'kaynak yok')}</span></a>`;
@@ -477,7 +633,7 @@ const dayKey = ()=>{ const d=new Date(); return d.getFullYear()*10000+(d.getMont
 let _good, _top, dailyShift = 0, recShift = 0;
 const goodPool = ()=> _good || (_good = ANIME.filter(a=>a.eps>=12 && a.urls>0));
 const topPool = ()=> _top || (_top = ANIME.slice().sort((a,b)=>b.urls-a.urls).slice(0,14));
-/* ============ AniList: kapak, tür, puan (public GraphQL API, anahtar gerekmez) ============ */
+/* ============ AniList: tür, puan, özet (build-time dosyalar) — seri sayfası kapağı da buradan ============ */
 const DEF_TITLE = document.title;
 const DEF_DESC = document.querySelector('meta[name="description"]').content;
 const OG_IMG = document.querySelector('meta[property="og:image"]').content;
@@ -492,95 +648,46 @@ function ldSet(o){
   if (!e){ e = document.createElement('script'); e.type = 'application/ld+json'; e.id = 'ld-dyn'; document.head.appendChild(e); }
   e.textContent = JSON.stringify(o);
 }
-const AL_URL = 'https://graphql.anilist.co', AL_KEY = 'tk_al1';
-let AL = {}, alCool = 0, alTok = 0, infoFor = null;
-const alPending = new Set(), DETAIL = new Map(), ANIME_BY = new Map();
-try{ AL = JSON.parse(localStorage.getItem(AL_KEY)||'{}') || {}; }catch(e){ AL = {}; }
-const alSave = debounce(()=>{ try{ localStorage.setItem(AL_KEY, JSON.stringify(AL)); }catch(e){ try{ localStorage.removeItem(AL_KEY); }catch(_){} } }, 800);
+/* AniList'e artık tarayıcıdan HİÇ canlı istek atılmıyor: kapak/tür/puan/özet build-time'da
+   scripts/fetch_anilist.py ile indirilir + çevrilir, assets/covers/*.avif ve assets/anilist/*.json
+   olarak repoya yazılır (bkz. .github/workflows/anilist-sync.yml, README-kurulum.md). */
+const DETAIL = new Map(), ANIME_BY = new Map();
 function titleOf(slug){
   if (!ANIME_BY.size) ANIME.forEach(a=>ANIME_BY.set(a.slug, a));
   const a = ANIME_BY.get(slug);
   return (a && a.baslik) || String(slug).replace(/-/g,' ');
 }
-const alPost = (query, variables)=> fetch(AL_URL, {method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body:JSON.stringify({query, variables})});
-/* kapaklar: 10 başlığı tek istekte (alias) sorgular; sonuç localStorage'da kalır */
-async function alBatch(slugs){
-  const vars = {}, parts = [];
-  slugs.forEach((s,i)=>{ vars['s'+i] = titleOf(s); parts.push(`m${i}: Media(search:$s${i}, type:ANIME, isAdult:false){id coverImage{large color}}`); });
-  const r = await alPost(`query(${slugs.map((_,i)=>`$s${i}:String`).join(',')}){${parts.join(' ')}}`, vars);
-  if (r.status===429){ alCool = Date.now()+((+r.headers.get('Retry-After')||60)*1000); throw new Error('limit'); }
-  const j = await r.json();
-  if (!j.data) throw new Error('yanıt yok');
-  slugs.forEach((s,i)=>{ const m = j.data['m'+i]; AL[s] = m && m.coverImage ? [m.coverImage.large, m.coverImage.color||'', m.id] : 0; });
-  alSave();
-}
 async function alDetail(slug){
   if (DETAIL.has(slug)) return DETAIL.get(slug);
-  const p = (async()=>{
-    const r = await alPost('query($s:String){Media(search:$s,type:ANIME,isAdult:false){id genres averageScore seasonYear description(asHtml:false) coverImage{large extraLarge color}}}', {s:titleOf(slug)});
-    const j = await r.json(), m = j.data && j.data.Media;
-    if (m && m.coverImage && !AL[slug]){ AL[slug] = [m.coverImage.large, m.coverImage.color||'', m.id]; alSave(); }
-    return m || null;
-  })().catch(()=>null);
+  const p = fetch('assets/anilist/' + encodeURIComponent(slug) + '.json')
+    .then(r=> r.ok ? r.json() : null).catch(()=>null);
   DETAIL.set(slug, p);
   return p;
 }
-const GTR = {Action:'Aksiyon',Adventure:'Macera',Comedy:'Komedi',Drama:'Drama',Fantasy:'Fantastik',Horror:'Korku','Mahou Shoujo':'Büyülü kız',Mecha:'Mecha',Music:'Müzik',Mystery:'Gizem',Psychological:'Psikolojik',Romance:'Romantik','Sci-Fi':'Bilim kurgu','Slice of Life':'Günlük yaşam',Sports:'Spor',Supernatural:'Doğaüstü',Thriller:'Gerilim',Ecchi:'Ecchi'};
 function gchipsHtml(m){
   const c = [];
   if (m.averageScore) c.push(`<span class="pchip gchip"><i class="fa-solid fa-star"></i> ${(m.averageScore/10).toFixed(1)}</span>`);
   if (m.seasonYear) c.push(`<span class="pchip gchip">${m.seasonYear}</span>`);
-  (m.genres||[]).slice(0,4).forEach(g=>c.push(`<span class="pchip gchip">${esc(GTR[g]||g)}</span>`));
+  (m.genres||[]).slice(0,4).forEach(g=>c.push(`<span class="pchip gchip">${esc(g)}</span>`));
   return c.length ? `<div class="gchips">${c.join('')}</div>` : '';
 }
-function synText(m){ const t = String(m.description||'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim(); return t.length>340 ? t.slice(0,337)+'…' : t; }
-function alPaint(){
-  document.querySelectorAll('.poster[data-slug]:not([data-i])').forEach(p=>{
-    const e = AL[p.dataset.slug]; if (!e) return;
-    p.dataset.i = 1;
-    const img = new Image();
-    img.alt = ''; img.decoding = 'async'; img.referrerPolicy = 'no-referrer';
-    img.onload = ()=> img.classList.add('on'); img.onerror = ()=> img.remove();
-    img.src = e[0]; p.appendChild(img);
-  });
-  const at = document.querySelector('.atxt');
-  if (at && infoFor && !at.querySelector('.ainfo') && (window.CUR_SLUG||'')===infoFor.slug){
-    const t = synText(infoFor.m);
-    at.insertAdjacentHTML('beforeend', `<div class="ainfo">${gchipsHtml(infoFor.m)}${t?`<p class="syn">${esc(t)}<small>Özet: AniList (İngilizce)</small></p>`:''}</div>`);
-  }
-}
-async function alHydrate(){
-  alPaint();
-  const tok = ++alTok;
-  if (Date.now()<alCool) return;
-  const need = [...new Set([...document.querySelectorAll('.poster[data-slug]:not([data-i])')].map(p=>p.dataset.slug))]
-    .filter(s=> !(s in AL) && !alPending.has(s));
-  const BATCH = 24;
-  for (let i=0; i<need.length; i+=BATCH){
-    if (tok!==alTok) return;
-    const grp = need.slice(i, i+BATCH);
-    grp.forEach(x=>alPending.add(x));
-    try{ await alBatch(grp); }catch(e){ alCool = Math.max(alCool, Date.now()+30000); return; }
-    finally{ grp.forEach(x=>alPending.delete(x)); }
-    alPaint();
-    if (i+BATCH < need.length) await new Promise(r=>setTimeout(r, 350));
-  }
-}
+function synText(m){ const t = String(m.description||'').replace(/\s+/g,' ').trim(); return t.length>340 ? t.slice(0,337)+'…' : t; }
 async function enrichAnime(slug){
   const t = titleOf(slug), a = ANIME_BY.get(slug), n = a ? a.eps : 0;
   document.title = `${t} izle — tüm bölümler | TürkAnime Arşiv`;
   metaSet(`${t} animesini izle: ${n?n+' bölüm, ':''}oynatma linkleri ve indirme komutları TürkAnime Arşiv'de.`);
   const m = await alDetail(slug);
   if (!m || (window.CUR_SLUG||'')!==slug) return;
-  infoFor = {slug, m};
-  const syn = synText(m), g = (m.genres||[]).map(x=>GTR[x]||x);
-  const img = m.coverImage && (m.coverImage.extraLarge || m.coverImage.large);
+  const syn = synText(m), g = m.genres || [];
+  const img = siteKok() + coverUrl(slug);
   metaSet(`${t}${g.length?' ('+g.slice(0,3).join(', ')+')':''} animesini izle: ${n?n+' bölüm, ':''}oynatma linkleri ve indirme komutları.`, img);
   ldSet({'@context':'https://schema.org','@type':'TVSeries', name:t, numberOfEpisodes:n||undefined, genre:m.genres, image:img, description:syn||undefined, inLanguage:'ja'});
-  alPaint();
+  const at = document.querySelector('.atxt');
+  if (at && !at.querySelector('.ainfo')){
+    at.insertAdjacentHTML('beforeend', `<div class="ainfo">${gchipsHtml(m)}${syn?`<p class="syn">${esc(syn)}<small>Özet: AniList</small></p>`:''}</div>`);
+  }
 }
 function initAniList(){
-  new MutationObserver(debounce(alHydrate, 120)).observe(appEl(), {childList:true});
   new MutationObserver(()=>{ document.querySelectorAll('meta[property="og:title"],meta[name="twitter:title"]').forEach(m=>m.setAttribute('content', document.title)); })
     .observe(document.querySelector('title'), {childList:true});
 }
