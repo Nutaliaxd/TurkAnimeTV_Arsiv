@@ -1,0 +1,55 @@
+[
+ {
+  "player": "MAIL",
+  "path": "ajax/videosec&b=RFovNkZXWXRzVE5Xbm80a2M5emxPUT09OjpERUFJYmlhUXJpTTlWbTdp&v=cWFvOVFPQ3ZXN09kdUFkaGYxcFRXQT09OjpOT0pISlB3NFNLajNaNEly&f=L0JNcUxsK1AyL1lMb0JJdnZ3S0pOUT09Ojo1VzV2WlRTWWx1QlNaUWJh",
+  "fansub": "Varsay\u0131lan",
+  "url": "https://my.mail.ru/video/embed/2444636457931907544"
+ },
+ {
+  "player": "MAIL",
+  "path": "ajax/videosec&b=YUJFWGdtT004VUkxbEhGcC9RTDh2QT09OjpCRHEtZ2VIUlBqcnlBZ1hU&v=SlhTUXlZRy8vQXZNYTdDSkNZc2pzQT09Ojo0ZEJjM0RqMUlGSHlOQlkw&f=YkxVQ1BLMS9nTGFDdk1qcHZJK0d6QT09Ojo1d1R0OXVJMWlaMzdjcmZ1",
+  "fansub": "Varsay\u0131lan",
+  "url": "https://my.mail.ru/video/embed/2444636457931907545"
+ },
+ {
+  "player": "ODNOKLASSNIKI",
+  "path": "ajax/videosec&b=ZWFZTlVsK2ltcHFoSjJyZmFFNzhxZz09OjpCWUQ5YUh3ZENfTkpYdWlS&v=RmdkZ0RzQkpKTnRzOFd1czA0ZkFyQT09Ojp1ZDhJb0FIU2RhNnBrRVVE&f=MkEwdndOcHQrUWh6L054bVVNVDJYQT09OjowR2FNNlAzUDlHeDRKNEg0",
+  "fansub": "Varsay\u0131lan",
+  "url": "https://odnoklassniki.ru/videoembed/2336363186909"
+ },
+ {
+  "player": "ODNOKLASSNIKI",
+  "path": "ajax/videosec&b=MUZmQXZCVkpwTVB4WGJiamo1b1o4Zz09OjpsWnZuSTVwN2pIRHVwai1q&v=OEtmemVqditiSWF5STdtSjAzanFVUT09OjphQTZsMERWUlVRZlRXcDJ2&f=eWlwc0NOendGeEQyK0oyOWg5Vis4Zz09OjpWU3paRU1OR1dSX2JtZkRH",
+  "fansub": "Varsay\u0131lan",
+  "url": "https://odnoklassniki.ru/videoembed/2336369150685"
+ },
+ {
+  "player": "MP4UPLOAD",
+  "path": "ajax/videosec&b=dkJUdjdwRGxTK1JIdms3ZWVqL2Judz09Ojo0cHlhSE1OYWFnQ2FEM3U3&v=cUQ4aWtpaHNiNlYxVkNsYWRPOUowQT09OjpMeVlCVTBRTmI5N1Zad3Et&f=dVhJTmNSeFZnbW53K0dESHBvbDFadz09OjpGZzlJck1iN1BUWUZ3TU8y",
+  "fansub": "Varsay\u0131lan",
+  "url": "https://www.mp4upload.com/embed-5s7wlb0savt1.html"
+ },
+ {
+  "player": "MP4UPLOAD",
+  "path": "ajax/videosec&b=TnQzVlVxK2JRdGt1UEtTUkk0RVZTQT09OjpCdW9wUGNyOWVJdTRoclRP&v=UldvaVZwb0FyUmloVXlUTFEzMWsrQT09Ojo2dTVJSEVMdy05SU9palRJ&f=SnYybUVyZWFMdjc4MFIyUk5UeE11Zz09OjpGbHFkTS1zQjNEdWZXblJH",
+  "fansub": "Varsay\u0131lan",
+  "url": "https://www.mp4upload.com/embed-q5xvhi2itba6.html"
+ },
+ {
+  "player": "VUDEA",
+  "path": "ajax/videosec&b=NDFkUjBFdDJmQTNBbDNWM3lSVEFsZz09OjpSdllmQ1NzLXZBZ0RZWkVk&v=SHhELzc4KzFDMEZlWjRUakhST3lTUT09OjpEbVpGY09JNU1XQjN2bFZ6&f=VHpCODhqSTJNVVk2TkhqMHJvRjVXQT09Ojp6RlN6dzBqX2t6RXZtYVox",
+  "fansub": "Varsay\u0131lan",
+  "url": "https://vudeo.io/embed-qq8vqv832t96.html"
+ },
+ {
+  "player": "VUDEA",
+  "path": "ajax/videosec&b=WWU5cStQRVFWWTlvMUxKUnhTTUE2QT09OjplNDhmQ2c0aHZkYVhQZXB5&v=QkJYdUhVWDhaN3NIOStpRzRsWWVndz09OjpIZHFyT0VfbkVFVndwOTg3&f=NjQ0cmFhOWVjUG1xRFQ3anBxaEEzZz09OjpOMmM2VTVaaDdQcWFYRjRu",
+  "fansub": "Varsay\u0131lan",
+  "url": "https://vudeo.io/embed-l540tj1h2jna.html"
+ },
+ {
+  "player": "ALUCARD(BETA)",
+  "fansub": "Varsay\u0131lan",
+  "mask": "/player/QWd2SHVEOG5DVnFSWGQ0Y0h5eVZGZlJHWGZXdVpMWnJ3UGpJamhFOG1kVT06OnRkVmFKZmZJUnJlS2JMbVo"
+ }
+]
