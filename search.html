@@ -234,6 +234,46 @@ h1.anime-title{font:800 26px/1.25 var(--fd);letter-spacing:-.4px;margin-bottom:v
 .advanced summary::-webkit-details-marker{display:none}
 .advanced[open] summary{margin-bottom:var(--sp-3)}
 
+/* ===== izleme düzeni: sol oynatıcı + sağ bölüm listesi ===== */
+.watch{display:grid;grid-template-columns:minmax(0,1fr) 300px;grid-template-areas:"top side" "bot side";column-gap:var(--sp-4);row-gap:0;align-items:start}
+.watch-top{grid-area:top;min-width:0}
+.watch-bot{grid-area:bot;min-width:0}
+
+/* önceki / sonraki bölüm */
+.epnav{display:flex;align-items:center;gap:var(--sp-2);margin:0 0 var(--sp-3)}
+.epnav .btn{flex:none}
+.epnav .btn.off{opacity:.35;pointer-events:none}
+.epnav .spacer{flex:1}
+.epnav .cnt{flex:none;font-size:12.5px;color:var(--tx3);white-space:nowrap}
+
+/* sağ sütun bölüm listesi */
+.eplist-side{grid-area:side;min-width:0;background:var(--card);border:1px solid var(--line);border-radius:var(--rad);overflow:hidden;position:sticky;top:76px;display:flex;flex-direction:column;max-height:calc(100vh - 92px)}
+.els-head{flex:none;display:flex;align-items:center;gap:var(--sp-2);padding:10px var(--sp-3);border-bottom:1px solid var(--line);font:700 12.5px var(--fd);letter-spacing:.3px;text-transform:uppercase;color:var(--tx2);background:var(--card2)}
+.els-head i{color:var(--ac)}
+.els-head b{margin-left:auto;font-weight:700;color:var(--tx3);font-size:11.5px;text-transform:none}
+.els-search{flex:none;display:flex;align-items:center;gap:var(--sp-2);padding:7px var(--sp-3);border-bottom:1px solid var(--line)}
+.els-search i{color:var(--tx3);font-size:12px}
+.els-search input{flex:1;min-width:0;background:none;border:none;outline:none;font-size:13px}
+.els-search input::placeholder{color:var(--tx3)}
+.els-body{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
+.els-body::-webkit-scrollbar{width:8px}
+.els-body::-webkit-scrollbar-thumb{background:var(--card2);border-radius:8px}
+.els-item{display:flex;align-items:center;gap:var(--sp-2);padding:9px var(--sp-3);border-bottom:1px solid rgba(42,62,68,.5);color:var(--tx2);font-size:13px;text-decoration:none}
+.els-item:last-child{border-bottom:none}
+.els-item:hover{text-decoration:none;background:var(--card2);color:var(--tx)}
+.els-item .n{flex:none;min-width:30px;font-weight:800;font-size:12px;color:var(--ac2);text-align:center}
+.els-item .t{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.els-item.on{background:rgba(255,143,177,.13);color:var(--tx);box-shadow:inset 3px 0 0 var(--ac)}
+.els-item.on .n{color:var(--ac)}
+.els-item[hidden]{display:none}
+.els-empty{padding:18px var(--sp-3);color:var(--tx3);font-size:12.5px;text-align:center}
+
+@media (max-width:900px){
+  .watch{grid-template-columns:1fr;grid-template-areas:"top" "side" "bot"}
+  .eplist-side{position:static;max-height:none;margin:var(--sp-3) 0}
+  .els-body{max-height:44vh}
+}
+
 /* ===== alt gezinme (mobil) ===== */
 .bnav{display:none}
 
@@ -261,6 +301,8 @@ h1.anime-title{font:800 26px/1.25 var(--fd);letter-spacing:-.4px;margin-bottom:v
   .aposter{width:88px}
   .crumb{flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
   .controls .btn,.controls .tgl{flex:1 1 auto;justify-content:center}
+  .epnav .btn{flex:1 1 0;justify-content:center;padding:0 var(--sp-2);font-size:12.5px}
+  .epnav .cnt{display:none}
   .opt .pname{max-width:55%}
   .optacts{width:100%;margin-left:0;justify-content:flex-end}
   .src{flex-direction:column;align-items:stretch}
@@ -992,12 +1034,39 @@ function optRowHtml(x, num){
   </div>`;
 }
 
+/* varsayılan oynatıcı sırası: SIBNET > MAIL.RU > diğerleri */
+function playerRank(name){
+  const n = String(name||'').toUpperCase();
+  if (n.indexOf('SIBNET')!==-1) return 0;
+  if (n.indexOf('MAIL')!==-1) return 1;       // MAIL / MAIL.RU / MAILRU
+  return 2;
+}
+
 function pickBest(items){
   if (!items || !items.length) return null;
-  const score = x=> (x.l.tip==='url'?0:10) + (x.l.durum==='calisiyor'?0:x.l.durum==='supheli'?1:x.l.durum==='olu'?3:2);
+  const score = x=> (x.l.tip==='url'?0:100) + 10*(x.l.durum==='calisiyor'?0:x.l.durum==='supheli'?1:x.l.durum==='olu'?3:2) + playerRank(x.l.player);
   let best = items[0];
   for (const x of items) if (score(x) < score(best)) best = x;
   return best;
+}
+
+/* sağdaki bölüm listesi: seçili bölüme kaydır + filtre kutusu */
+function bindEpSide(){
+  const body = $('#elsBody');
+  if (!body) return;
+  const aktif = body.querySelector('.els-item.on');
+  if (aktif) body.scrollTop = Math.max(0, aktif.offsetTop - body.clientHeight/2 + aktif.clientHeight/2);
+  const f = $('#epFilter');
+  if (!f) return;
+  f.oninput = ()=>{
+    const q = f.value.trim().toLowerCase();
+    let gorunen = 0;
+    body.querySelectorAll('.els-item').forEach(a=>{
+      const ok = !q || a.dataset.t.indexOf(q)!==-1;
+      a.hidden = !ok; if (ok) gorunen++;
+    });
+    const bos = $('#elsEmpty'); if (bos) bos.hidden = gorunen>0;
+  };
 }
 
 function renderEpisode(slug, data, bolumId, playerName, idxStr){
@@ -1019,16 +1088,53 @@ function renderEpisode(slug, data, bolumId, playerName, idxStr){
       <span>${esc(ep.ad)}</span>
     </div>`;
   document.title = `${meta.baslik} — ${ep.ad} | TürkAnime Arşiv`;
+  /* ---- önceki / sonraki bölüm + sağdaki bölüm listesi ---- */
+  const epHref = e => `#/anime/${encodeURIComponent(slug)}/${bolumIdFor(e)}`;
+  const curIdxEp = data.indexOf(ep);
+  const prevEp = curIdxEp>0 ? data[curIdxEp-1] : null;
+  const nextEp = (curIdxEp>=0 && curIdxEp<data.length-1) ? data[curIdxEp+1] : null;
+  const epNav = `<div class="epnav">
+    ${prevEp? `<a class="btn ghost" href="${epHref(prevEp)}" title="${esc(prevEp.ad)}"><i class="fa-solid fa-arrow-left"></i> Önceki Bölüm</a>`
+            : `<span class="btn ghost off"><i class="fa-solid fa-arrow-left"></i> Önceki Bölüm</span>`}
+    <span class="spacer"></span>
+    <span class="cnt">${curIdxEp>=0?curIdxEp+1:'?'} / ${data.length}</span>
+    <span class="spacer"></span>
+    ${nextEp? `<a class="btn" href="${epHref(nextEp)}" title="${esc(nextEp.ad)}">Sonraki Bölüm <i class="fa-solid fa-arrow-right"></i></a>`
+            : `<span class="btn off">Sonraki Bölüm <i class="fa-solid fa-arrow-right"></i></span>`}
+  </div>`;
+
+  const sideList = `<aside class="eplist-side">
+    <div class="els-head"><i class="fa-solid fa-list-ul"></i> Bölüm Listesi <b>${data.length}</b></div>
+    <div class="els-search"><i class="fa-solid fa-magnifying-glass"></i><input id="epFilter" type="search" placeholder="Filtrele..." autocomplete="off" spellcheck="false"></div>
+    <div class="els-body" id="elsBody">
+      ${data.map(e=>{
+        const on = e===ep;
+        const no = e.no!=null ? String(e.no) : '★';
+        return `<a class="els-item${on?' on':''}" href="${epHref(e)}" data-t="${esc((no+' '+(e.ad||'')).toLowerCase())}">
+          <span class="n">${esc(no)}</span><span class="t">${esc(e.ad||e.slug)}</span>
+        </a>`;
+      }).join('')}
+      <div class="els-empty" id="elsEmpty" hidden>Eşleşen bölüm yok.</div>
+    </div>
+  </aside>`;
 
   if (!canli.length){
     appEl().innerHTML = `${crumb}
       <h1 class="anime-title" style="font-size:20px">${esc(ep.ad)}</h1>
-      <div class="controls">
-        <label class="tgl"><input type="checkbox" id="oluTgl" ${olu?'checked':''}> ölüleri göster</label>
-      </div>
-      <div class="empty"><div class="big"><i class="fa-solid fa-ban"></i></div>Görünür seçenek yok.${!olu?' Ölüleri açmayı dene.':''}</div>`;
+      <div class="watch">
+        <div class="watch-top">
+          ${epNav}
+          <div class="controls">
+            <label class="tgl"><input type="checkbox" id="oluTgl" ${olu?'checked':''}> ölüleri göster</label>
+          </div>
+          <div class="empty"><div class="big"><i class="fa-solid fa-ban"></i></div>Görünür seçenek yok.${!olu?' Ölüleri açmayı dene.':''}</div>
+        </div>
+        ${sideList}
+        <div class="watch-bot"></div>
+      </div>`;
     const tgl0 = $('#oluTgl');
     if (tgl0) tgl0.onchange = ()=>{ oluGoster.set(tgl0.checked); renderEpisode(slug, data, bolumId, playerName, idxStr); };
+    bindEpSide();
     return;
   }
 
@@ -1044,6 +1150,7 @@ function renderEpisode(slug, data, bolumId, playerName, idxStr){
   if (!cur) cur = pickBest(canli);
   const curPName = cur.l.player, curIdx = cur.i;
   const hrefFor = (pl,i)=> `#/anime/${encodeURIComponent(slug)}/${bolumId}/${encodeURIComponent(pl)}/${i}`;
+
 
   /* ---- çevirmen (fansub) grupları: üstte gösterilir ---- */
   const fansubMap = new Map();
@@ -1106,30 +1213,40 @@ function renderEpisode(slug, data, bolumId, playerName, idxStr){
 
   appEl().innerHTML = `${crumb}
     <h1 class="anime-title" style="font-size:20px">${esc(ep.ad)}</h1>
-    <div class="controls">
-      <button class="btn" id="epIndir"><i class="fa-solid fa-download"></i> Bu bölümü indir</button>
-      <label class="tgl"><input type="checkbox" id="oluTgl" ${olu?'checked':''}> ölüleri göster</label>
-      ${ADMIN&&_geriAl.length?`<button class="btn ghost" id="geriBtn" title="son kaldırdığın linki geri getir"><i class="fa-solid fa-rotate-left"></i> geri al (${_geriAl.length})</button>`:''}
-      ${ADMIN&&kaldirilanSay()?`<button class="btn ghost" id="exportBtn" title="henüz repoya eklenmemiş kaldırmaları el_degisiklikleri.json olarak indir"><i class="fa-solid fa-file-export"></i> değişiklikleri dışa aktar (${kaldirilanSay()})</button>`:''}
+    <div class="watch">
+      <div class="watch-top">
+        ${epNav}
+        ${fansubRow}
+        ${iframeHtml}
+        <div class="note-soft">Player açılmadıysa (üçüncü parti host engelleyebilir) <b>kaynak linkini</b> kullan ya da yt-dlp komutuyla indir.</div>
+        ${hostRow}
+      </div>
+      ${sideList}
+      <div class="watch-bot">
+        <div class="pmeta">
+          <span class="pname">${esc(cur.l.player)}</span>
+          ${badge(cur.l.durum)}
+          <span class="tag ${tipClass(cur.l.tip)}">${esc(cur.l.tip)}</span>
+        </div>
+        ${src?`<div class="src"><span class="lbl">Kaynak:</span><a href="${esc(src)}" target="_blank" rel="noopener noreferrer">${esc(src)}</a></div>`:''}
+        ${dlGrp?`<div class="src"><span class="lbl">İndir:</span>${dlGrp}</div>`:''}
+        <div class="controls">
+          <button class="btn" id="epIndir"><i class="fa-solid fa-download"></i> Bu bölümü indir</button>
+          <label class="tgl"><input type="checkbox" id="oluTgl" ${olu?'checked':''}> ölüleri göster</label>
+          ${ADMIN&&_geriAl.length?`<button class="btn ghost" id="geriBtn" title="son kaldırdığın linki geri getir"><i class="fa-solid fa-rotate-left"></i> geri al (${_geriAl.length})</button>`:''}
+          ${ADMIN&&kaldirilanSay()?`<button class="btn ghost" id="exportBtn" title="henüz repoya eklenmemiş kaldırmaları el_degisiklikleri.json olarak indir"><i class="fa-solid fa-file-export"></i> değişiklikleri dışa aktar (${kaldirilanSay()})</button>`:''}
+        </div>
+        ${ADMIN?`<div class="src"><span class="lbl">Yönetici:</span><button class="btn ghost" id="oluBtn"><i class="fa-solid fa-skull"></i> Bu link ölü — gizle</button><span style="color:var(--tx3);font-size:12px">bu tarayıcıda gizler; herkese açmak için bölüm sayfasından dışa aktar</span></div>`:''}
+        <div class="src">
+          <span class="lbl">Konsol komutu:</span>
+          <button class="copybtn" data-cmd="${esc(cmd)}">${esc(cmd)}</button>
+        </div>
+        ${advancedHtml}
+      </div>
     </div>
-    ${fansubRow}
-    ${iframeHtml}
-    <div class="note-soft">Player açılmadıysa (üçüncü parti host engelleyebilir) <b>kaynak linkini</b> kullan ya da yt-dlp komutuyla indir.</div>
-    ${hostRow}
-    <div class="pmeta">
-      <span class="pname">${esc(cur.l.player)}</span>
-      ${badge(cur.l.durum)}
-      <span class="tag ${tipClass(cur.l.tip)}">${esc(cur.l.tip)}</span>
-    </div>
-    ${src?`<div class="src"><span class="lbl">Kaynak:</span><a href="${esc(src)}" target="_blank" rel="noopener noreferrer">${esc(src)}</a></div>`:''}
-    ${dlGrp?`<div class="src"><span class="lbl">İndir:</span>${dlGrp}</div>`:''}
-    ${ADMIN?`<div class="src"><span class="lbl">Yönetici:</span><button class="btn ghost" id="oluBtn"><i class="fa-solid fa-skull"></i> Bu link ölü — gizle</button><span style="color:var(--tx3);font-size:12px">bu tarayıcıda gizler; herkese açmak için bölüm sayfasından dışa aktar</span></div>`:''}
-    <div class="src">
-      <span class="lbl">Konsol komutu:</span>
-      <button class="copybtn" data-cmd="${esc(cmd)}">${esc(cmd)}</button>
-    </div>
-    ${advancedHtml}
   `;
+
+  bindEpSide();
 
   const tgl = $('#oluTgl');
   if (tgl) tgl.onchange = ()=>{ oluGoster.set(tgl.checked); renderEpisode(slug, data, bolumId, curPName, String(curIdx)); };
