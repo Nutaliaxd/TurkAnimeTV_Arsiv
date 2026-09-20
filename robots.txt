@@ -1,2 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /ara.html
+Disallow: /b/
+Disallow: /api/
+
+Sitemap: https://SITE-ADRESIN.com/sitemap.xml
