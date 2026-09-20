@@ -1,0 +1,1 @@
+window.__TKA__=window.__TKA__||{};window.__TKA__["love-live-superstar-2nd-season"]=[];

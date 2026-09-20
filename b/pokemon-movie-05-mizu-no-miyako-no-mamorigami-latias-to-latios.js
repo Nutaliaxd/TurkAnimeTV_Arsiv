@@ -1,0 +1,1 @@
+window.__TKA__=window.__TKA__||{};window.__TKA__["pokemon-movie-05-mizu-no-miyako-no-mamorigami-latias-to-latios"]=[{"no":null,"ad":"Pokemon Movie 5 - Pokemon Heroes","slug":"pokemon-movie-5-pokemon-heroes","links":[{"player":"?","fansub":"-","tip":"url","url":null}]}];

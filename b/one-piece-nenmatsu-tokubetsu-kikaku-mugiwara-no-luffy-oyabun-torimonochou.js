@@ -1,0 +1,1 @@
+window.__TKA__=window.__TKA__||{};window.__TKA__["one-piece-nenmatsu-tokubetsu-kikaku-mugiwara-no-luffy-oyabun-torimonochou"]=[{"no":null,"ad":"One Piece: Nenmatsu Tokubetsu Kikaku! Mugiwara no Luffy Oyabun Torimonochou","slug":"one-piece-nenmatsu-tokubetsu-kikaku-mugiwara-no-luffy-oyabun-torimonochou","links":[{"player":"?","fansub":"-","tip":"url","url":null}]}];

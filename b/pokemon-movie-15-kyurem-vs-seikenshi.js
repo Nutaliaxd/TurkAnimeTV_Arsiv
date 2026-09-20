@@ -1,0 +1,1 @@
+window.__TKA__=window.__TKA__||{};window.__TKA__["pokemon-movie-15-kyurem-vs-seikenshi"]=[{"no":null,"ad":"Pokemon Movie 15 - Kyurem vs.the Sword of Justice","slug":"pokemon-movie-15-kyurem-vs-the-sword-of-justice","links":[{"player":"?","fansub":"-","tip":"url","url":null}]}];

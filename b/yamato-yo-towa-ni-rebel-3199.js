@@ -1,0 +1,1 @@
+window.__TKA__=window.__TKA__||{};window.__TKA__["yamato-yo-towa-ni-rebel-3199"]=[];

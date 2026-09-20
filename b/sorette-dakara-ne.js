@@ -1,0 +1,1 @@
+window.__TKA__=window.__TKA__||{};window.__TKA__["sorette-dakara-ne"]=[{"no":null,"ad":"Sorette Dakara ne! ONA","slug":"sorette-dakara-ne-ona","links":[{"player":"?","fansub":"-","tip":"url","url":null}]}];

@@ -1,0 +1,1 @@
+window.__TKA__=window.__TKA__||{};window.__TKA__["kono-sekai-wa-fukanzen-sugiru"]=[];

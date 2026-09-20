@@ -1,0 +1,1 @@
+window.__TKA__=window.__TKA__||{};window.__TKA__["pokemon-movie-01-mewtwo-no-gyakushuu"]=[{"no":null,"ad":"Pokemon Movie 1 - The First Movie","slug":"pokemon-movie-1-the-first-movie","links":[{"player":"?","fansub":"-","tip":"url","url":null}]}];

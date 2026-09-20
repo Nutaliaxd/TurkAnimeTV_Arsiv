@@ -1,0 +1,1 @@
+window.__TKA__=window.__TKA__||{};window.__TKA__["mahou-sensei-negima-shiroki-tsubasa-ala-alba"]=[];

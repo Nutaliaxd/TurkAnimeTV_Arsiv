@@ -1,0 +1,1 @@
+window.__TKA__=window.__TKA__||{};window.__TKA__["pokemon-movie-09-pokemon-ranger-to-umi-no-ouji-manaphy"]=[{"no":null,"ad":"Pokemon Movie 9 - Pokemon Ranger and The Temple of The Sea","slug":"pokemon-movie-9-pokemon-ranger-and-the-temple-of-the-sea","links":[{"player":"?","fansub":"-","tip":"url","url":null}]}];

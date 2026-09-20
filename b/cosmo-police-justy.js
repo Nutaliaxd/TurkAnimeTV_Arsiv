@@ -1,0 +1,1 @@
+window.__TKA__=window.__TKA__||{};window.__TKA__["cosmo-police-justy"]=[{"no":null,"ad":"Cosma Police Justy","slug":"cosma-police-justy","links":[{"player":"?","fansub":"-","tip":"url","url":null}]}];

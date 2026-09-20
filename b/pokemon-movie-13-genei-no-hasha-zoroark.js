@@ -1,0 +1,1 @@
+window.__TKA__=window.__TKA__||{};window.__TKA__["pokemon-movie-13-genei-no-hasha-zoroark"]=[{"no":null,"ad":"Pokemon Movie 13 - Zoroark Master of Illusions","slug":"pokemon-movie-13-zoroark-master-of-illusions","links":[{"player":"?","fansub":"-","tip":"url","url":null}]}];

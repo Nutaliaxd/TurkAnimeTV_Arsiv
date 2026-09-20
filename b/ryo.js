@@ -1,0 +1,1 @@
+window.__TKA__=window.__TKA__||{};window.__TKA__["ryo"]=[{"no":null,"ad":"Ryo","slug":"ryo","links":[{"player":"?","fansub":"-","tip":"url","url":null}]}];

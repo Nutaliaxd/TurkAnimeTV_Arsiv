@@ -1,0 +1,1 @@
+window.__TKA__=window.__TKA__||{};window.__TKA__["digimon-adventure-movie"]=[{"no":null,"ad":"Digimon Adverture Gekijouban","slug":"digimon-adverture-gekijouban","links":[{"player":"?","fansub":"-","tip":"url","url":null}]}];

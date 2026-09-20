@@ -1,0 +1,1 @@
+window.__TKA__=window.__TKA__||{};window.__TKA__["pokemon-movie-11-giratina-to-sora-no-hanataba-sheimi"]=[{"no":null,"ad":"Pokemon Movie 11 - Giratina & The Sky Warrior","slug":"pokemon-movie-11-giratina-the-sky-warrior","links":[{"player":"?","fansub":"-","tip":"url","url":null}]}];
