@@ -1,0 +1,79 @@
+[
+ {
+  "player": "AMATERASU(BETA)",
+  "path": "ajax/videosec&b=MWpHMVdBZmVFWFU5WFBIQ29OcFArQT09OjowaEtMdFdlaGQ5R2FPSFZk&v=OXAvU0xKbTQ4SEdRbk1RYlR4NjVXUT09OjpidmZDWEhaWFJJNkgyZVYx&f=RGpZOW5oQUUxNUdhb052M0l5aXBhUT09OjpuM3RQVC1TM3pJNS1RLU1y",
+  "fansub": "AniSekai",
+  "mask": "/player/R3NoOVlRQnRvSTRhR2I5clVJMmM4NStoTnZFaXVCeFV6bEZySGVhWHptcz06OkQ3QUE0d3JuZzM2VVlHUmc"
+ },
+ {
+  "player": "BANKAI(BETA)",
+  "path": "ajax/videosec&b=blhvbVRjTXB4ellGQWMxNW5mc2Z2Zz09OjpzUXNTVFhYUnJvRGFSRHdU&v=c0VINURrbEY5WTVVK25kQW80REQvUT09OjpJRWVFSXJaQjN4Q2pSOGQx&f=U3htQXVsVGRCM0dvMHVQTDJPMmJLQT09OjpRa1dIT0NQUnBfY00tWTg5",
+  "fansub": "AniSekai",
+  "mask": "/player/ZzJjbGNwNTdwOVBxSERvaUZNcHdyWCtrakRieGVZei9WV2NkelBicm01UDEzOXB2cnZyZVhiMGw0M3BnWFRjYTo6dXVQM1dPcXR6RFdicFBxUg"
+ },
+ {
+  "player": "GDRIVE",
+  "path": "ajax/videosec&b=cGlsdmJyaGN6dE5NMEhtNXF6Y1krdz09OjpMOThZQzlpVm9jdGZyVDJC&v=MFYyVklzVHpCUXJ0MkZEb000dVdQZz09OjpSNjI0MktRWjZvY2RfNVNC&f=NDU0anZmV0FJK3phYUNxT2J2cURzUT09OjpvMU0tcFlVc3U2UDJGNk5x",
+  "fansub": "AniSekai",
+  "url": "https://drive.google.com/file/d/14x3prwwoi6-xPBB-5LV7mAbrF_OqooOk/preview"
+ },
+ {
+  "player": "MAIL",
+  "path": "ajax/videosec&b=cy9uSGlKU1V5RjhpRVFvZnVQQ0dOUT09OjpLblp5RWtFOGFxcklESXpX&v=V25IZ2R2anNYaGpwOEd0d0Rlc3N4QT09OjpjNDhiYlBYX240NWJqaXJK&f=NFhtZTFsMmpJaGZEVFBpdXhhZzM4QT09OjprdjFDT0NiUl9vZkNJcjBs",
+  "fansub": "AniSekai",
+  "url": "https://videoapi.my.mail.ru/videos/embed/mail/mertcanmulk/3/25.html"
+ },
+ {
+  "player": "MAIL",
+  "path": "ajax/videosec&b=SnZGcVFOb1ovQ3VrenMzeC9odVVHdz09Ojpsdk1LYlp4UW1PMklzMUFt&v=OWMvUXdrYXdkVkRQN0NXSkpJci9KUT09OjpaWVF5NnNRcDJMek5EV28y&f=OVF6S2U2WTRIb21DM05tSGFyUk1MUT09OjpsLWoxYjcyYkg2ZGFQOGZV",
+  "fansub": "AniSekai",
+  "url": "https://my.mail.ru/video/embed/7370103204933016104"
+ },
+ {
+  "player": "ODNOKLASSNIKI",
+  "path": "ajax/videosec&b=bkNyQVlsS0h4MHV4L0VUMEtwdmFqdz09OjpFb2JyZmJSTVc2dWxxbEtC&v=dTRCeFlWM3JIdm43RWYxS2ZtVEZTZz09OjowbFB6TXpVQ3JqRzUyTWd2&f=bFVXZDRvRDNDb0dITFpwSGZHS0M0UT09OjpDQmUwQTRVMFhQWE9ETUZF",
+  "fansub": "AniSekai",
+  "url": "https://odnoklassniki.ru/videoembed/2436688317149"
+ },
+ {
+  "player": "ODNOKLASSNIKI",
+  "path": "ajax/videosec&b=NTdqY0NaZ25wbVByK1Y3dm5JQSs2QT09OjpldXBrTGJqajNKMWFFWnR6&v=UGtBS21OQTJIRWxaL3pmaVgxZEJTQT09Ojp3QWFCR0FVNHRwOHBRdzdO&f=eFZJbisyUHpSSmgwTG1JcS9BenhzQT09OjpCSE0yeFZ3SDY1OFdtQlZF",
+  "fansub": "AniSekai",
+  "url": "https://odnoklassniki.ru/videoembed/187667057313"
+ },
+ {
+  "player": "SIBNET",
+  "path": "ajax/videosec&b=Zkc2cGgxeEhKNGxQY1dqeUowbURydz09OjpWTkxfZjBSOXFnSXBhZjJl&v=d2hJbU9TenU2L1VFZ1RlNzJ0Yk9IQT09OjpZOXBQOTlQQnFHRGFQRmJl&f=MldrQzkvd24yY3ZLMVA2Y2xlZWZpdz09OjpXU1g4T0ZTNWtBZGhUdXRu",
+  "fansub": "AniSekai",
+  "url": "https://video.sibnet.ru/shell.php?videoid=2742960"
+ },
+ {
+  "player": "VK",
+  "path": "ajax/videosec&b=clc4TVZkRndHQ2QvekVnTU9VWm1oUT09Ojo5OVlEQmhVXzRTMGI4alFs&v=ZkMvTHZ1a1F5YnpVUDUxakljNENwUT09Ojo0VWhIdW5mWkxac0hqUHJN&f=ZDZIV0hCVnE3d3V3VkkrQytNcWF5Zz09OjpXd2dDSVdMZnRJVkY4MTQx",
+  "fansub": "AniSekai",
+  "url": "https:https://href.li/?https://vk.com/video_ext.php?oid=188805124&id=456239041&hash=8cc9609a6e94b56a&hd=1"
+ },
+ {
+  "player": "CLONE",
+  "path": "ajax/videosec&b=QVhORzVZL0orSWI3Y1lSVG1BYldpZz09OjpTQlNtUGgxT3lhMEc0QVJV&v=cnFzYm5tanNkWWtadWpINzFLKzVVZz09OjpsZFBmdGxwZlo5Wm41T3JE&f=OWU2U0ZJb2Y3Smx6STF3VUJLMGw1Zz09OjotRVFzS19rS1RhcW5PVENk",
+  "fansub": "AniSekai",
+  "url": "https://short.icu/?v=AG7lcsH3M"
+ },
+ {
+  "player": "MP4UPLOAD",
+  "path": "ajax/videosec&b=WmxmeEdnNmpwTDZxWFBKQU44Y2VwZz09OjpUNld5NDFWUVB3TjFOa3Zj&v=UU0yOGNZcXFUem9qNnFJaTNJRS8wQT09OjpiTWNERFlmbHRlOHJwcnN5&f=dHFxbU5Vak9YYVlLTkRNVnVNMmpodz09OjprU0lndkJjai0xZUhiUkV5",
+  "fansub": "AniSekai",
+  "url": "https://www.mp4upload.com/embed-ex6094cprc4i.html"
+ },
+ {
+  "player": "VUDEA",
+  "path": "ajax/videosec&b=Um9UVXdXZkxlc1JmajhUc3JKb1d5UT09OjpJQmVSLTJWY1BhQk85Y1E1&v=Nld6WG1uS2JocDBoanJNYldZMm94dz09Ojo1MFltaVplaER0YjBUeGlf&f=SktuWmF4Qk55WmxKaWp3d2NRUi9Pdz09OjpnT18wR3RRc3ZOVV9QN2c0",
+  "fansub": "AniSekai",
+  "url": "https://vudeo.io/embed-0xhrwvi1npap.html"
+ },
+ {
+  "player": "ALUCARD(BETA)",
+  "fansub": "AniSekai",
+  "mask": "/player/SDlMUENZM2dRUFNFOStHR3I0UmlDL0hJVzJlOVI0Y1NvU29KMWhIeUpzaz06OnFmdkRhMmJkSjFaTHdlYk4"
+ }
+]

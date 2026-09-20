@@ -1,0 +1,25 @@
+[
+ {
+  "player": "AMATERASU(BETA)",
+  "path": "ajax/videosec&b=WVBiMjhWc1pxczFLcThieTE2a2Z3UT09OjpiaElMT0VYSzEyUEk2UmFL&v=SDk2b2ZjSUk5cSt3R0hjMEljeUc4Zz09OjpfckNsejFKWTdfSHk2QXF5&f=Y3JDLzYrbjRlQllISFBnYzg1YmtUUT09OjpYVmpKeHdSZjlscUFOMUN0",
+  "fansub": "Seicode",
+  "mask": "/player/SFBNUEZhb3FYOXdObnVxcTRLQnNETGQxNWhkQkNlYzE2bzg2dlJpR1hFYz06OnBsVU5hRmdwNllscHZKQXQ"
+ },
+ {
+  "player": "ODNOKLASSNIKI",
+  "path": "ajax/videosec&b=RzhGKzJlSDZUaDBZeHcvRnRZdDFtdz09Ojo1azNnZ2dLT3NVRXd6X2Iw&v=bko2UWxZN2EyTTZqRTVZeWw1VUg4QT09OjpQYm1aZ0lUQUhuWTVERUIy&f=NGwwUmJpZ0VrMHFzNmtoRklBQkp4dz09OjpqYkcwcFVCUFVMc1lsSFg2",
+  "fansub": "Seicode",
+  "url": "https://odnoklassniki.ru/videoembed/9266847287911"
+ },
+ {
+  "player": "SIBNET",
+  "path": "ajax/videosec&b=dmQ4WWhZK3lpbGl3enN4bDhmdDNnUT09OjpzbzJWXzVySER3QlpBSjJv&v=Ym1TazllVjhvOFRNRVlKa1BRTWFmdz09OjpXbDlhY2o2YjlkM0dYQ1Rw&f=dmgxR1orNlF3dDZ3Rzh1U1BjSGZFQT09OjpSOWZQdTBsVlNiOFZtU2Nf",
+  "fansub": "Seicode",
+  "url": "https://video.sibnet.ru/shell.php?videoid=5806372"
+ },
+ {
+  "player": "ALUCARD(BETA)",
+  "fansub": "Seicode",
+  "mask": "/player/K1dheGlFbGREZGJUOTBuRmJDR2VtdVN6V2xoU1ExbWpIa0JkNlVocVB4OD06OjQydllCa25XYXZZcXZyMmw"
+ }
+]

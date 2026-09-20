@@ -1,0 +1,84 @@
+[
+ {
+  "player": "AMATERASU(BETA)",
+  "path": "ajax/videosec&b=RDdjKy9WWlRQazdKSHVvZkJseXNEUT09OjpJcFE1WVZRdmJKcDFQRk9C&v=QkEwdXRhU0swTVBySENEckkzYXpOQT09OjpXVE5FSWVqNW1YNHNKVXpz&f=TUE0azBwcWhhWG1yM1hrc0tHYUNHdz09OjpfTFptSEZJX0RsRWFSRDd6",
+  "fansub": "AMT",
+  "mask": "/player/VzBXYjFiNHg1M0pWc2VQd1VvTXpSRVQwN2lwcDZDS25HRmNjeGlPNkdwOD06OjVDZEtWX01iVkdvbFkxWHY"
+ },
+ {
+  "player": "ODNOKLASSNIKI",
+  "path": "ajax/videosec&b=aVNjSlkxTkY2MnV0YjV5OVJJSUtaUT09OjpZQk13RjZ6WUNKaUlFcnNT&v=WXVHNElSanBGTEVhMituYklIZTduQT09OjprNlhlS1d5cHU1UzdxcF9C&f=NnlEalQ3d3liWHNFRDliQnhVVm5uZz09Ojo5QzNPZzNsUURsWG5wT0NR",
+  "fansub": "AMT",
+  "url": "https://odnoklassniki.ru/videoembed/1328841951965"
+ },
+ {
+  "player": "SIBNET",
+  "path": "ajax/videosec&b=OUdMb0Z2UjNsNGM5NmhKaHFuZmNuUT09OjpMWVlqYVhlZTdmNXFOajNE&v=MmZzMzlhYTlOMlhyelM4L3QzZnZwdz09OjpwSWZqend6alNZVlgwblhK&f=MEtyOWU4bEtYVlR4N0UwMURhZUJ2UT09OjpNamZQaVVjakplUF9yYVRX",
+  "fansub": "AMT",
+  "url": "https://video.sibnet.ru/shell.php?videoid=3851725"
+ },
+ {
+  "player": "SENDVID",
+  "path": "ajax/videosec&b=NGM1Q3R6RVB4MFBmdVJqTTBOYnB3Zz09OjpVa2dodWY4Y0RLVFZNMmpM&v=Y25Sb21UZFlPL2J0NkNqd1B6YThkdz09OjowRnFsaTRMT0ZDNEY1aFky&f=dzNCalNvYlhMZFlvV28zWll2dzJGZz09OjpCdGFTTkdURDY2eURzUG5a",
+  "fansub": "AMT",
+  "url": "https://sendvid.com/embed/96cdsvhs"
+ },
+ {
+  "player": "BANKAI(BETA)",
+  "path": "ajax/videosec&b=RU8zM0NUTDJ5WWUyd3ZldHhYRGJkQT09OjpQb3BQWjJkelM1S2VTZ08w&v=L2FXN0R2bHJ4SEt0cXM3QUtCZWVNQT09OjpSUC1VaVczcnJERVVzVnRV&f=d2hvc1YwMkFHTlZEc3p3a1hGVzFKQT09Ojp1TEZXSXlyeXBJWHNidmRn",
+  "fansub": "Varsay\u0131lan",
+  "mask": "/player/L25GeWZ6VFBiWVlHWWxEY3hYMncxY1gxRmlvYytHdlV6YkFteXM4b1ZDMUNyWnIxNng5bHNFbklKVUpqNUxuUTo6TUdySGdTUW4tZjhfbzBMTw"
+ },
+ {
+  "player": "GDRIVE",
+  "path": "ajax/videosec&b=dzRXWm04a3U3UThJU2J5UXY4bkVOdz09OjppSEtBRnRSZWN2RXVScUVw&v=WkpCVXlDQ2dNNWREMkNZMVM2T1hBdz09Ojo2dXNnS2llY1NJbFU0REU1&f=L0UrTEw3emdwYVhFYWJ4YmRWOXM3QT09OjpNVTVMTGdoMFltNm9oMkE0",
+  "fansub": "Varsay\u0131lan",
+  "url": "https://drive.google.com/file/d/1Khde0K8ryqZ1BtxOiqgBg4J1MW16d1Cp/preview"
+ },
+ {
+  "player": "MAIL",
+  "path": "ajax/videosec&b=a1prWXllNEFZVWZIRXEwMmxaTTUrdz09OjpCb1V3eFQwY0Z4UnMzNC1K&v=eTVBb0ZtNmlaQ0k0VC9OTUEyQzc2dz09OjpWWU9XYU5DdkpJNHEzZVMx&f=dTFwZEpBL0tQRm1PamhRNUtoZVM0dz09OjpVNHZZNXV3QjJQYVpNaGJh",
+  "fansub": "Varsay\u0131lan",
+  "url": "https://my.mail.ru/video/embed/7671770326140715094"
+ },
+ {
+  "player": "ODNOKLASSNIKI",
+  "path": "ajax/videosec&b=dDNHZDJUbmt6RzJPcUhkZ3FCem9LZz09Ojp2UUJ1NklsdG96aUNRNVNW&v=cEwxOXdSNUUyYXZXaDJMdlBteS9lUT09OjozMnA3MTlHTTZvOUZjcXoy&f=WlNCOE83Zys4VnRxTWVNc1B4RDdnQT09OjpTQmp6Q01pNGZJY2s4bVdr",
+  "fansub": "Varsay\u0131lan",
+  "url": "https://odnoklassniki.ru/videoembed/3105998768728"
+ },
+ {
+  "player": "SIBNET",
+  "path": "ajax/videosec&b=aE0rbHVsZXhFOEw1Z2NueUxyRFhTQT09OjpGRVZpWnZQSXhxalNnNGVU&v=Ym1UL2p4N0VsYUFmRVJGekd1RkVFZz09Ojpyam5QdWdLYVA1R01aVWpH&f=ZGdCc0hoTXJhaU1BejJvdEpCMVB2UT09OjpBdlhaWXVHR1NZNFp0TEo2",
+  "fansub": "Varsay\u0131lan",
+  "url": "https://video.sibnet.ru/shell.php?videoid=4461706"
+ },
+ {
+  "player": "CLONE",
+  "path": "ajax/videosec&b=YlFWeGU4L3paRDE5ZnljRUowQUpIQT09OjpxRzJFWk5XLVVCZkxKSzlM&v=cENVczRRVHFodlhZTjUwSlZaVGc4UT09Ojp5VDNmc2xIejZKNUtZSzJs&f=eHBkY0NXN3JwNHhpRmo3eGhPWHMvUT09OjpHVHNNSDlKSnRzbFFBeWw3",
+  "fansub": "Varsay\u0131lan",
+  "url": "https://short.icu/?v=ReSXHms8I"
+ },
+ {
+  "player": "SENDVID",
+  "path": "ajax/videosec&b=WXBURzc5RmFzdk1lMXRiL0J3TjZhdz09Ojp6Q25oMS15R1R1cVVKZm5z&v=UzlKelBFeGpraFFUaFl0NUpjY1J0UT09OjpvYkhBR0V0eG40N2ZaQ3Y3&f=aXhzVVYzOFlsVWlFaEVWdjhWbHFWQT09Ojo5MnV5SkdiR1ZLVFFhZWot",
+  "fansub": "Varsay\u0131lan",
+  "url": "https://sendvid.com/embed/z4afnzki"
+ },
+ {
+  "player": "VUDEA",
+  "path": "ajax/videosec&b=U3BLVFJtenVWSjI0ai9YWll2MlVaZz09OjpBbVBld055cV9WSVc3dTRS&v=bDZSSnpPcmlGVXlrMW1zS3NPQlNyZz09OjpRSkxuc19ITm8zZmlrMU9I&f=ZUVTMlNSUTlmeTRRbTZneUdIcWtsdz09OjpuUzdPYXBoM3R6cU05a04z",
+  "fansub": "Varsay\u0131lan",
+  "url": "https://vudeo.io/embed-omwt42ykkcdp.html"
+ },
+ {
+  "player": "ALUCARD(BETA)",
+  "fansub": "AMT",
+  "mask": "/player/a3gxM0c0bDJ0aVpxUkJheTYveG15ZnF5akpUVWNsb25xZkJCaGVzMXNIOD06Ok1wcG8tRUZyTGNPaFExY3g"
+ },
+ {
+  "player": "AMATERASU(BETA)",
+  "fansub": "Varsay\u0131lan",
+  "mask": "/player/dkVHaEdzMFF0KzRPN3AwckdtQ1U0QnNacHkzSEV5NWhyQk9la3dFaS9XYz06OkVuaWhMbzF1Y25jNGN4UEk"
+ }
+]
