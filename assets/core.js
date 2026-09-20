@@ -323,6 +323,7 @@ function bindHeader(canliArama){
       q.addEventListener('keydown', e=>{
         if (e.key==='Enter'){ const v = q.value.trim(); if (v) location.href = araUrl(v); }
       });
+      bindLiveSearch(q);
     }
     document.addEventListener('keydown', e=>{
       if (e.key==='/' && document.activeElement!==q && !/INPUT|TEXTAREA/.test(document.activeElement.tagName)){
@@ -340,6 +341,57 @@ function bindHeader(canliArama){
 function showLoading(msg){
   appEl().innerHTML = `<div class="loading"><div class="spinner"></div><div>${esc(msg||'Yükleniyor...')}</div></div>`;
 }
+/* ============ üst çubuk: canlı arama açılır listesi (ara.html dışındaki sayfalar) ============ */
+function bindLiveSearch(q){
+  const box = q.closest('.searchbox');
+  if (!box) return;
+  const drop = document.createElement('div');
+  drop.className = 'qdrop';
+  drop.hidden = true;
+  box.appendChild(drop);
+  let shown = [], active = -1;
+
+  function render(list, total, term){
+    if (!list.length){
+      drop.innerHTML = `<div class="qd-empty">“${esc(term)}” için sonuç bulunamadı</div>`;
+    } else {
+      drop.innerHTML = list.map(a=>`
+        <a class="qd-item" href="${animeUrl(a.slug)}">${poster(a)}
+          <span class="qd-tx"><b>${esc(a.baslik||a.slug)}</b><small>${a.eps} bölüm · ${esc(a.top.slice(0,2).join(', ')||'kaynak yok')}</small></span>
+        </a>`).join('')
+        + `<a class="qd-all" href="${araUrl(term)}">“${esc(term)}” için tüm sonuçları gör (${total.toLocaleString('tr-TR')})</a>`;
+    }
+    drop.hidden = false;
+    active = -1;
+  }
+
+  const run = debounce(()=>{
+    const v = q.value.trim();
+    if (!v){ drop.hidden = true; shown = []; return; }
+    const all = searchAnime(v);
+    shown = all.slice(0, 8);
+    render(shown, all.length, v);
+  }, 120);
+
+  function mark(opts){
+    opts.forEach((o,i)=>o.classList.toggle('on', i===active));
+    if (active>=0) opts[active].scrollIntoView({block:'nearest'});
+  }
+
+  q.addEventListener('input', run);
+  q.addEventListener('focus', ()=>{ if (q.value.trim() && shown.length) drop.hidden = false; });
+  q.addEventListener('keydown', e=>{
+    if (drop.hidden) return;
+    const opts = [...drop.querySelectorAll('.qd-item')];
+    if (!opts.length) return;
+    if (e.key==='ArrowDown'){ e.preventDefault(); active = Math.min(active+1, opts.length-1); mark(opts); }
+    else if (e.key==='ArrowUp'){ e.preventDefault(); active = Math.max(active-1, -1); mark(opts); }
+    else if (e.key==='Enter' && active>=0){ e.preventDefault(); location.href = opts[active].href; }
+    else if (e.key==='Escape'){ drop.hidden = true; }
+  });
+  document.addEventListener('click', e=>{ if (!box.contains(e.target)) drop.hidden = true; });
+}
+
 /* ============ arama ============ */
 const PAGE = 60;
 let lastQuery = '', lastPage = 1;

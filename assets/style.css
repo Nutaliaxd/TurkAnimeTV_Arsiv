@@ -28,9 +28,21 @@ header.top{position:sticky;top:0;z-index:50;background:rgba(13,19,21,.94);backdr
 .logo:hover{text-decoration:none}
 .logo i{color:var(--ac);font-size:22px}
 .logo b{font-weight:600;color:var(--tx2);margin-left:4px}
-.searchbox{flex:1;height:42px;display:flex;align-items:center;gap:var(--sp-2);background:var(--card);border:1px solid var(--line);border-radius:var(--rad-pill);padding:0 var(--sp-4)}
+.searchbox{position:relative;flex:1;height:42px;display:flex;align-items:center;gap:var(--sp-2);background:var(--card);border:1px solid var(--line);border-radius:var(--rad-pill);padding:0 var(--sp-4)}
 .searchbox:focus-within{border-color:var(--ac)}
 .searchbox i,.searchbox svg{flex:none;opacity:.55;color:var(--tx3)}
+.qdrop{position:absolute;top:calc(100% + 8px);left:0;right:0;background:var(--card);border:1px solid var(--line);border-radius:var(--rad);box-shadow:0 16px 32px rgba(0,0,0,.4);max-height:min(70vh,520px);overflow:auto;z-index:60;padding:var(--sp-2)}
+.qd-item{display:flex;align-items:center;gap:var(--sp-3);padding:6px var(--sp-2);border-radius:var(--rad-sm);color:var(--tx)}
+.qd-item:hover,.qd-item.on{background:var(--card2);text-decoration:none}
+.qd-item .poster{width:40px;flex:none}
+.qd-item .pn{display:none}
+.qd-tx{display:flex;flex-direction:column;gap:2px;min-width:0}
+.qd-tx b{font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.qd-tx small{font-size:12px;color:var(--tx3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.qd-all{display:block;text-align:center;padding:var(--sp-2);margin-top:2px;border-top:1px solid var(--line);font-size:13px;color:var(--ac2)}
+.qd-all:hover{background:var(--card2);text-decoration:none;border-radius:var(--rad-sm)}
+.qd-empty{padding:var(--sp-4) var(--sp-3);color:var(--tx3);text-align:center;font-size:13px}
+@media (max-width:640px){ .qdrop{left:calc(-1 * var(--sp-4));right:calc(-1 * var(--sp-4));border-radius:0 0 var(--rad) var(--rad)} }
 #q{flex:1;min-width:0;background:none;border:none;outline:none;font-size:15px;-webkit-appearance:none}
 #q::placeholder{color:var(--tx3)}
 #q::-webkit-search-cancel-button{-webkit-appearance:none}
