@@ -81,7 +81,7 @@ def al_query(slugs, titles):
         )
     query = "query(%s){%s}" % (",".join("$s%d:String" % i for i in range(len(titles))), " ".join(parts))
     body = json.dumps({"query": query, "variables": vars_}).encode("utf-8")
-    headers = {"Content-Type": "application/json", "Accept": "application/json"}
+    headers = {"Content-Type": "application/json", "Accept": "application/json", "User-Agent": "Mozilla/5.0"}
 
     for attempt in range(1, MAX_RETRY + 1):
         try:
