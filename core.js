@@ -456,142 +456,9 @@ function pagerHTML(page, total, perPage, hrefFn){
 const HUES = [178,205,232,268,318,350,18,42,96,150];
 function hueOf(s){ let h=0; for (let i=0;i<s.length;i++) h=(h*31+s.charCodeAt(i))>>>0; return HUES[h%HUES.length]; }
 function initials(t){ const w=String(t||'?').replace(/[^\p{L}\p{N} ]/gu,' ').trim().split(/\s+/); return ((w[0]||'?')[0]+((w[1]||'')[0]||'')).toUpperCase(); }
-/* ============ kapak görselleri: AniList (yerel dosya) → olmazsa Jikan ============
-   1) Önce build-time AniList kapağı  assets/covers/<slug>.avif  (statik dosya, limit yok, anında).
-   2) Dosya yoksa/yüklenmezse Jikan API (MyAnimeList) devreye girer.
-      Jikan limiti 3 istek/sn ve 60 istek/dk olduğu için istekler tek sıradan, aralıklı gider;
-      yalnızca ekrana yaklaşan kapaklar sorgulanır; bulunan adres localStorage'a yazılır,
-      bir sonraki ziyarette (ve aynı seri başka yerde göründüğünde) hiç istek atılmaz.
-   3) İkisi de olmazsa renkli baş harf kutusu kalır.
-   Yerel dosyası olmayan seriler 1 gün boyunca tekrar denenmez (404 gürültüsü olmasın). */
-function coverUrl(slug){ return 'assets/covers/' + encodeURIComponent(slug) + '.avif'; }
-/* JK-BEGIN */
-const JK = (()=>{
-  const API = 'https://api.jikan.moe/v4/anime', CDN = 'https://cdn.myanimelist.net/images/anime/';
-  const K_OK = 'jk_ok1', K_NO = 'jk_no1', K_LM = 'jk_lm1';
-  const NO_TTL = 3*864e5, LM_TTL = 864e5;                        // Jikan'da bulunamayanlar 3 gün, yerel dosyası olmayanlar 1 gün sonra tekrar denenir
-  const GAP = 400, PER_MIN = 50, MAX_TRY = 3;                   // 2.5 istek/sn, dakikada en fazla 50
-  const load = k => { try { return JSON.parse(localStorage.getItem(k)) || {}; } catch(e){ return {}; } };
-  const ok = load(K_OK), no = load(K_NO), lm = load(K_LM);
-  { const t0 = Date.now(); for (const s in no) if (t0 - no[s] > NO_TTL) delete no[s]; for (const s in lm) if (t0 - lm[s] > LM_TTL) delete lm[s]; }
-  let saveT = 0;
-  function flush(){
-    try { localStorage.setItem(K_OK, JSON.stringify(ok)); localStorage.setItem(K_NO, JSON.stringify(no)); localStorage.setItem(K_LM, JSON.stringify(lm)); }
-    catch(e){ try { localStorage.removeItem(K_NO); localStorage.removeItem(K_LM); localStorage.setItem(K_OK, JSON.stringify(ok)); } catch(_){} }
-  }
-  const save = ()=>{ clearTimeout(saveT); saveT = setTimeout(flush, 1500); };
-  addEventListener('pagehide', flush);
-
-  const url  = (v, big)=> /^https?:/.test(v) ? v : CDN + v + (big ? 'l.jpg' : '.jpg');
-  const pack = u => { const m = /\/images\/anime\/(.+?)l?\.jpg$/.exec(u || ''); return m ? m[1] : null; };
-  const norm = s => String(s || '').toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '');
-  function choose(list, title){                                  // başlığı birebir tutan sonuç, yoksa ilk sonuç
-    const t = norm(title);
-    if (t){
-      const hit = list.find(it => [it.title, it.title_english, it.title_japanese, ...(it.titles || []).map(x=>x.title)].some(n => norm(n) === t));
-      if (hit) return hit;
-    }
-    return list[0];
-  }
-  const sleep = ms => new Promise(r => setTimeout(r, ms));
-
-  const jobs = new Map(), queue = [];
-  let running = false, last = 0, stamps = [];
-  async function gate(){                                         // hız sınırı: istekler arası GAP ms + dakikada PER_MIN
-    for (;;){
-      const now = Date.now();
-      stamps = stamps.filter(t => now - t < 60000);
-      const w = Math.max(last + GAP - now, stamps.length >= PER_MIN ? stamps[0] + 60000 - now : 0);
-      if (w <= 0) break;
-      await sleep(w);
-    }
-    last = Date.now(); stamps.push(last);
-  }
-  async function fetchOne(slug){                                 // → paketlenmiş yol | '' (bulunamadı) | 429 | null (hata)
-    const title = String(titleOf(slug));
-    const r = await fetch(API + '?q=' + encodeURIComponent(title.slice(0, 120)) + '&limit=5&sfw=true');
-    if (r.status === 429) return 429;
-    if (!r.ok) return null;
-    const j = await r.json();
-    const list = (j.data || []).filter(it => it && it.images && it.images.jpg && pack(it.images.jpg.image_url));
-    return list.length ? pack(choose(list, title).images.jpg.image_url) : '';
-  }
-  async function pump(){
-    if (running) return;
-    running = true;
-    while (queue.length){
-      const slug = queue.shift(), job = jobs.get(slug);
-      if (!job) continue;
-      for (const im of job.imgs) if (!im.isConnected) job.imgs.delete(im);
-      if (!job.imgs.size){ jobs.delete(slug); continue; }        // sayfa değişti / açılır liste kapandı: istek harcama
-      let res = null;
-      try { await gate(); res = await fetchOne(slug); } catch(e){ res = null; }
-      if (res === 429){
-        if (++job.tries < MAX_TRY){ queue.unshift(slug); await sleep(3000); continue; }
-        jobs.delete(slug); continue;
-      }
-      jobs.delete(slug);
-      if (res === null) continue;                                // ağ/sunucu hatası: önbelleğe yazma, sonra yine denenir
-      if (res === ''){ no[slug] = Date.now(); save(); for (const im of job.imgs) im.remove(); continue; }   // Jikan'da da yok → baş harf kutusu
-      ok[slug] = res; save();
-      for (const im of job.imgs) if (im.isConnected) im.src = url(res, im.dataset.big === '1');
-    }
-    running = false;
-  }
-  function want(el){                                             // el = .poster[data-jk]
-    const slug = el.dataset.jk, img = el.querySelector('img');
-    if (!img) return;
-    if (ok[slug]){ img.src = url(ok[slug], img.dataset.big === '1'); return; }
-    if (no[slug]) return;
-    let job = jobs.get(slug);
-    if (!job){
-      job = {imgs: new Set(), tries: 0}; jobs.set(slug, job);
-      if (img.dataset.big === '1') queue.unshift(slug); else queue.push(slug);   // büyük (öne çıkan) kapak öne geçer
-    }
-    job.imgs.add(img);
-    pump();
-  }
-  const io = 'IntersectionObserver' in window
-    ? new IntersectionObserver(es => { for (const e of es) if (e.isIntersecting){ io.unobserve(e.target); want(e.target); } }, {rootMargin: '300px'})
-    : null;
-  function scan(){
-    document.querySelectorAll('.poster[data-jk]:not([data-jkw])').forEach(el => { el.dataset.jkw = '1'; io ? io.observe(el) : want(el); });
-  }
-  let st = 0;                                                    // sayfa kodu innerHTML ile yeniden çizse de yeni kapaklar yakalanır
-  new MutationObserver(()=>{ if (!st) st = setTimeout(()=>{ st = 0; scan(); }, 60); })
-    .observe(document.body || document.documentElement, {childList: true, subtree: true});
-  scan();
-
-  /* yerel AniList kapağı yüklenemedi → aynı <img> Jikan sonucuna geçer */
-  function miss(img){
-    const el = img.closest && img.closest('.poster');
-    if (!el || img.dataset.fb){ img.remove(); return; }         // ikinci hata: vazgeç, baş harf kutusu kalsın
-    const slug = el.dataset.slug;
-    img.dataset.fb = '1';
-    lm[slug] = Date.now(); save();
-    if (no[slug]){ img.remove(); return; }
-    el.dataset.jk = slug;
-    if (ok[slug]){ img.src = url(ok[slug], img.dataset.big === '1'); return; }
-    el.dataset.jkw = '1';
-    io ? io.observe(el) : want(el);
-  }
-
-  return { url, miss, cached: s => ok[s] || '', missing: s => !!no[s], localMissing: s => !!lm[s] };
-})();
-/* JK-END */
-function poster(a, o){
-  o = o || {};
-  const h = hueOf(a.slug), t = a.baslik||a.slug, s = esc(a.slug);
-  const big = o.big ? ' data-big="1"' : '';
-  let img = '', jk = '';
-  if (!JK.localMissing(a.slug)){                                  // 1) yerel AniList kapağı; olmazsa JK.miss → Jikan
-    img = `<img src="${coverUrl(a.slug)}" alt="" loading="lazy" decoding="async"${big} onload="this.classList.add('on')" onerror="JK.miss(this)">`;
-  } else {                                                        // yerel dosya yok (biliniyor) → doğrudan Jikan
-    const v = JK.cached(a.slug), ev = `onload="this.classList.add('on')" onerror="this.remove()"`;
-    if (v) img = `<img src="${JK.url(v, o.big)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer"${big} ${ev}>`;
-    else if (!JK.missing(a.slug)){ img = `<img alt="" decoding="async" referrerpolicy="no-referrer"${big} ${ev}>`; jk = ` data-jk="${s}"`; }
-  }
-  return `<div class="poster" data-slug="${s}"${jk} style="--h:${h};--g:${(h+35)%360}"><span class="pl">${esc(initials(t))}</span>${a.eps!=null?`<span class="pn">${a.eps} bölüm</span>`:''}${img}</div>`;
+function poster(a){
+  const h = hueOf(a.slug), t = a.baslik||a.slug;
+  return `<div class="poster" data-slug="${esc(a.slug)}" style="--h:${h};--g:${(h+35)%360}"><span class="pl">${esc(initials(t))}</span>${a.eps!=null?`<span class="pn">${a.eps} bölüm</span>`:''}</div>`;
 }
 function card(a){
   return `<a class="card" href="${animeUrl(a.slug)}">${poster(a)}<span class="ct">${esc(a.baslik||a.slug)}</span><span class="cs">${esc(a.top.slice(0,2).join(', ')||'kaynak yok')}</span></a>`;
@@ -610,7 +477,7 @@ const dayKey = ()=>{ const d=new Date(); return d.getFullYear()*10000+(d.getMont
 let _good, _top, dailyShift = 0, recShift = 0;
 const goodPool = ()=> _good || (_good = ANIME.filter(a=>a.eps>=12 && a.urls>0));
 const topPool = ()=> _top || (_top = ANIME.slice().sort((a,b)=>b.urls-a.urls).slice(0,14));
-/* ============ AniList: tür, puan, özet (build-time dosyalar) — seri sayfası kapağı da buradan ============ */
+/* ============ AniList: kapak, tür, puan (public GraphQL API, anahtar gerekmez) ============ */
 const DEF_TITLE = document.title;
 const DEF_DESC = document.querySelector('meta[name="description"]').content;
 const OG_IMG = document.querySelector('meta[property="og:image"]').content;
@@ -625,46 +492,95 @@ function ldSet(o){
   if (!e){ e = document.createElement('script'); e.type = 'application/ld+json'; e.id = 'ld-dyn'; document.head.appendChild(e); }
   e.textContent = JSON.stringify(o);
 }
-/* AniList'e artık tarayıcıdan HİÇ canlı istek atılmıyor: kapak/tür/puan/özet build-time'da
-   scripts/fetch_anilist.py ile indirilir + çevrilir, assets/covers/*.avif ve assets/anilist/*.json
-   olarak repoya yazılır (bkz. .github/workflows/anilist-sync.yml, README-kurulum.md). */
-const DETAIL = new Map(), ANIME_BY = new Map();
+const AL_URL = 'https://graphql.anilist.co', AL_KEY = 'tk_al1';
+let AL = {}, alCool = 0, alTok = 0, infoFor = null;
+const alPending = new Set(), DETAIL = new Map(), ANIME_BY = new Map();
+try{ AL = JSON.parse(localStorage.getItem(AL_KEY)||'{}') || {}; }catch(e){ AL = {}; }
+const alSave = debounce(()=>{ try{ localStorage.setItem(AL_KEY, JSON.stringify(AL)); }catch(e){ try{ localStorage.removeItem(AL_KEY); }catch(_){} } }, 800);
 function titleOf(slug){
   if (!ANIME_BY.size) ANIME.forEach(a=>ANIME_BY.set(a.slug, a));
   const a = ANIME_BY.get(slug);
   return (a && a.baslik) || String(slug).replace(/-/g,' ');
 }
+const alPost = (query, variables)=> fetch(AL_URL, {method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body:JSON.stringify({query, variables})});
+/* kapaklar: 10 başlığı tek istekte (alias) sorgular; sonuç localStorage'da kalır */
+async function alBatch(slugs){
+  const vars = {}, parts = [];
+  slugs.forEach((s,i)=>{ vars['s'+i] = titleOf(s); parts.push(`m${i}: Media(search:$s${i}, type:ANIME, isAdult:false){id coverImage{large color}}`); });
+  const r = await alPost(`query(${slugs.map((_,i)=>`$s${i}:String`).join(',')}){${parts.join(' ')}}`, vars);
+  if (r.status===429){ alCool = Date.now()+((+r.headers.get('Retry-After')||60)*1000); throw new Error('limit'); }
+  const j = await r.json();
+  if (!j.data) throw new Error('yanıt yok');
+  slugs.forEach((s,i)=>{ const m = j.data['m'+i]; AL[s] = m && m.coverImage ? [m.coverImage.large, m.coverImage.color||'', m.id] : 0; });
+  alSave();
+}
 async function alDetail(slug){
   if (DETAIL.has(slug)) return DETAIL.get(slug);
-  const p = fetch('assets/anilist/' + encodeURIComponent(slug) + '.json')
-    .then(r=> r.ok ? r.json() : null).catch(()=>null);
+  const p = (async()=>{
+    const r = await alPost('query($s:String){Media(search:$s,type:ANIME,isAdult:false){id genres averageScore seasonYear description(asHtml:false) coverImage{large extraLarge color}}}', {s:titleOf(slug)});
+    const j = await r.json(), m = j.data && j.data.Media;
+    if (m && m.coverImage && !AL[slug]){ AL[slug] = [m.coverImage.large, m.coverImage.color||'', m.id]; alSave(); }
+    return m || null;
+  })().catch(()=>null);
   DETAIL.set(slug, p);
   return p;
 }
+const GTR = {Action:'Aksiyon',Adventure:'Macera',Comedy:'Komedi',Drama:'Drama',Fantasy:'Fantastik',Horror:'Korku','Mahou Shoujo':'Büyülü kız',Mecha:'Mecha',Music:'Müzik',Mystery:'Gizem',Psychological:'Psikolojik',Romance:'Romantik','Sci-Fi':'Bilim kurgu','Slice of Life':'Günlük yaşam',Sports:'Spor',Supernatural:'Doğaüstü',Thriller:'Gerilim',Ecchi:'Ecchi'};
 function gchipsHtml(m){
   const c = [];
   if (m.averageScore) c.push(`<span class="pchip gchip"><i class="fa-solid fa-star"></i> ${(m.averageScore/10).toFixed(1)}</span>`);
   if (m.seasonYear) c.push(`<span class="pchip gchip">${m.seasonYear}</span>`);
-  (m.genres||[]).slice(0,4).forEach(g=>c.push(`<span class="pchip gchip">${esc(g)}</span>`));
+  (m.genres||[]).slice(0,4).forEach(g=>c.push(`<span class="pchip gchip">${esc(GTR[g]||g)}</span>`));
   return c.length ? `<div class="gchips">${c.join('')}</div>` : '';
 }
-function synText(m){ const t = String(m.description||'').replace(/\s+/g,' ').trim(); return t.length>340 ? t.slice(0,337)+'…' : t; }
+function synText(m){ const t = String(m.description||'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim(); return t.length>340 ? t.slice(0,337)+'…' : t; }
+function alPaint(){
+  document.querySelectorAll('.poster[data-slug]:not([data-i])').forEach(p=>{
+    const e = AL[p.dataset.slug]; if (!e) return;
+    p.dataset.i = 1;
+    const img = new Image();
+    img.alt = ''; img.decoding = 'async'; img.referrerPolicy = 'no-referrer';
+    img.onload = ()=> img.classList.add('on'); img.onerror = ()=> img.remove();
+    img.src = e[0]; p.appendChild(img);
+  });
+  const at = document.querySelector('.atxt');
+  if (at && infoFor && !at.querySelector('.ainfo') && (window.CUR_SLUG||'')===infoFor.slug){
+    const t = synText(infoFor.m);
+    at.insertAdjacentHTML('beforeend', `<div class="ainfo">${gchipsHtml(infoFor.m)}${t?`<p class="syn">${esc(t)}<small>Özet: AniList (İngilizce)</small></p>`:''}</div>`);
+  }
+}
+async function alHydrate(){
+  alPaint();
+  const tok = ++alTok;
+  if (Date.now()<alCool) return;
+  const need = [...new Set([...document.querySelectorAll('.poster[data-slug]:not([data-i])')].map(p=>p.dataset.slug))]
+    .filter(s=> !(s in AL) && !alPending.has(s));
+  const BATCH = 24;
+  for (let i=0; i<need.length; i+=BATCH){
+    if (tok!==alTok) return;
+    const grp = need.slice(i, i+BATCH);
+    grp.forEach(x=>alPending.add(x));
+    try{ await alBatch(grp); }catch(e){ alCool = Math.max(alCool, Date.now()+30000); return; }
+    finally{ grp.forEach(x=>alPending.delete(x)); }
+    alPaint();
+    if (i+BATCH < need.length) await new Promise(r=>setTimeout(r, 350));
+  }
+}
 async function enrichAnime(slug){
   const t = titleOf(slug), a = ANIME_BY.get(slug), n = a ? a.eps : 0;
   document.title = `${t} izle — tüm bölümler | TürkAnime Arşiv`;
   metaSet(`${t} animesini izle: ${n?n+' bölüm, ':''}oynatma linkleri ve indirme komutları TürkAnime Arşiv'de.`);
   const m = await alDetail(slug);
   if (!m || (window.CUR_SLUG||'')!==slug) return;
-  const syn = synText(m), g = m.genres || [];
-  const img = siteKok() + coverUrl(slug);
+  infoFor = {slug, m};
+  const syn = synText(m), g = (m.genres||[]).map(x=>GTR[x]||x);
+  const img = m.coverImage && (m.coverImage.extraLarge || m.coverImage.large);
   metaSet(`${t}${g.length?' ('+g.slice(0,3).join(', ')+')':''} animesini izle: ${n?n+' bölüm, ':''}oynatma linkleri ve indirme komutları.`, img);
   ldSet({'@context':'https://schema.org','@type':'TVSeries', name:t, numberOfEpisodes:n||undefined, genre:m.genres, image:img, description:syn||undefined, inLanguage:'ja'});
-  const at = document.querySelector('.atxt');
-  if (at && !at.querySelector('.ainfo')){
-    at.insertAdjacentHTML('beforeend', `<div class="ainfo">${gchipsHtml(m)}${syn?`<p class="syn">${esc(syn)}<small>Özet: AniList</small></p>`:''}</div>`);
-  }
+  alPaint();
 }
 function initAniList(){
+  new MutationObserver(debounce(alHydrate, 120)).observe(appEl(), {childList:true});
   new MutationObserver(()=>{ document.querySelectorAll('meta[property="og:title"],meta[name="twitter:title"]').forEach(m=>m.setAttribute('content', document.title)); })
     .observe(document.querySelector('title'), {childList:true});
 }
