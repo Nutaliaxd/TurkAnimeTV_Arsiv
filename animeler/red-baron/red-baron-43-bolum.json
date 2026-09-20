@@ -1,0 +1,49 @@
+[
+ {
+  "player": "HDVID",
+  "path": "ajax/videosec&b=UThqWVhmNU8vejF3TDNRejJhTlduZz09OjpyN0RrZWdTaFVvb3lLSkRB&v=K3pxMWdxRUdQTnpxbU9rWVU4V2w1QT09OjpyLWFfUV95UzBTdkRWS24x&f=eGFMRFp6MEEzd1FOd1kva0p6L1BtUT09OjpYek5BdFVSMkFqSEU4dFlo",
+  "fansub": "AMT",
+  "mask": "/player/ei9nNkFvRUI0cWFrTnJ1eTZJMk5uQ3haYUhVR3I2c1NvRmNpUWFZQzRab3NKOXAvb3IzOE02WklFUWpoWkErczo6bTlTMnJBQ1VhRklrVG4yMg"
+ },
+ {
+  "player": "MAIL",
+  "path": "ajax/videosec&b=RzhQUG85TENyWXJUTE5CczZVT2JUQT09Ojp5N21yeGcyLTBFX0Q5eVB4&v=d0JIZUVXZEErdFR0ZTdWQ1JuaTA5QT09OjpfajVlcUllRHFLWC16b0V3&f=blhvZFlEZVJDQ0l5aE5hYWZtNGI1UT09OjpHZ2F3TFJoeXFaUEhuLWlU",
+  "fansub": "AMT",
+  "url": "https://my.mail.ru/video/embed/7571497515682367922"
+ },
+ {
+  "player": "ODNOKLASSNIKI",
+  "path": "ajax/videosec&b=OG1IN1Vjd3k2ekhjRmdWWGZpeFBjZz09OjpkQlJ0UU9VeXBOVXVZWDQw&v=dkF5cEo1dW1NZUpGa3ViRzVOSWJSdz09Ojp0UGdobWIxdlBfNjVPNkxG&f=b3NJdnVUeHpQc0wwWTQ1YXEvYStyZz09OjppLXEwWUIxTEFYeXF1ZTND",
+  "fansub": "AMT",
+  "url": "https://odnoklassniki.ru/videoembed/2790784109168"
+ },
+ {
+  "player": "DAILYMOTION",
+  "path": "ajax/videosec&b=Qk5LZU1IMm9oYXRvNmYydnltb2ZyUT09OjpqOS1Qd2FiVGI4NzQzZHFf&v=ZmNBa0lIRlVHNXlaK3h1b1kvVi96UT09Ojp6bFl0cldmUzh2Y3B1bGhs&f=eW9OeGtIS2RXd3V1dE5PK3hLVGtCZz09OjpYNFhURGI1LUZHZV9IUXV0",
+  "fansub": "AMT",
+  "url": "https://www.dailymotion.com/embed/video/x83ecx5"
+ },
+ {
+  "player": "SENDVID",
+  "path": "ajax/videosec&b=NnJnekt1TXZLS01CTURqZTRPU21RQT09OjpaYjFpVG1Xb2pyNzRISy1l&v=L1FodFdxUE00M3RLL1ZnSFNrdWl2UT09Ojo2VFRHZHBVakFrWlBRVXRa&f=V2s4ejFwdmpGRWltYWpZcC9pSXpqQT09OjpkbFlIb3JXZnh1dUFlQXd1",
+  "fansub": "AMT",
+  "url": "https://sendvid.com/embed/7bmowahu"
+ },
+ {
+  "player": "STREAMSB",
+  "path": "ajax/videosec&b=WnpnQnY5SFlSaVp4RVR3aXRWdWp0QT09Ojp2R051eFFvem1yeFc0YnpS&v=bEh3YWd2blZwUEplSldGTmQ0L0lqUT09OjpXb1ZtR3JWa0NpZ0U4MHY3&f=VkQxeFovNWVPSkZHSE5Dekd1dDhWUT09OjpwcjB4RVFxZjhCREJwT3h4",
+  "fansub": "AMT",
+  "url": "https://sbfast.com/embed-75ckvj7uxra4.html"
+ },
+ {
+  "player": "VUDEA",
+  "path": "ajax/videosec&b=MHdOa21kUDFlaWt0NnR2SmViaDU3UT09OjpvS05BbTdFQ1FsR19tUHJP&v=Wkc1Z2RtUk9SUWJMTE9hdnhzQWRYdz09OjoyQzJOMGVwRGlTQjVqNUU3&f=U085bzJQUVlvamxYbnFFZkM5cUNqdz09OjpYUEo5Yy10RlNoVFY5Z29Y",
+  "fansub": "AMT",
+  "url": "https://vudeo.io/embed-1xskfad2fwoq.html"
+ },
+ {
+  "player": "ALUCARD(BETA)",
+  "fansub": "AMT",
+  "mask": "/player/SUk1Uy8vOXVNd3YrS2YvL2RtdmRzQUQ4SEZ4SGZYTjRFTnh6UlVxR1ZvTT06Ondvc1ZwLXJjZWotN3lNUHk"
+ }
+]
