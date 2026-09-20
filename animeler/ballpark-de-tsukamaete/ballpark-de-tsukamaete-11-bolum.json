@@ -1,0 +1,37 @@
+[
+ {
+  "player": "GDRIVE",
+  "path": "ajax/videosec&b=U1NHL1Q1eDEzTzZOS3NwM2tGUjdZdz09Ojp5TWRmV0dMU0lJVFd4RzNV&v=MXlTaDBkbmVFZnN4NHFPYlRhaUlKQT09OjpkcFlkcmJ1bWJXeXNJZ1kt&f=cHJmL2llaEhNVDNMTndzcFRWcCsxQT09OjphUEloeHJkZDRJZHhkaUJK",
+  "fansub": "Seicode",
+  "url": "https://drive.google.com/file/d/1hUtI-4lWQ__VsWXEreXPRZCpXN-QK-5A/preview"
+ },
+ {
+  "player": "HDVID",
+  "path": "ajax/videosec&b=eEZRVDFLS2NkS2hCcVJxZkZFdzAxUT09OjpBZUZYd0xRRzFPZTkxY1E2&v=VVhGWDF4OGFWamtWK2x5cGl6aytTUT09OjpvZlZrQXhMUmNzMURhNG04&f=SkRrV1JPbWNOc3gweDRJbGdmdWM1UT09OjpOS2tkX0JPTkxhOUp1aWlI",
+  "fansub": "Seicode",
+  "mask": "/player/UEVCTDY4N1JvWklKc1pXZ3N4M1NVNVRSSjg4TVN3THduRGFkZndrTUY5Y3BEUUtHR2lKSjhUbWE0aUNnTWl3Vzo6ckJ3RV9WQkx6WHlvM3RLaQ"
+ },
+ {
+  "player": "ODNOKLASSNIKI",
+  "path": "ajax/videosec&b=RklNdHE3bThaQmJKTXNNcG1Ndzk5Zz09Ojo5SUxYMm5rbU84bnIxWERq&v=QnFhbDF6VTZpNytjM3hXUEVYdjJNQT09OjprbFBGeWxqdUVBQ0dlUUV0&f=dS93eVJ6UU84WkxuOU5PenhUSzZkQT09OjpBX0U0UDU1anpmYVBsd3hZ",
+  "fansub": "Seicode",
+  "url": "https://odnoklassniki.ru/videoembed/9683691244050"
+ },
+ {
+  "player": "CLONE",
+  "path": "ajax/videosec&b=THJieU9EcjJBQUFJa0d2OUc2Z2NKZz09OjpNQURaNm1DcVNwQ2VpUHNZ&v=OVJocmovZFNvU0k3WHc0MWZkcXZHdz09OjpFYmg1QmRWQ0w5dzVTMUNU&f=Wmw4aWRuVXpTUjJNbFcvVFBUdll2UT09OjpPSEh4WW1NaHVHLVN4ZjBx",
+  "fansub": "Seicode",
+  "url": "https://short.icu/SxzL2W1Xp"
+ },
+ {
+  "player": "VOE",
+  "path": "ajax/videosec&b=VW4reDhjNTNCamppTm9xcmQvOWRaUT09OjpFZFRsT0FFa3luWG9tNnRo&v=UXFTdy9OMzZLMVNrTXlUZGtoN01xdz09OjoxUW5oLVZoX3l5M0NWOXJj&f=b0xnb0FDbWYweFVUSzhvUGs4b1ZSZz09Ojp1MFlkZVZHcFkwckUtZUtX",
+  "fansub": "Seicode",
+  "url": "https://voe.sx/e/fcipeoisoezs"
+ },
+ {
+  "player": "BANKAI(BETA)",
+  "fansub": "Seicode",
+  "mask": "/player/b0krZG1EZzg3RGRsWi9RYldXY1JvcjIrMHhZKzBKNXlmTnkyQzI2Z0pCWEhmTHNIQk5XVmM2RnNPc3VqR2RCbjo6R2JHd2lqNE5HQ1lFMW9RNA"
+ }
+]
