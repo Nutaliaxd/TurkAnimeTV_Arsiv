@@ -1,0 +1,520 @@
+[
+ {
+  "player": "AMATERASU(BETA)",
+  "path": "ajax/videosec&b=RXZkNHlrcit0MjBVZFVma1BvRWxWZz09OjpKZnZyNUQ3NFN4QU1hWndP&v=M3NaOFR2SEZMcDJXMW9mU0JKUjlrZz09Ojo3NDV0VU9iNkFicHRuZjFw&f=dHBlM1NHVHZnZ2NXcWFQN0hjb25zdz09Ojo2RjRuXzBhRkpnOGdacVBm",
+  "fansub": "AMT",
+  "mask": "/player/T2kwV2lOODMyWnNqY0V2MTNFSVd3WWZhemt5QXJ6ckV5MktjZzlyWVJ2QT06OjE3VFAtbng2QTZ6S1JsdHo"
+ },
+ {
+  "player": "SIBNET",
+  "path": "ajax/videosec&b=b0NOR1UyZUh3VjM2YUpBWGtWTFlJUT09Ojp4LW5hTktfY0RnSTM4ckhq&v=VG5PYVY4Rms3S1M0d1ZjaUlPTjFnQT09OjpHbU83X2RKeFJjZENBUmZi&f=UmxucFVjbXBhQVFCNzNTOXdtYklodz09OjpKVTZDa2w3LXg3RmlqTmdz",
+  "fansub": "AMT",
+  "url": "https://video.sibnet.ru/shell.php?videoid=2657223"
+ },
+ {
+  "player": "SENDVID",
+  "path": "ajax/videosec&b=UjMrZlFPcjZKSGFab0RxV2xjSHo1dz09OjpOMlhXeHBHdTFZNzhHeTY5&v=SnpPaytrZXdaS0cxaEVIcWRDVzdUdz09OjpXS2gtRG91c3hTaTIwOUlY&f=T3NJNjBtS0RHMC9ZdjZoemgxeXBUdz09OjpxMDI2LVlBUHEtSktHOEtF",
+  "fansub": "AMT",
+  "url": "https://sendvid.com/embed/cu6zffbz"
+ },
+ {
+  "player": "BANKAI(BETA)",
+  "path": "ajax/videosec&b=WHd3a3lYSm5HY0hMNWM1V3lkRUdpZz09Ojo5cFF5TDF4a3FxWGdodmt0&v=UkxrMzBnMjlweDVxMEtrenQ1dGlrUT09OjpUZU9CYXRLS1dENm9OOVJW&f=SjM3djZaNkcxem4vVlFoMUt4ZjM1Zz09OjoxRWZ2bVJaNXFaa2tLaVRX",
+  "fansub": "Animan-BD",
+  "mask": "/player/aGE0MUI5YTVTdHZQWHUyQkdtQzhpNkt2T3NnWGpHczl6OG9GL0dGeklObFZKRGxtREp4ZGlhRWxPYXNmQ2RySjo6WlZmUTVLT2FfQ2RpWHZrdA"
+ },
+ {
+  "player": "GDRIVE",
+  "path": "ajax/videosec&b=amxUY1JDSVJzMzFUM1NwdjlLczY2QT09OjpyamVSbnZvVnl4c1ZkazZI&v=N2tGdnl3bDZQRnExU1R0Q3g2b1hQQT09OjpPajNCTUVvbkQxQmJMRnQ1&f=S0lYVk5tWEdmMTA3MGJMbEJRdy9Wdz09OjpHRzNOVGhpdUZPMjBwNU91",
+  "fansub": "Animan-BD",
+  "url": "https://drive.google.com/file/d/1idXn425HdGkKAh6a_JpTHYwC_kQCQ1tw/preview"
+ },
+ {
+  "player": "HDVID",
+  "path": "ajax/videosec&b=MThVWU1qeFlRS0F4S3hHaFVTajU1UT09OjprV2VXc1pFSWpaYW9CRDB6&v=aUE2NmtNYStydmplZFdiTC9IRkxadz09Ojo2a2RiaUpNVC1laVprc1dY&f=TjNxT2ROcTVaNStNeWFPdWw5bS9oQT09OjpLbGZVRXkybmZkRk0wOTNU",
+  "fansub": "Animan-BD",
+  "mask": "/player/Vi9xQzlIakw5R1podlo2dDRMUmZmTjFTSUFNeHpoTGp6c2U3V09VVHEyMEFoUEZXcG52dmJldGFiV0lxa2RzSTo6ckNyN092c2xfenVPSDN5bg"
+ },
+ {
+  "player": "HDVID",
+  "path": "ajax/videosec&b=YmJXUTlQdmYrYjlyWWxXazNuVDZKQT09OjozZjlBTTJRUGc3LWpheDBD&v=ajV4aDR6aDh0eUR1V285SUEyV2wzUT09Ojp6NDV4cDJoNHRoOEZuM2dw&f=ZzJ5STNPU1pQQWhLVTRBcHRpV1Z1dz09OjpDQ01QVm9XNW55eDVqRUpo",
+  "fansub": "Animan-BD",
+  "mask": "/player/RW9UWFJ5RS9JOEE4NnRJMFpsN2QrMXE3dDducWNyM3htdzRZVE9qcWFUSkZ6ZVJRb1l5WStJWGpidmJIeERFUTo6bVV1QXNGcUU0NEpRdEh3MQ"
+ },
+ {
+  "player": "HDVID",
+  "path": "ajax/videosec&b=elo0OCt6WXVUOGpydWxMcmxmdERyQT09OjpyUTRXZjE4cXNEOS1US3d5&v=b0twM0tuS2xFWERKYW1EdkNJNTZQZz09OjpGZmk1Ylo4dV83M3NUYmVB&f=MHdGWkhwV0NGdHNoUkNjZ2JoNnBidz09OjpvWGFQcUE2aDMzaG9JWGtH",
+  "fansub": "Animan-BD",
+  "mask": "/player/cVhJT1VoNTFJY1dwQkRZbUYva1NlRXFIZ084SlR1bW5XNWFWdC92WWtwekR0bjhGTHNEck5mcStMcGhsWmpGeDo6ZEJQLW0zQ0ZqM2MtUGxJdQ"
+ },
+ {
+  "player": "HDVID",
+  "path": "ajax/videosec&b=c1BIZHlNTmZsTkRrUzY1Q3R6TkV3Zz09OjpXbHlMMlZxZWh1bUFCaDhM&v=bGNyc0Q2S3JkVWlrZDlCQlIvRTdDUT09Ojo2TjNkYmR2cVlqZV9NUy1I&f=RWVxcEZRZlliYlpjYXduNUpadkFaQT09Ojp5Q2hWX0N3WW9ieEhTT0xa",
+  "fansub": "Animan-BD",
+  "mask": "/player/MS85bUd0QnVFb0xabTZxN3Y1eGhGUFUza29ETnE0b0tQUWxTWHpEVXphN3FaSDBNdlJxQWpFYTV5cVhTbWdFdzo6RV9PUUhzMzVKWEN2cmdkUQ"
+ },
+ {
+  "player": "HDVID",
+  "path": "ajax/videosec&b=emEwNXpGaHZkOXpsS214OVJ2VlpVUT09OjpGZnV2cWNubk9FUkJBSUxF&v=QXMyVmFrdDNJNm82VElXd3JYT2Nadz09Ojo4TUdpSm1KMm9jOXRUN1FN&f=My9kZFl3dHZleE9aVDNuV2h1c241QT09Ojp0eG1tWlNOUU44a056NEtG",
+  "fansub": "Animan-BD",
+  "mask": "/player/TnBEUm1ncm5iYXpkOU5MMjZqNUtlSUh0YStyQmlSRzZTUmZsU0xhWVRTU2Jvei93TTZSREI5Z1pvVFo2YitSaTo6LUFnVkJ5dGlIODVPeWJzag"
+ },
+ {
+  "player": "MAIL",
+  "path": "ajax/videosec&b=K2JFdU11ekNnT2F2K1BUTnBZVitZUT09OjpmREc4dzl1aXZfVXBZRWNR&v=TzFmejNuMTZVVGJhbVJxbWxvTjcrdz09OjpCNmxpekt1dmVGY2VidXNh&f=Q0tMcldRTW5zY3pvT0RnclVXd3BWdz09OjpWS1FwenoyeHZjNC1veTcy",
+  "fansub": "Animan-BD",
+  "url": "https://my.mail.ru/video/embed/8275262434374059081"
+ },
+ {
+  "player": "MAIL",
+  "path": "ajax/videosec&b=RWR3V3NuTGFxaDlySVA5bTlwbkk3dz09OjpqTC13LV9aNWJUYU5mazJH&v=VzdkZXBIQ0txWmJzMlExNjcybGoxZz09Ojp0VEtJRWVHWFRZdEt6ZkVy&f=aStsVlJQalVEaTNHRCszN00vS0FnQT09OjpKeGU4SUVlNkpaNHlsdUFF",
+  "fansub": "Animan-BD",
+  "url": "https://my.mail.ru/video/embed/8275262434374059102"
+ },
+ {
+  "player": "CLONE",
+  "path": "ajax/videosec&b=ZmliVnMzMjlJemJFeW1rZDB1RC91UT09OjpNejBTZW1jdW8wTGNraEw0&v=dFU2Rm9sZnViOXgxa3k5RU1OeEdTZz09OjprYmRoUWJ4ajdHdTRTUDlM&f=NjhQWGFTZlFCelNsTm9UUkR0a3ZZZz09OjpsUEo0UEtTdHhyVVhERnZG",
+  "fansub": "Animan-BD",
+  "url": "https://short.icu/2ZHFX5CIu"
+ },
+ {
+  "player": "DOODSTREAM",
+  "path": "ajax/videosec&b=OWM4RXc3ZnNHeFFSOXN5alBwSlBtZz09OjpReUpEa2dySFNENWoySmJn&v=WnVIVzR4cFZVSndCeGIrTkxOZVZiUT09OjozM1Vhc2NfZUxwSXUta3JB&f=eks2bUxRMXF6aFh4OStkY0J5N0JXZz09OjoyWEZBb25WaXZ1WG5ENWZn",
+  "fansub": "Animan-BD",
+  "url": "https://dood.watch/e/l8c4r3dgdpzq"
+ },
+ {
+  "player": "DOODSTREAM",
+  "path": "ajax/videosec&b=U2FSUVRzN3FNS1IvSXJncWhVL0g3QT09OjpYWUtNVUF4TWFRSUxjZzhs&v=Qi9SQkJ5K0x2SnFBbnJ3bXovQWVLZz09OjpBU2VlTDZ6UURkc0tiZFdK&f=UUkwM3p1VGwwR0QvT0EwQXh6UjFaUT09OjoyVVh1aUJmQlItRUNSX0st",
+  "fansub": "Animan-BD",
+  "url": "https://dood.watch/e/qd30gq9f5glg"
+ },
+ {
+  "player": "DOODSTREAM",
+  "path": "ajax/videosec&b=Tk5EU3RsUzl3L1d1VUhxM1FjV1FIdz09OjpDN2dDQWZ1QW45ZFJ4MjI2&v=bHhvdXdRWkFCV3dFaFlxOXR4OHIrUT09OjpiM3dRNGw4bGg0VGV0eHlp&f=Wk5jV2NrajNLamZRVnBIb3Fhckhadz09Ojo4VE9jWHBqRHo4QXk0NHd6",
+  "fansub": "Animan-BD",
+  "url": "https://dood.watch/e/s4ivnsz3n0z9"
+ },
+ {
+  "player": "DOODSTREAM",
+  "path": "ajax/videosec&b=WmRhRVA3eThqSStuMlBqU2xHQm00dz09OjpIRDNKN2F4cmtrSk15eVdp&v=Z29rampySFR2OThZVml5SHNjTnJZdz09Ojp3UkhpWVo1ZmZhSi01VVJX&f=L1RqYTgyWHNSVnc0WVc1eXhxWnhWUT09Ojp2a3pZWFZBUnJ0eUVuN1V4",
+  "fansub": "Animan-BD",
+  "url": "https://dood.watch/e/553225vz5upn"
+ },
+ {
+  "player": "DOODSTREAM",
+  "path": "ajax/videosec&b=TXAyQ2VXelVnbEx5T2FZclI1WWpMUT09OjptLWIxYS1mZ3d4bXhGeEZ1&v=WGp2NDZhRXZCU2FNOHV4T1pVUWM4Zz09Ojp1TzIyU3QtaktrNXNTMDRx&f=TVBFR3Y2SE5HRXR5MUZEdlozRlU1QT09OjpLQ0M3MVhrdlRKM0NSNlg3",
+  "fansub": "Animan-BD",
+  "url": "https://dood.watch/e/6ip5p1i5n56k"
+ },
+ {
+  "player": "EMBEDGRAM",
+  "path": "ajax/videosec&b=VlRWSXYwa2phTlVzQzBGZFJUNzZHUT09Ojo3TmgwMXpJWjBLQW5zOVI4&v=enl6SW8wOExLZEZ1Vmc3cTFSSm1kZz09OjozTDF6SFVocWEyYmhlQ1NI&f=MzFHK2xTbEU4YWRLRmdiWDlIMk50QT09OjpsZTdYdDktMVM5ck5rX0Vh",
+  "fansub": "Animan-BD",
+  "url": "https://embedgram.com/v/6444p19s8o14s"
+ },
+ {
+  "player": "MVIDOO",
+  "path": "ajax/videosec&b=V2oxaUU4TlZtWDFXekRsaWtBZWdBZz09Ojp3ejh4TG9pcENnbjdBVGZw&v=bFE0bU9zOGc5ZURab05UVkd6Qm9Tdz09OjpZakR0bkVGZ1pWMGdPeTZX&f=YWQzcElPUGV0WjdtT3FXTk1aOVRHZz09OjpvMEV2a3dMMTdhb3N4cnZO",
+  "fansub": "Animan-BD",
+  "url": "https://mvidoo.com/embed-qp37enb4fin7.html"
+ },
+ {
+  "player": "MVIDOO",
+  "path": "ajax/videosec&b=c05uQjgySktyY2VzMG9PVUdPV2U4UT09Ojp3ak1BUlNKS1lRZi0ycmRw&v=elBvSm1uWDU3MFlyallycDZ5ejdKQT09OjpYXzJwVWFpMlZFdzZWOU92&f=dTNwQWxEQXZmZ09mU3MxMFlvMWNGdz09Ojo3bmNNQTduUmU4MnhYc3M3",
+  "fansub": "Animan-BD",
+  "url": "https://mvidoo.com/embed-ep8qn7dyibkq.html"
+ },
+ {
+  "player": "MVIDOO",
+  "path": "ajax/videosec&b=ODQwL1pxODkxNExsb1piUFp0Y2t2dz09Ojo2S3lkcmZjMFl0NzZ1Q3Nf&v=YTlEUGloQVZoK0MzWWpGNzMzV3o3Zz09OjpXeklGMUVWSk8taHZrVXhs&f=NVVaeDNGVTEycDlMUzNjdCtnek5uZz09OjpJeWR5MzZyRmFfSHhLZFgx",
+  "fansub": "Animan-BD",
+  "url": "https://mvidoo.com/embed-wo9zq0kdztpq.html"
+ },
+ {
+  "player": "STREAMSB",
+  "path": "ajax/videosec&b=eVF1Kzc5V3BmVW03TTZNcXk1VjFFdz09OjpBVEtfUERFLW4wNzlFLWhB&v=bUxaM3ZBWmRsVUtoVEhMbFVDV0RpUT09OjpHajVwdkNlaTVrc1A1cDg2&f=Zks2MU1PS041SUIzeThUazZKR3JYUT09Ojp1eTZuYWFNdHhOangwMDVH",
+  "fansub": "Animan-BD",
+  "url": "https://sbfast.com/embed-59r48ql94hqa.html"
+ },
+ {
+  "player": "STREAMSB",
+  "path": "ajax/videosec&b=NDFWVjlJdThhb1VSVmdmVFRJM3ExZz09OjpqVlhqRHFPektBQzR5YWVj&v=dUdLTHZzc05JSDRWS0lZZ1ZqUmwydz09OjpDMDByODNHcUNwUEtrUm9D&f=d0VENzFXRDZtOHAxeWVaZEJIMWIyZz09OjpOenlSZUlDTk8tei1mbDRP",
+  "fansub": "Animan-BD",
+  "url": "https://sbfast.com/embed-rc0tjqxlfe5w.html"
+ },
+ {
+  "player": "STREAMSB",
+  "path": "ajax/videosec&b=YWVvVUJUUWRINFNHcnlJWVBrcVc3Zz09OjpHZTRHeHcxMENiMmZJRmJq&v=UmZsMzh3VDhKNXZJSHJocEcyVjR3dz09Ojo1WkRnLWs5dFpObHdKYk9q&f=Z0IraTg4UGRnaXJ2blFneXFOWkpldz09Ojo4aEsyZ21ad1pPa29kdkN0",
+  "fansub": "Animan-BD",
+  "url": "https://sbfast.com/embed-nignek4x03sh.html"
+ },
+ {
+  "player": "STREAMSB",
+  "path": "ajax/videosec&b=SUE3TGNtbTdxNlRWNDBab1YxNWZmUT09OjpWZUV6RUFtYjcyYUYtMVB6&v=Y1FBdWdkQXNOWXQ4ZTNKOUJ5cVBTZz09OjpxUnR4X3pqTE40UXBvMVpf&f=QkJKaVhlNkhsTklGeHo1TkNlcUxzUT09OjpRd0FOTzB6Wk02RS0xX1V6",
+  "fansub": "Animan-BD",
+  "url": "https://sbfast.com/embed-yr2lv76hi8pd.html"
+ },
+ {
+  "player": "STREAMSB",
+  "path": "ajax/videosec&b=UkJrTmsxWk9JdFJyNWordk9yN1QwUT09OjpxTjhyWlBHNWFPUHZnNFlv&v=aG9YUGFhbkhXell2SE1LcVBWVkkrZz09OjpXMXN1XzVJOE9SMXJuS0Qw&f=LzZ0V25TZktEN2hLRXdTbDJ1QysxZz09OjprWHpISFkydmZteFFIalR0",
+  "fansub": "Animan-BD",
+  "url": "https://sbfast.com/embed-sgjhxe1awand.html"
+ },
+ {
+  "player": "STREAMVID",
+  "path": "ajax/videosec&b=WmtsL0g1cEI2OW1ieHVoOUxlZndxQT09Ojp4U0lqdVRCZVZDZjhNU0k2&v=TkRoc1dqRkYyaWpyN0hWMkRiSXJtZz09OjpTMDBEUXp3T2JhOGVTdTRo&f=SDZGUFUzcDVKQ2gyMkpSWDUrbFZZdz09OjpoanVoN3RaZWwtNS03QVlf",
+  "fansub": "Animan-BD",
+  "url": "https://streamvid.net/embed-n483sz8rr0lo.html"
+ },
+ {
+  "player": "STREAMVID",
+  "path": "ajax/videosec&b=bUxZZFFETHNFWmYyRktTSjVsQzVNUT09OjpQczhTLWRVTmVrbFpwcW5G&v=UUxwUTBLbHFrd3ZmYW9laEtqMENzdz09Ojp2MEsyTzFDcjFFbVh2Ny1H&f=bDFnaDljYjFoOGJYZXk3bUY0bEVuQT09OjpCQXVSTVExdy1rZTF5ZGZW",
+  "fansub": "Animan-BD",
+  "url": "https://streamvid.net/embed-zk991may6690.html"
+ },
+ {
+  "player": "STREAMVID",
+  "path": "ajax/videosec&b=R252azAvZTNMcmlTZ3A3bnUzN2h0QT09OjowYXhUeUVUZkU4LWNMRFBV&v=ZkpEK3FSRERDaFBwRDErYUYyTk5EZz09OjpvcHdzOU5MeVA5OXZZV1Jt&f=QUNqYm0vUW4za2ZKY1VMN3k5QSt5QT09OjpwWVFGZXJyNFkwWXdsOHEx",
+  "fansub": "Animan-BD",
+  "url": "https://streamvid.net/embed-chg8bd4n7v0d.html"
+ },
+ {
+  "player": "AMATERASU(BETA)",
+  "path": "ajax/videosec&b=WkttSnFYUU92eE45TVpTeFA3TEljdz09OjpFdTJxNUNqOVY2R2c5Y3Zr&v=UzlHUE9KYmpuZ29VY2w2bktqdGhXUT09OjpQQWJpNjJMRFhhS1UtdzVp&f=R3RFYVJKSFc3T2pYQm90dnFsdEg1QT09Ojo5WnBENDM5aXdTWHNNSm8t",
+  "fansub": "AniSekai",
+  "mask": "/player/amhHNDdza0VpNkgwSy9vaDhWTGs1ZHZva2JpNE94SlZtMVJPMUhCZWZFWT06OlZJYkI4RklpWmRqRWVXa0I"
+ },
+ {
+  "player": "SIBNET",
+  "path": "ajax/videosec&b=UWZaQWdIRC9ETXR5VDYzMmIrR055QT09OjpnUmlTV3I1U2FZNzAtNTVm&v=NSs2UEsvWjNDanpPMURJMThyeFhTZz09OjpUOWpaVUZIN1ZVUG9Ja2k0&f=VDRtOTBHT1k1KysxOEJ1c093U01Gdz09Ojo0eVpGVkI2VUdTYXU4TGdB",
+  "fansub": "AniSekai",
+  "url": "https://video.sibnet.ru/shell.php?videoid=2683852"
+ },
+ {
+  "player": "AMATERASU(BETA)",
+  "path": "ajax/videosec&b=SE9jRVhaSSs3UFk2bnMxVU9Cb2tpZz09OjpFa2pqZldGLUh0S1N4WHlh&v=dmN3M0s5aDZiVVEvdnV3bHppeHVmUT09Ojp4cndsc1JjWHE5OU1VcU1o&f=V2M3S2pzTWxJcjBkb0EwdCt5SnNydz09OjpmZVV2MkFub0FYUTctX3NW",
+  "fansub": "AniToria",
+  "mask": "/player/OGF5dmd2Zy9qWkxEQjRPaVJnbWxpaUd1S3BDeWQyaFd4RFNJeDZqU1prcz06OjMtaDJMd2E1XzBxa0VmOHo"
+ },
+ {
+  "player": "SIBNET",
+  "path": "ajax/videosec&b=OHNCV05QalFYTG5SWGtwdUNVa1lRUT09Ojp5ZE1nX1ZBWFc4M1VIcUJC&v=SEJpZW1EdEFCN1h2azZ2VExaTUJRdz09OjpabXNMQmpKb2MtMTNCM1Rq&f=K2xOVVAyY28zbEd0N3lReUVEVEh4dz09OjpIVXVaYmRGQlVQVG5aVVpJ",
+  "fansub": "AniToria",
+  "url": "https://video.sibnet.ru/shell.php?videoid=2638687"
+ },
+ {
+  "player": "AMATERASU(BETA)",
+  "path": "ajax/videosec&b=UFo0blFseXRxL3laWWJHaU5mUjF6dz09OjpHUGVtaU83TURLMXhEemZD&v=SFNudXJrVUJqSk1DSHVva3NZNGNJUT09OjpqWURycXdVOFpFSlZBWnZD&f=SjlyWHFDSGlSZWtKMXZCc2UzUy83Zz09OjpQYnpsaFJObzZRdkZxRWFo",
+  "fansub": "AoiSubs",
+  "mask": "/player/THd4S0JaM1crZkZkdDlvWXJQc2J1QXFDeTdoZXJOTmpjenRqaEhQNDdsYz06OmY4WmVaU0pXZmxDdjVkQzg"
+ },
+ {
+  "player": "SIBNET",
+  "path": "ajax/videosec&b=UGYyNmJpY2NuKzVGNEpMVkczTVB1dz09OjpDUk5mRnk0Ry0zNjhhSlI3&v=WDFLSi9TUGo3eGVmQkQ4MXRsenJQZz09OjpUd2tlbWxubkc5dWlsekRz&f=cXdpcUt3b2NuY1FKK1loaG81bHZNdz09Ojo1ZHpKeXJWSXdKa1d1aEtW",
+  "fansub": "AoiSubs",
+  "url": "https://video.sibnet.ru/shell.php?videoid=2644299"
+ },
+ {
+  "player": "MP4UPLOAD",
+  "path": "ajax/videosec&b=OEJmandKcVVPYldJZ1RHQ0NZbGxCZz09OjpXRjlsblBsVG9telYwejBT&v=Z3BYS2t4NFpiVnhRZzZQaVVSa2tYUT09OjpMNlFDRzBKY3F6TERYNGNv&f=Sisrc1ZEalZicWxsc2JLbTB3Z25rQT09OjpwREpyUl9fYzBva3oxRnNR",
+  "fansub": "AoiSubs",
+  "url": "https://www.mp4upload.com/embed-rcsc873o0wj5.html"
+ },
+ {
+  "player": "SENDVID",
+  "path": "ajax/videosec&b=MG5DUkJrSlRrSXEzK2VrVmp4WjRqUT09OjppN3JuaFVBNEpPYm90SW5O&v=MW1vdFlyOC9CclpuUGJsQnkyWnVhUT09Ojo1Q3dUcXhwMWd0Ukx1UnJu&f=UGNqRU51b1dmNkE5K3dRR3pRNjEyZz09OjpYQ1VBRVBhc1ZlZGVpN1lH",
+  "fansub": "AoiSubs",
+  "url": "https://sendvid.com/embed/et633v69"
+ },
+ {
+  "player": "VUDEA",
+  "path": "ajax/videosec&b=U2J1c2VKRklDd3BZc3prVm15a0NpZz09Ojo3RmtkcWItZ2N1M1hlQ1Vk&v=bkZjejhPQlhQaXlhRzJZdktkWnh1UT09OjpNcWphYmlaVEwySWdjUjJ0&f=Nnh4cWN0MFBnVlEraXd3QWhNRXF1dz09OjpVX090Z1NxQVZSYzhZR3Fk",
+  "fansub": "AoiSubs",
+  "url": "https://vudeo.io/embed-iyc1uap28qxl.html"
+ },
+ {
+  "player": "AMATERASU(BETA)",
+  "path": "ajax/videosec&b=a1JjWjV2NnhFQlNuR0tnMDFkNVc2UT09OjpESEZiWTliem5VQjFzOThS&v=U2R3NzNRZWhWRDhpR3dxdExISlpwZz09OjpnUXZ4MUU4dGF3b2VBdS1Y&f=K2NMNnllSThJd1dSQVVYTkRCNTk0QT09OjprNU9MNzRtc1ViamZxY0Fv",
+  "fansub": "Arcadia-BD",
+  "mask": "/player/bmhWVit1MXNCY2RCUXRYUEVCakJuWkFGb3FyVXp2YW10SjF1dDI4SFlLbz06OlJPeFBQY3pReF8tT3J0aDE"
+ },
+ {
+  "player": "AMATERASU(BETA)",
+  "path": "ajax/videosec&b=VlJPNFZvYmU5b2tQckJzZDg4bTBSdz09OjpBdk91QXRIWlp6YUZwYVRT&v=YTE5RVphZHFvODlDa2RQTDdlS1NtQT09OjpFUExHSVhPZ1VDNzY1dmZS&f=OG9RWWJTcmJ1bnVPaE1zbVllUUVGQT09OjpjZzZGZWU5UzVKMDlZRTdo",
+  "fansub": "Arcadia-BD",
+  "mask": "/player/WEVheXN5TzBiZUJKSjcydVpWWk1ENEFjRktsRE12QUZGK2I1MFZwZkxZbz06Oi1LT1ZQVm5TU3VQYjZyWXE"
+ },
+ {
+  "player": "BANKAI(BETA)",
+  "path": "ajax/videosec&b=Rkt5Tzc3VjBobEs1bEhGMjNsSzhSUT09OjotVUlRdTFiMGF5aG9TNHNB&v=eWtzdEppV2s4UnNBRXF5TmVmeC85dz09OjpPWm1QLWdwSWF6bk8yRDN1&f=OXBBdEp0WEdhM29DcHp3SjFMclVkUT09OjpCMG5KcWxxOE8wcm1TVFd0",
+  "fansub": "Arcadia-BD",
+  "mask": "/player/WXVnT05VeW14dlFvOGZqT1oxRHRWZEJRT3FrZ0dJR1owQlM3RkNBbHJBR3pWTGlWUk9xK0VRekFUWmRyRzVmZzo6Z0Z5LXU1Rlhvdnh3RXpaRg"
+ },
+ {
+  "player": "GDRIVE",
+  "path": "ajax/videosec&b=VGZSN2d0bWxxVWRsN3JiUkJNY2Mwdz09OjpMbXc1X1VZaDZjUm9hOUpV&v=RGZsR2d2MU1TSmpRUXZxR1ZMRkc3dz09OjpVSE9WMHhMemhmUTNYV0lz&f=S3lhSmRnK3JQYW5pT29xNlo2QytRdz09OjpYRXJZTktMX1JBVmM5d0pB",
+  "fansub": "Arcadia-BD",
+  "url": "https://drive.google.com/file/d/1pvxKNN9LiuW2DEvQqDcWKjuGEHbQ3UGy/preview"
+ },
+ {
+  "player": "HDVID",
+  "path": "ajax/videosec&b=U1UzY1VQbW5LVDBMeXdtUzJjRisrdz09OjpScG9HZDBCb2d1T05CRmdp&v=T1lVUXhjUEVXbG5JYmZZQ3RDOUxWQT09OjoxNnFyZkdJZ2paMmplTkNB&f=bzkzUHhqQ0dta09Dai9XbXFZRm04dz09Ojo3Y1JBZmpLNGxWWjBtWHcy",
+  "fansub": "Arcadia-BD",
+  "mask": "/player/WEc5N2JIcXp3andUTXBOSnQrT1dQQWhhcXZuWEh1Q1RMRDlOTGZCZVhiZGZIcXdHMkR2bzNTaXRBY3p1Tmh1ejo6cHBieEluM0lHczRoV1R2Vw"
+ },
+ {
+  "player": "ODNOKLASSNIKI",
+  "path": "ajax/videosec&b=SERxcUVhMitzOFVkY3lxR0xWUC8yZz09OjpQWklyUS0wejMtc0p5UmFw&v=RnFUcnczb3JGc2Nna3NoUmtxQzBRdz09OjoxaElpX25JTE1sZkZYcmV2&f=Vmc1Zm1aLy9ZcDc2akl5bjFOTk16QT09OjpYRENaQkY2aXZGbWlETGtm",
+  "fansub": "Arcadia-BD",
+  "url": "https://odnoklassniki.ru/videoembed/4514017970776"
+ },
+ {
+  "player": "SAVEFILEWAY",
+  "path": "ajax/videosec&b=UFF6NXdhb3RrRDdmTDlzd3NoVTRjQT09OjpBcnRONlBEWHZZV0xyMklx&v=V3krRjdoc21oYmQ4cUlhRWpzSUdIUT09OjozMnhWeWRsSXJQU0N3MGo1&f=Z0hoVHkzS3o3M0RJbmtKc01RYTZzUT09Ojp4a2oxZUs4NFU4UGxsR0xk",
+  "fansub": "Arcadia-BD",
+  "url": "https://savefileway.com/video/embed/Kkv/660x425/1pvxKNN9L1uW2D3vQqDcWKjuG3H8Q3UGy_By_Oto_Uploader.mp4"
+ },
+ {
+  "player": "SIBNET",
+  "path": "ajax/videosec&b=cnlsaHpWQUpPWWhQZHJFMzVBb09FZz09OjpUUkJYZVFjenBfV2NlY3df&v=NEJSNmlkVVM5dWhNYnNZVDkwZ3pQUT09OjpXVjFTbU1WYWZLWS10elJM&f=Mk9rcjdJNW1EeURxUE81Z0hwM2hIUT09Ojp0UDl0eGVTZXVWeDdzZU0x",
+  "fansub": "Arcadia-BD",
+  "url": "https://video.sibnet.ru/shell.php?videoid=3385899"
+ },
+ {
+  "player": "SIBNET",
+  "path": "ajax/videosec&b=YTMvNjJ3OUhlZ0R2elJ6NFJsU2trUT09OjpuMlJJQlhDcG9iRjBHcTJW&v=dHFRMXUxa2dsdkJGSmJjcDFEdnpCQT09OjpCV09DaTdnTTY3RlhfdlNp&f=N2R4aCtqVTBLeGIwK0NVVnAvQTRVZz09OjpEY1plZmN1OWFFbF9iT1ow",
+  "fansub": "Arcadia-BD",
+  "url": "https://video.sibnet.ru/shell.php?videoid=4952951"
+ },
+ {
+  "player": "CLONE",
+  "path": "ajax/videosec&b=U2JjSFJsaisvcThrQUtIcFNiWFFsUT09OjpBUDJBcmxBU3d6RlBXUTRj&v=enVZZnM4dGUxTy9EbnRCby96Vzdpdz09OjpwbGE5TXE5Mm55eHgzOHUt&f=NFk5VTd2WlNsTlY2U09yaDRDaDRpZz09OjpWU1l2Zk43SktSSnNNbVI1",
+  "fansub": "Arcadia-BD",
+  "url": "https://short.icu/?v=NX20w9sLt"
+ },
+ {
+  "player": "EMBEDO",
+  "path": "ajax/videosec&b=NjhWVVh5SEIzZi8wYVgwTExWQnZEQT09OjpibUZWUlZabmVVVzlLZWRQ&v=M2w0Wk1WNExrRmRma2N1ZytiTnpVUT09OjpvYmZDUTl3TTFMYmFDSC1f&f=akdIRmF2TzhmZXI5djRNQm5PTVgwUT09OjpPZEZyZVM3VmRmWXdyaF9Y",
+  "fansub": "Arcadia-BD",
+  "url": "https://embedo.co/e/nddfpfipsyxj"
+ },
+ {
+  "player": "MVIDOO",
+  "path": "ajax/videosec&b=Z3RNYTlpYjZVMVR0ZER6WThyaDZkQT09OjpiWlRMaHE5TWYweDNueGRz&v=MmZBQ1FveTdPcXRlR1A1NjdFbnl3QT09OjpScDFqRU92Y2d5QlM0X0Yw&f=UW5Gc1NtMEVsVTRtYXhrRTRycDZWZz09Ojp3cmotME02eDd2ZHR3dDFL",
+  "fansub": "Arcadia-BD",
+  "url": "https://mvidoo.com/embed-sn6jb90856b5.html"
+ },
+ {
+  "player": "TUBELOAD",
+  "path": "ajax/videosec&b=ZHNDTUJVMWxiYXhoYjd1RnNHNEFFQT09OjpRbzhrdHNUdjY0SmY4Um9N&v=MGtLU3pjRldhUmc1bFJKQVd1TVp1Zz09OjpGWnBraEZVR2ZOa1BGcjZn&f=aWFpNzNSY1JBKzFqNEUyUDlaSWhldz09Ojo3aW5DbnVvMm0wZWxtXzJ2",
+  "fansub": "Arcadia-BD",
+  "url": "https://tubeload.co/e/8m4t78z9fmsp"
+ },
+ {
+  "player": "UQLOAD",
+  "path": "ajax/videosec&b=VGVPejE1ODF6S3FYd2JmWTBibWdRUT09OjotWkJjNWdZZ0ZjRTB0NDIt&v=TzlHaGJ5MStwaElybVM1cnE5VFdiZz09OjoyX2tFMldmbEtoZHhxZV93&f=eUxvYncxK2tkVy9lNDlwandTRVFVQT09OjpJT21JeXRsSXdMY3FNVC14",
+  "fansub": "Arcadia-BD",
+  "url": "https://uqload.com/embed-bzcqsuvnw496.html"
+ },
+ {
+  "player": "VOE",
+  "path": "ajax/videosec&b=cVY4K2VMYWxkNkZFaXZaeGVNTFpCdz09OjprSE02cUI2bXdIX25mNjZm&v=a1AxOFdWMFh4Nkg4anpQYWIzWVV3Zz09OjpoQXJzN2p5UDlPdnFSNmlr&f=b2pMcmNJendHWWIwbW9ZclNuMjNxUT09OjpqSG1WNGg1V0lHNXFPQzNm",
+  "fansub": "Arcadia-BD",
+  "url": "https://voe.sx/e/fiz0dwtfb1ne"
+ },
+ {
+  "player": "YOUTUBE",
+  "path": "ajax/videosec&b=QzkvMDFWS0ExaGRPdVR2UjM1Q01YQT09Ojo2MXQyXzZhY2stdnl6aWFV&v=dm9adDZrbnloZGZmd2dQUk5mdkhhUT09OjpXbnZ1Z01zY3JfSTFVZW0t&f=YkZYTys0MG9ZTDhiRTBxMDlFVmVUdz09OjpWUHVJZ05zYmMyX1hhcnhK",
+  "fansub": "Arcadia-BD",
+  "url": "https://www.youtube.com/embed/WzSvZiMH0Z4"
+ },
+ {
+  "player": "AMATERASU(BETA)",
+  "path": "ajax/videosec&b=SU80V2hkb2FWdWFuZnpNekxqN3MrUT09OjpsN3FjUjVHUlN3dkp1OHhN&v=QVBidXkvViswSnprQ2RreUpvc28xUT09OjoyNlhpMU5hNm5jeW9JWXJ6&f=SE9HaDRNSWZiSm1kTWZMTnZ3NjcwQT09OjoxTnFER1F6UWFaMkdoMXNw",
+  "fansub": "AYS",
+  "mask": "/player/L05aTHc1akxiNzBoNFAwcjh6RUZKeTd2SmNxblpYYWxUT1IrOHYxT1ZHST06OnZVcnlrVkd4T0VHN0JPdU4"
+ },
+ {
+  "player": "SIBNET",
+  "path": "ajax/videosec&b=WHJMMnJBL3NXNklsN2w5VWZHWUdtdz09Ojo0NlFldEk0aEUxUWdXZzdD&v=V1BSMG1ybjVpS0Y0QWdZUng4eENVUT09OjpBT2FucDVWeXZucGpSWThr&f=SnhoSU1MNkRpRURkU1RPaTFCbW9oZz09OjpJaTBWUDFQRFROSTE1M1FG",
+  "fansub": "AYS",
+  "url": "https://video.sibnet.ru/shell.php?videoid=2639447"
+ },
+ {
+  "player": "AMATERASU(BETA)",
+  "path": "ajax/videosec&b=NnUwQ0dVcWowbWdBM3RaTkdQUFo3UT09OjpWdFAxeTNRcmtnWmlMS09E&v=c29rWEsxci92UkQ1eEZweVRzSWlWQT09OjphczdFc0R0ejVCZWF0ek1R&f=V2luOEQxWXlPWFRZaHYwSEw1MlVhdz09OjpZbHhEUVdPZmVtTkFCZVdZ",
+  "fansub": "NepentheSubs",
+  "mask": "/player/cFBuOTU1K0NpbUhBOUlnVWRNUUg5M3JMOHc5cVFEN1lYUjV0d3hkeVY1QT06OkxsYXZfTF9NVVp6My1FOVI"
+ },
+ {
+  "player": "BANKAI(BETA)",
+  "path": "ajax/videosec&b=dHFvV3BCamtUdjVPMjNRNy83SU1oUT09OjozUTd4ZElObzg2S0JhTWFD&v=c3NZSGRmWWdzczYrNnRZOVorR0thQT09OjpiUktYLXBVR2dWcXpRM1Fl&f=TGdaVElrUjdsRk55THdCWDQ0VHQ2QT09OjpXRUhnODBJVlFXdFREaFZS",
+  "fansub": "NepentheSubs",
+  "mask": "/player/VUViZlJJd1I5VlkxRnlGcFAzMDNhRkZVdk80QjA2THZCM2N3TzJkUmZZb1JmK0d3N2ZFUCtDeGc3dStBMTg2VTo6MjFqbExQaWZyQ3RFMGFudg"
+ },
+ {
+  "player": "GDRIVE",
+  "path": "ajax/videosec&b=T3NpSWVMYzQvUkNsdWtIbnZuTFdVUT09OjpzNXJidEVYU0NmalZBWXdV&v=ZjhBOU5DWUNQWE44RUU2eCt1ZW5sUT09OjotVmtXWWY4bDhFTUhmd3Np&f=cG1YY2xqL1R5MVZIb2xkYVg3bWx2Zz09Ojo4VFlIalRuZ29OVHZKaUN3",
+  "fansub": "NepentheSubs",
+  "url": "https://drive.google.com/file/d/1icy4VxZMBb1Q3GuEi7sov6LMsytdTs0v/preview"
+ },
+ {
+  "player": "HDVID",
+  "path": "ajax/videosec&b=TkhCWVkxQ3pWQjJRaWNLQ25EdXByUT09OjpOcHd5RnhwalliSkR0ZVBQ&v=RUdWaDRuU2piZDhxcmVMYmFpOTUxZz09OjpoMl96Z1ZjZm85LVlnaFlD&f=T2JEZkFzckpFcGRtVGxxUFA1VkMzUT09OjpaZ25LT0JpSWt1Y3ZfUU1q",
+  "fansub": "NepentheSubs",
+  "mask": "/player/OWN3a2FWU0R5QUhVTUZkajcyRHhMZkYrSFJLeGpzdy9QaGx0a2pKTkR4dkdIdWlnU1Y3azMzRTVhVS9vRUFxdzo6Qko4aVNWbGFaMndWclNJNA"
+ },
+ {
+  "player": "MEGA",
+  "path": "ajax/videosec&b=OVBlUEJsRzJxUUdaamhKL3FLUzVJQT09Ojo0aElwTXBSSEJxZkpVTWJk&v=L2NiU05xblNwdkNrMDJIb2YzcmpkQT09OjppYXMxV0RwNWNqTGtEU0xW&f=RVd0THdJN20yR1d2RUVTMloxcjg0QT09Ojp2MWFma1hzYkxBeGRkS3Q3",
+  "fansub": "NepentheSubs",
+  "url": "https://mega.nz/embed/BFsFCCIY#iKsAEZk_7Z_m6KmcGlKfhAhLagRdWFTy8RBF0F71UDg"
+ },
+ {
+  "player": "SIBNET",
+  "path": "ajax/videosec&b=V21JSzlsN2lHSTdzQmNXcGlmUSt4dz09OjpfSkw3VXYwdFEyNmpIYjZQ&v=UDhNSEpBTy9LbFVlbGZuOWpicElRUT09Ojo3U2dIRkpOaTZuV0hGVENZ&f=cExnelBOdDI3ZjM0N2FEdkIwZmRudz09OjpDamNVZnJpcDhmTjZGVE9D",
+  "fansub": "NepentheSubs",
+  "url": "https://video.sibnet.ru/shell.php?videoid=4461357"
+ },
+ {
+  "player": "CLONE",
+  "path": "ajax/videosec&b=TlBSNFZ6ZnBENXl5VDU1enlONEIrUT09OjoxcWFVSmVrd3NENV9RX0FD&v=TUhla3dJUFB6WjhFVWRtQ0lNWDBRZz09OjpoOHZGNExvd1J0TmNWY1pI&f=eTdKTGZEY2xBYzRHQ1luTkZxTkZrZz09OjpWOE9kaURrbmlNb1FmZ3BY",
+  "fansub": "NepentheSubs",
+  "url": "https://short.icu/?v=K3Osi836Z"
+ },
+ {
+  "player": "CLOUDVIDEO",
+  "path": "ajax/videosec&b=Z3lSQk00TjdZK3RCZEp4YjQvMHAzdz09OjpVUmZpQ2x5UTNTSmxqZE5K&v=QzAzdHhiZ2p4QU1nb3RRWE9zRXN2QT09OjpWSlBEOExiajJGTHdIcjJB&f=TmhXV25lajk1VitWNzVITTlsbnVTUT09OjowS05OOHVKTG1Cc1VWTUE0",
+  "fansub": "NepentheSubs",
+  "url": "https://www.cloudvideo.tv/embed-dvo4z91pgrv5.html"
+ },
+ {
+  "player": "SENDVID",
+  "path": "ajax/videosec&b=WlBwbmNmaDIzTTFGNlI2TzBxVmlBZz09OjowVjNkTFNCTkY5VlJ2XzYx&v=THZQM3RMbEROaUlmc0NhL2tZb2pSQT09Ojp4MmxmdTZXOFRLSHpwZ3ZY&f=WUZRbDZWYlpEWGtoVnhlMVh5TXVtZz09OjpjZHlzdVY4a1Y1TXlES2Fv",
+  "fansub": "NepentheSubs",
+  "url": "https://sendvid.com/embed/dl7qya5q"
+ },
+ {
+  "player": "VOE",
+  "path": "ajax/videosec&b=UlB1TkhBcVNPU0M0eVRaeDRJNkNQdz09Ojp4Z1k1a1d3eElnXzc0Vjd5&v=WTZNakIvY1gzcWVsbFd0YmdoSXlzdz09OjpuN1JjMlREcU04eGRiNFlv&f=UDlISUYyWjVCWWUvczVsU3YxV2JsQT09Ojp5enFnWUxtanVOTUIySUM3",
+  "fansub": "NepentheSubs",
+  "url": "https://voe.sx/e/k6kb5d4wndz4"
+ },
+ {
+  "player": "VUDEA",
+  "path": "ajax/videosec&b=b1cxQW9EdTNPWDd5RFZ1b0kwejBJZz09OjpsaTcwdUY0YXJNcmFmb0pV&v=RFJQK21USEQwYmpVUW4xeldHcHR3dz09Ojp0YTZtTHprMUVXNlJha0lw&f=RGRsQkNxdmw2ZDJ5UGx6VUJUUi9JUT09OjpDY3FiRWJRcUdBYWpiMWZk",
+  "fansub": "NepentheSubs",
+  "url": "https://vudeo.io/embed-iogdpdpamzp9.html"
+ },
+ {
+  "player": "HDVID",
+  "path": "ajax/videosec&b=VnRYbVh6enVCa3pkaGZTcElKWUFiUT09OjpRTmxiN0JsdzhvRWlRRVFW&v=Z3czS3dnM2dXSVZndWFVOXJXbzdLZz09OjoyalpKVGVtUk1NNjNTZGtO&f=clgyQ1MvL3U2TnV1TGpGd3hqbW9oZz09OjpfQVJYbmFaYlhIakVZM1kw",
+  "fansub": "Pijamal\u0131 Koi",
+  "mask": "/player/amNzV1B0R0ZBWmJRM1BrQ1AySkhYaEM1OUNBMDJXSmU4UHBtbUdKaVdBZTlOVjk3Z1BGWjNFVEFxeXlUbzlyVzo6ZDBrcENCc09yWGJ1eVhVeg"
+ },
+ {
+  "player": "CLOUDVIDEO",
+  "path": "ajax/videosec&b=RGVWNEtHUTRQWkpRM3dvUXp0bmUrZz09OjpycHVnZ21WWkREbGFJaVlw&v=R2x4bHNKelkza216MXc4OXBiSHpxUT09OjpZYTJfbUpXV3JRT3pyZUow&f=MzFhMUM1QzVINEY4NERsTmZkT1pGUT09OjpuZnpWUFlUeEJOOGdmckxL",
+  "fansub": "Pijamal\u0131 Koi",
+  "url": "https://www.cloudvideo.tv/embed-3wi2uql26ii9.html"
+ },
+ {
+  "player": "SENDVID",
+  "path": "ajax/videosec&b=UXRxSVh4RW9oQUdUSWJYS09OaVZUdz09Ojowd0NiRUxqRktxQmU1NkZt&v=dE9CWG1xZzVScHYzQmNKNTRhRGZEUT09OjpOVlozRXItM1RtS1BMaHUz&f=UWtLK1JmZG1zdG5Xdk8rUkxiT2YxQT09Ojp1Ri1HRU1GTHlSWlU2UXRF",
+  "fansub": "Pijamal\u0131 Koi",
+  "url": "https://sendvid.com/embed/dl6ty47l"
+ },
+ {
+  "player": "VOE",
+  "path": "ajax/videosec&b=MWlTbURGR0cvSlVYM01ITXhKNXdvQT09Ojp6WXNGaW5USEtSRnRJclZk&v=K3JuUDZqQ1NRUm9nck9Jeml0a0JoQT09OjpoR21Mc2hnM05NeXlJUl85&f=Mm96clk4UjR6OVRHd1cxZ0FWZGtFUT09OjptYjlsN09SXzRjUFVrVnBi",
+  "fansub": "Pijamal\u0131 Koi",
+  "url": "https://voe.sx/e/v1kzk1oxyncs"
+ },
+ {
+  "player": "VUDEA",
+  "path": "ajax/videosec&b=N0xSaXZUaE5UZ0JmY3d5S2l1VythUT09Ojo0RFJsenRoZzNuMEhJWERR&v=dmJWbHNnRzA3YllwdGdhU3ZsZWZqZz09OjpmNEppUWNXa2JWU0NnOTVp&f=VjFiNEJmMWQyVWEzS1RtMHN5UXZJdz09OjozYWlGQ204ZlRvVWpPaXNK",
+  "fansub": "Pijamal\u0131 Koi",
+  "url": "https://vudeo.io/embed-0dsq98qzd91m.html"
+ },
+ {
+  "player": "AMATERASU(BETA)",
+  "path": "ajax/videosec&b=V0h0dUdxZFdFN1NGMWdnZFpxYitjUT09OjpCRmZVNXJCWmZ4ZE5yeXkz&v=WmFDMXRwaVVSMW1mclIxQkRlMEhwQT09OjoxdUxuX05kX1lpb1FnVzQy&f=d1hDeW91T0JYRE9SRTFjWURIQ3lwQT09OjpIcm1GUHRhTFBOa1ZVZ1dy",
+  "fansub": "PuzzleSubs",
+  "mask": "/player/YXJBQlFCdDZxeW5TZEMxTUhYN20ySUFqUmlwdjVqVGRyRlkybEZmMzdJQT06OkRwWUp1LXVOU2pMSHVndjg"
+ },
+ {
+  "player": "AMATERASU(BETA)",
+  "path": "ajax/videosec&b=L2dWZzBKbzdaU2dHNGI2ZjBwSVpOUT09Ojp1a2lPcGcyNzdZdHdyeVVL&v=SVZaZnVZRXkyMWVkZ2t6bFpHUkpLdz09OjphbDlxNlB4MEJjODFMaHE5&f=UEttQUpqdDBSWFBnMmM5SlhEQXFXQT09OjpHUzI5OVV1cGhnN0JvRTcx",
+  "fansub": "PuzzleSubs",
+  "mask": "/player/ZFU3TmVLQkNJQUM3WE1ueWdib0RnV0MySVIvdlN6N2FtbXVOVlppMkFsWT06OkRScnhtaXFkOHl1ek05dGQ"
+ },
+ {
+  "player": "SIBNET",
+  "path": "ajax/videosec&b=TStSNjdvL0FTTUY1REUwVFREemIyQT09Ojp6V0JTbXdyaWVKOWJtZkdz&v=UTJwNFNORENPaXZTbDFUb2hONnYrUT09OjpCX295cHVvM0toUjB5QXdU&f=WFNyU3JWeWRrNFJaRmNzd3B6UkNlUT09OjpFZGE0d1lIUlRiWW0zZEtZ",
+  "fansub": "PuzzleSubs",
+  "url": "https://video.sibnet.ru/shell.php?videoid=2638011"
+ },
+ {
+  "player": "SIBNET",
+  "path": "ajax/videosec&b=RGdJUEIrdk9qcEFiV0pnbGpMQmgzZz09OjpyRWlEM2M2MTNjYXZTc2R2&v=UitGWFYyZ2tndUhwdDFXWFpRajdUUT09Ojoyd21vcVYycV9YS2hNTkF1&f=QTgyNXNYUzlSZnYvYndSWWtoUTdQdz09OjowUE1UZzdQcDhhYVZpUWQ5",
+  "fansub": "PuzzleSubs",
+  "url": "https://video.sibnet.ru/shell.php?videoid=3386453"
+ },
+ {
+  "player": "SENDVID",
+  "path": "ajax/videosec&b=Q3ZNSVp5QUs5V0RtSjczZVJLNEY0Zz09OjpITGg3X3hKTmc3MFpLLTNF&v=U0pFMGpydmN1ZzZ3Z09IWk5YRWVNZz09OjpVMEs1RDRLX2N5OTNrejNB&f=QWxzN0NCL0NzM01xdU1GQ1Y5Wi84QT09Ojp3VWY1SWFhUDlrSVpUektL",
+  "fansub": "PuzzleSubs",
+  "url": "https://sendvid.com/embed/b9de23nm"
+ },
+ {
+  "player": "ALUCARD(BETA)",
+  "fansub": "AMT",
+  "mask": "/player/Mkh4dml4bVdGR1RqRVV2V1Y0YzZ5dHdzb1d2NEhkMWUxM0ZiUXI5S0lGTT06Ono5a1E4MHFOb0RBYlZUVlI"
+ },
+ {
+  "player": "ALUCARD(BETA)",
+  "fansub": "Animan-BD",
+  "mask": "/player/VHRrSE0zRHpxVzNiQUFYQlMwS1o2RlNaN3NERE10UXA1cUt1UzlxNG1kVT06OjVTNXpPQnRpZi1mRzJyaUE"
+ },
+ {
+  "player": "ALUCARD(BETA)",
+  "fansub": "AniSekai",
+  "mask": "/player/TWhZWDgvQmg3NVlSak5LWjhrRWFNdXRGVElDZHN3UGZ2NTU3b2UvcUdGZz06OjdicDlkZGsxU3hTVjNCZmk"
+ },
+ {
+  "player": "ALUCARD(BETA)",
+  "fansub": "AniToria",
+  "mask": "/player/dGJUenFWNWdFRC92NC9HdWN3NGxsWU5XL21iSVljTDk0TG9DQXZWcEtyND06OkNsTno0WU1KYzZQN3cta0k"
+ },
+ {
+  "player": "ALUCARD(BETA)",
+  "fansub": "AoiSubs",
+  "mask": "/player/U3VjSXZPUHJmWVk1VnZhNGZ5MG1wcWVtQnRYZ1FUZlNXUFFiVTMzMk5NMD06OjJNSTlZY2F0bFE5elcxQmg"
+ },
+ {
+  "player": "ALUCARD(BETA)",
+  "fansub": "Arcadia-BD",
+  "mask": "/player/eCtxeFBBZlhST1dzaThVZ3o1eXVDckZuaEdBT0NrMHhQM3hxV1dKcXRSdz06OnNoU0tXQmFCYTk4VkxHYXY"
+ },
+ {
+  "player": "ALUCARD(BETA)",
+  "fansub": "AYS",
+  "mask": "/player/UEozcERtRFdJRWhBdTNTQkx2SGgyakVpc25zOVJyU3NJb1FxaU5TVlo4OD06OkFuRnRSMFVLaWxDYjRWcHg"
+ },
+ {
+  "player": "ALUCARD(BETA)",
+  "fansub": "NepentheSubs",
+  "mask": "/player/ZWYrMDlwWXE4aDV3ZzBaMXozZE5iWnVTeVZnbFpJYlQzdHFKOXo2OCt3MD06OkF0MkFNSVNlYlR4T2JsNEk"
+ },
+ {
+  "player": "ALUCARD(BETA)",
+  "fansub": "Pijamal\u0131 Koi",
+  "mask": "/player/cm0vSjJXVUo3QXJZamdSNjJwRm8zSzNTMnpSZzZXTlg5WGpIWFVKUndnYz06OnNYYUlZQ2otYWJQNVpRbGQ"
+ },
+ {
+  "player": "ALUCARD(BETA)",
+  "fansub": "PuzzleSubs",
+  "mask": "/player/K09NeS9RV0ZKUEtPMGdBeXR1TndYQ0xDcldpUDFDS0VpYlZJREwzKysxRT06OmpJanpJaTdYOG5DM2VtNzQ"
+ }
+]
