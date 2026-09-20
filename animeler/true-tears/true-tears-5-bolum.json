@@ -1,0 +1,48 @@
+[
+ {
+  "player": "MAIL",
+  "path": "ajax/videosec&b=MStYbEwrRU41d081OXUvY3N5dzNydz09OjpfTkZZenVCcjNHSVMyUmpt&v=dTZKYURuenYwQStHL0tId2tKMVQxdz09OjpYRHRub24yTTNEdkVOQk8y&f=WDhSQTRJSjYvZ3IrNldXRUlnRCszUT09OjpUNnduLUlENml1QzhiNEhI",
+  "fansub": "AnimeOU",
+  "url": "https://my.mail.ru/video/embed/7571497515682366334"
+ },
+ {
+  "player": "ODNOKLASSNIKI",
+  "path": "ajax/videosec&b=T1NrU3cydEFzRzhPN2pNSjZnd3ZhUT09OjpnLVJ2LUZFcGtxYlpTMlJn&v=Yk12NWdsVDR3bFNZSnMyRnkzM0hMUT09OjpTVkgzaUxOTHFyYU9HcUE2&f=MzVhVjFMRTVUU0NEazd4VldPdWhiZz09Ojp4eElLRG9kSWZrbVl5QUdS",
+  "fansub": "AnimeOU",
+  "url": "https://odnoklassniki.ru/videoembed/16982936169"
+ },
+ {
+  "player": "ODNOKLASSNIKI",
+  "path": "ajax/videosec&b=VEVNZFdrbWJuSG5LRnRyOHgxMWphdz09OjoxcVFZcV9FVEp4YXZRR1Fi&v=Sll1aHp4cmdGNGQ5K1hVK09oUFo1UT09Ojp5V2I2cFQ5UEJ1X1NyMFQ4&f=VEJVVXh1R1ZlcFNSTDNXalcwcktZQT09Ojo0S3FyQV94WkRoRFVocHdX",
+  "fansub": "AnimeOU",
+  "url": "https://odnoklassniki.ru/videoembed/2626804976240"
+ },
+ {
+  "player": "SENDVID",
+  "path": "ajax/videosec&b=bnNiWnNiVGY4NUNMOERoVlptY1l4UT09Ojp3ZjFRYUl1WkM1TlA0aTlt&v=a3BiaEw0UEw0QmMxVnd1UGRjYVQzQT09OjpmdUM4WlN5cE81Z1d1anA5&f=OW4rWnk0VzV5QzMrQy95NHVZNC85Zz09Ojo1VGh6ZHdIQUpuaDlIV01m",
+  "fansub": "AnimeOU",
+  "url": "https://sendvid.com/embed/1vlt1ri6"
+ },
+ {
+  "player": "STREAMSB",
+  "path": "ajax/videosec&b=NDVIc3JwRURqLzVKSkh6SFphMlpHUT09OjpXcUR1UjBwZzNlN3BRMDFC&v=NTAxaTM2MUhKYmhpVUtyUzR6WW1WZz09OjozY1dYV2dJbXlmYXUwU1dO&f=ZDJrbEpsWi93TWxPUTRZSm92U2dwQT09Ojptc0VaZm1uSGxjRGtYNEg3",
+  "fansub": "AnimeOU",
+  "url": "https://sbfast.com/embed-apcl7oeo3mvd.html"
+ },
+ {
+  "player": "VUDEA",
+  "path": "ajax/videosec&b=eTJnbUgxUVdHODhuMEF2UkswMkxNdz09OjphblU2cVcwQXk4anNaRXJt&v=aElOcTYxNG90SDc2ekNIdWlsVHgrZz09OjozQ2VtMmx4QTdqOEVhc1dy&f=UmtlMmR3WVJzZmdqOFBwemZqZ3Y5Zz09OjpXaFVaSkQtTEMxak1qTmdk",
+  "fansub": "AnimeOU",
+  "url": "https://vudeo.io/embed-2knhoe374d20.html"
+ },
+ {
+  "player": "ALUCARD(BETA)",
+  "fansub": "AnimeOU",
+  "mask": "/player/OGZtNHRjVWpVZEZDcGNZQ240ZXl4MzlaOUo4SWFCV3ZxTjRlUytkTFUrQT06OlhwdWZ4NnlSVThXVjZTQmw"
+ },
+ {
+  "player": "ALUCARD(BETA)",
+  "fansub": "Varsay\u0131lan",
+  "mask": "/player/TCsvS2JMQ0VsUXZpcGorbWNXRElMYThvblBzamN0akhWL1o3SUNaTVJCaz06OnBHeDBadFZaMkxaM3pMVk4"
+ }
+]

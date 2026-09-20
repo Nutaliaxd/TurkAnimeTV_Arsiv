@@ -1,0 +1,85 @@
+[
+ {
+  "player": "AMATERASU(BETA)",
+  "path": "ajax/videosec&b=Y2VleXpobUdVVFBLVXBmc3VzNjY5dz09OjpOeXVRRzd2dHBrTmRkVnhz&v=b29uOUdWM1UyMkRuQ3JTWStMUU9OQT09OjpreEt4S1JVRjFMd1ZSRXBQ&f=SFpzNmZVMytYVVd4ZVBOb2NlSTVaZz09OjoyM2pNRVZxSTRFSUNjZmow",
+  "fansub": "AMT",
+  "mask": "/player/dUNZNnpuM2tLdTNHUTY4ZGVST1VKSHdTM3c5cmFNTDBkNmJIWHpSdE9OND06OmdJYTJERnk5dlRsNlJ2MjY"
+ },
+ {
+  "player": "BANKAI(BETA)",
+  "path": "ajax/videosec&b=aXNxcWxrYVhOTENvUWh4emN1MURhQT09OjoxbnZ0R1cyS3lLbXhDUkZ1&v=UHR2KzJHdVNYaUV2NDFZMytQUnBoZz09OjpSclJJNTFvZ2dVeTVOVkpP&f=bTRQNjB5MEM5TFBXK0s5ZFJ3RVdodz09Ojo4Q0I1WW9nQnh2bU1LY3dO",
+  "fansub": "AMT",
+  "mask": "/player/WlJ2ZFUyQWZMd1l6NVhhaEtBTzFCNklCVDdmYnlIWDdxamhWUEZoZTFUbnR1UzZRMWZaUmVCTW9hR1NuZjFPQzo6TU0zQVo0ZWZmUUNXV3k3bA"
+ },
+ {
+  "player": "GDRIVE",
+  "path": "ajax/videosec&b=dXM4citQV0pRSzBwSW1xWFp4Q3h1dz09Ojo3S29FU2lpbDcxUm1paUZm&v=ZndNWTBWelBGUDQzOWVDaXZZdWhrUT09OjpJZHhGanNKR0xIZ1dVY3lV&f=S2IyQnJNT0VERWR2NG8wK1JtMDB2dz09Ojp6U214ajVlX2FCb19TR2dV",
+  "fansub": "AMT",
+  "url": "https://drive.google.com/file/d/1pCfUuy0DRH65t6VFjy3ID3dDTjM8u9Tg/preview"
+ },
+ {
+  "player": "MAIL",
+  "path": "ajax/videosec&b=cFJweC8wZXlEdjVWaThOcVJHZnUydz09Ojpja2RKclY2b2FKUVlCSVBD&v=WlZzbVZ4RjY0cnd2bUNsS0w1QjJFZz09OjpXQXFWTEZFeGVtVkpwQWFx&f=WmtqRWVLTVJDdkZsTUtUZkVZRDlaZz09OjpmbHViQ1JMRG1Bbi1rUWNs",
+  "fansub": "AMT",
+  "url": "https://my.mail.ru/video/embed/7370103204933015137"
+ },
+ {
+  "player": "MAIL",
+  "path": "ajax/videosec&b=OGhTbEJqK2xDTkVkTVpXZ0U5aHFHQT09Ojo1ZTJNMHVLQ0pvNUtOYVU3&v=emdBZEZKSzVOZThWYi9QNmpXTXFSUT09Ojp6Zjg1b1g1RGxRUlFLSHJT&f=M21HeUdpaHFLYkhqeTZiaDNJOEs3dz09Ojo0dWgxempuY0NsOHlkdUtq",
+  "fansub": "AMT",
+  "url": "https://videoapi.my.mail.ru/videos/embed/bk/schneizel/_myvideo/660.html"
+ },
+ {
+  "player": "ODNOKLASSNIKI",
+  "path": "ajax/videosec&b=TWdzTW14TitOM0R0SHFKS1RaRUpQQT09OjpMOERMSExhczc4SWF1NVFr&v=MGlOTEJPUFg4YjBUUWo4VkNkeEJvUT09OjpFMThtaVFGOW05c2hGVnVs&f=ekFLeXRjSzczNDhkUjRGbXB1VEFCQT09OjpaNzFHWk9GTDhQOS1zRDM5",
+  "fansub": "AMT",
+  "url": "https://odnoklassniki.ru/videoembed/2431645125341"
+ },
+ {
+  "player": "ODNOKLASSNIKI",
+  "path": "ajax/videosec&b=cktFSVljSS9hRVN4SXh2VGNJS0ZqQT09Ojp6d1Vad1BYWkZuS0swdzct&v=eWt6ZmxheE5OVlFOQ0cxS1VRVktEQT09OjpteVI4ZkdYSjRTM2VDQVot&f=WmdyUSt2SGwwSGRRMS9ONk5XU1hVdz09Ojo1aTZZRkZiQzJHY0RFSUlZ",
+  "fansub": "AMT",
+  "url": "https://odnoklassniki.ru/videoembed/88042244839"
+ },
+ {
+  "player": "SIBNET",
+  "path": "ajax/videosec&b=S05XWHVDQ2ZZaDdsN09vc1FMakFJQT09OjpDdVhYN0NRUHVBRnY1Q05u&v=d3FHN2Y2bDdlV3V0cGt3aHJHSXhUUT09OjpmaHVVZVp5ZzloUFFSOXRH&f=ZkdYUnNwalJpQjJocFF1Z096ZlE1Zz09OjpneTAwSm5IMXVnVkh4WTE1",
+  "fansub": "AMT",
+  "url": "https://video.sibnet.ru/shell.php?videoid=2639448"
+ },
+ {
+  "player": "VK",
+  "path": "ajax/videosec&b=VTE0VXFFZGthd1JUVWIwVkxpeHpCUT09Ojp1NzhmSnVJYUJfTVNjQkV0&v=NXhrSnpRVVVEMlVDUzhpSFhBRTdiUT09OjpzcVJBY29JR2ZUdW8zUXlt&f=RitmQnd5UFBUL3AveHJWL3JnRnAxQT09OjpvcWNmMV9ueFlHR3luR1V3",
+  "fansub": "AMT",
+  "url": "https:https://href.li/?https://vk.com/video_ext.php?oid=201414500&id=167547916&hash=ae733c8677595274&hd=1"
+ },
+ {
+  "player": "VK",
+  "path": "ajax/videosec&b=S3BhWFdUL2hsQWhrL1dWTE5WOWxadz09OjpLSXdCcGpCTWc1LW56aUY1&v=NjZYVUU1c1U2MVdTZlBZVVoxSE1IUT09OjpDT2pGcXdFMTZTRHRLQzIw&f=bFhyTEpFaEV4bXFXS3RtR0VjUmE5Zz09OjpqTlR2M0NGS3lFU3RTdXdW",
+  "fansub": "AMT",
+  "url": "https:https://href.li/?https://vk.com/video_ext.php?oid=282767151&id=456239153&hash=162d4cf789266a11&hd=1"
+ },
+ {
+  "player": "CLONE",
+  "path": "ajax/videosec&b=eDBOd0lhNkJERSt2RXJMU1Z4RWtMUT09OjpmbjJYSUJITnBHZHZMM1Ru&v=R3hzbFNrbWFIRG8veFJod1VDcm1OZz09OjpyNHV2cUh6M0pRTmpmYnZ6&f=WllicUc1b0lYbTRjYXhLQ2tsSmRDZz09OjoySlVXRkF1UHZjZnJHMjJW",
+  "fansub": "AMT",
+  "url": "https://short.icu/?v=yX4gD8os3"
+ },
+ {
+  "player": "MP4UPLOAD",
+  "path": "ajax/videosec&b=c09MKzZUc2ZsSHl3dWgyNXNqNmV6UT09Ojp1RG9MR2pUUzRPTXlyLUVv&v=RzdOWFd1WHRwNmRRNzlFRk0xa1kxdz09Ojo3SF9oTURieFE4TDRjUm5L&f=U1docklOeis2S1YwQTlwcWJvV3BoQT09OjprUmtjT0NBVjZDS3dMM1R5",
+  "fansub": "AMT",
+  "url": "https://www.mp4upload.com/embed-yx987go7gj27.html"
+ },
+ {
+  "player": "VUDEA",
+  "path": "ajax/videosec&b=TnJOZlBleWRmVHgyRmJOQXZzeS8vUT09Ojo5dzZRTFcxUGIxdFhUR3VR&v=d3hqRERwVkk4T2lmdWxPaDk1K0grdz09OjpxX09lS3dCR3I3bnFpd1c0&f=eGZUd2FCU3g0RDl1RXMyNzhUbGo3UT09OjppN3Rkb3h3eHRKS3FrOGZW",
+  "fansub": "AMT",
+  "url": "https://vudeo.io/embed-bplovust8ib2.html"
+ },
+ {
+  "player": "ALUCARD(BETA)",
+  "fansub": "AMT",
+  "mask": "/player/a3orY0dsT0g0eVlHOTBhUGsrcUY3dldjVFhkVGdaR2NFbnhCOXE2TXMxQT06OjJZbXhOaE5OUHVNd1hJd2U"
+ }
+]
