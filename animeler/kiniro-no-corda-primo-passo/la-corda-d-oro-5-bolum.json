@@ -1,0 +1,60 @@
+[
+ {
+  "player": "MAIL",
+  "path": "ajax/videosec&b=U20vOEpEL0gzdFI4bWptSGFicmxIUT09Ojp4R3lhQmxtUENTaG80TmRr&v=MThsc0NkRk9ES0NrL3NXaUZlSGRXdz09OjpxazZQUUphdGJuUkVORV9Z&f=Q3Jpc0JyR1lFYWNXYWJkaWk1YUdFZz09OjpibFc4Qzd4cnI4UlFSMXVJ",
+  "fansub": "AnimeOU",
+  "url": "https://videoapi.my.mail.ru/videos/embed/mail/yunusemresuser/_myvideo/202.html"
+ },
+ {
+  "player": "MAIL",
+  "path": "ajax/videosec&b=RGJKbmVwbkZDZUhUNGV5Ni9BdERzQT09OjpGdS05RHdncVlsTHpkVFBN&v=Lzk2eTRhQmh0U1FsYmcwdGlMR291Zz09OjpwUVFQU3Z1cjJPaXVRdUpD&f=Zk5aUmZpUnJhOGw0VHNPdFA5K2M5UT09Ojp3ejdZdHlwalpfaFRwMVVM",
+  "fansub": "AnimeOU",
+  "url": "https://my.mail.ru/video/embed/9165530183271189236"
+ },
+ {
+  "player": "ODNOKLASSNIKI",
+  "path": "ajax/videosec&b=dDRxeloycTg3U1pOTENPR0kzeEhEUT09OjpFWmY1YkstejMwd0NiaWg0&v=OEp2N0pQdkxoQ1hWS3dSTTBDSWpvdz09OjpQMnZMdmJVQ3oxSjJDSEl0&f=S2NWZnA3MmJrZjZteE5zWDJmeDBnQT09OjpDSkxFcWpNLVE1TjZlTlkt",
+  "fansub": "AnimeOU",
+  "url": "https://odnoklassniki.ru/videoembed/2214270929520"
+ },
+ {
+  "player": "SIBNET",
+  "path": "ajax/videosec&b=dys2dVdvQmx4RWlrZzVUNGlrbm5uZz09OjpvelZkeHhvUnF1SHdVVjRS&v=Wm96YUY0ZUVhSXk1MjdtaFRwY29wdz09OjpBM082c2xsVUlOclVlMWhq&f=OHpCWElBZG15TkprSzV6Q2JZdUFRQT09OjpKX3lieUdKLVpNWVhLZTlD",
+  "fansub": "AnimeOU",
+  "url": "https://video.sibnet.ru/shell.php?videoid=2893336"
+ },
+ {
+  "player": "VK",
+  "path": "ajax/videosec&b=UEZnRk9IUCtJOUZsTHowaWhlZHVZZz09OjpLMlNvb05ZQUhKeU1FX1F0&v=bkN4QllEU01CbHU0YkdDK3lXTHRwQT09OjpRamM4NzM5UDNTNzA1ajVs&f=OE5DQ2Jzc3hSbWhHVTFhM2EvanFxZz09OjpXYTBoOG8ybFFMNW5Ea2JU",
+  "fansub": "AnimeOU",
+  "url": "https:https://href.li/?https://vk.com/video_ext.php?oid=398786044&id=456239054&hash=817a83535297b9be&hd=1"
+ },
+ {
+  "player": "VUDEA",
+  "path": "ajax/videosec&b=bTdZYllPNXVaanJhK29wNjBmc1NQUT09OjpreEl3V0ppZkZlNklfYWxK&v=VGVmSVNlSUlHbDA4WTVscW9uYVFldz09OjpyWmtVY3hOcVF3RmFXN3Ut&f=TVpVRmYrSHlLUFc3cUpBL0JOZUFXZz09OjpiLWNBWF9ZNWNwX0ZaS2tG",
+  "fansub": "AnimeOU",
+  "url": "https://vudeo.io/embed-ta3gmhdqnwlo.html"
+ },
+ {
+  "player": "AMATERASU(BETA)",
+  "path": "ajax/videosec&b=SVVhY2hRckR1OHRySVdZS3NDZjEvQT09Ojprd05nbG5jY1FQdzNfUVN3&v=eWN6a2MvUjlBMGxuUXAvK0lwS2tOUT09OjoydzZlUHFqRnBXa2VROEhi&f=OEZJcTdoQW13Q0JNV2RldXRNd2U5QT09OjotV3RyMmJBNW1hb0pESEZT",
+  "fansub": "Varsay\u0131lan",
+  "mask": "/player/dFdwQmZMZlErQlB1T3JMYWxIcDNKTGZuYnRUYzUvdEF1L2VhU244VnhTYz06OlFrUW92OFlLT0d5eER1ZlI"
+ },
+ {
+  "player": "SIBNET",
+  "path": "ajax/videosec&b=VkxCYnFqeWY1cHVIYnVVSElPblkzQT09OjppRnhMZTFaSHUxN0V5bGJy&v=c3VoYUdqQ3M2QTcrWVplOFQ0SXlwZz09OjpOZUtraEo3RTJacVE2VXhn&f=SzM3YXVqVlIrS1ZNbWpsNXhUT0tHZz09OjpfbzhtbldrV2pLRHlsN2tF",
+  "fansub": "Varsay\u0131lan",
+  "url": "https://video.sibnet.ru/shell.php?videoid=1094178"
+ },
+ {
+  "player": "AMATERASU(BETA)",
+  "fansub": "AnimeOU",
+  "mask": "/player/cm9SRlhUWklTSS9xZmZKakhmVE1TN3BpNWoraXh2R2RiQWh0aWJxcnZIRT06OkhuYmZUMXpac3dVVlZXM0E"
+ },
+ {
+  "player": "ALUCARD(BETA)",
+  "fansub": "Varsay\u0131lan",
+  "mask": "/player/VEdkdnh1czdFQk9jYitnVVJkWVpPU3RZakN4ZFJvL215ZE5maWMvdGtyWT06OjF0MkVoYjdCNnhoSTVTU1I"
+ }
+]
