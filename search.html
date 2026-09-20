@@ -4,11 +4,36 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0d1315">
-<link rel="icon" href="data:,">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://graphql.anilist.co"><link rel="preconnect" href="https://s4.anilist.co">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<title>TürkAnime Arşiv — İzle</title>
+<title>TürkAnime Arşiv — Anime izle, bölümler ve oynatma linkleri</title>
+<meta name="description" content="6.000'den fazla animenin bölümlerini ve oynatma linklerini tek yerde bul. Ara, kategorilere göz at, günün önerisini keşfet.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="color-scheme" content="dark">
+<meta name="application-name" content="TürkAnime Arşiv">
+<meta name="apple-mobile-web-app-title" content="TürkAnime">
+<link rel="canonical" href="https://SITE-ADRESIN.com/search.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TürkAnime Arşiv">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="TürkAnime Arşiv — Anime izle, bölümler ve oynatma linkleri">
+<meta property="og:description" content="6.000'den fazla animenin bölümlerini ve oynatma linklerini tek yerde bul. Ara, kategorilere göz at, günün önerisini keşfet.">
+<meta property="og:url" content="https://SITE-ADRESIN.com/search.html">
+<meta property="og:image" content="https://SITE-ADRESIN.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TürkAnime Arşiv">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TürkAnime Arşiv — Anime izle, bölümler ve oynatma linkleri">
+<meta name="twitter:description" content="6.000'den fazla animenin bölümlerini ve oynatma linklerini tek yerde bul. Ara, kategorilere göz at, günün önerisini keşfet.">
+<meta name="twitter:image" content="https://SITE-ADRESIN.com/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"TürkAnime Arşiv","url":"https://SITE-ADRESIN.com/search.html","inLanguage":"tr","description":"6.000'den fazla animenin bölümlerini ve oynatma linklerini tek yerde bul. Ara, kategorilere göz at, günün önerisini keşfet."}</script>
 <style>
 :root{--bg:#0d1315;--bg2:#121b1e;--card:#162226;--card2:#1e2f34;--line:#2a3e44;--tx:#eef4f2;--tx2:#a1b3b1;--tx3:#6f8582;--ac:#ff8fb1;--ac2:#ffc2d4;--ok:#57d9a3;--bad:#ff6b7a;--warn:#ffcb5c;--rad:14px;--fd:"Bricolage Grotesque",system-ui,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -244,6 +269,133 @@ h1.anime-title{font-family:var(--fd);font-size:28px;letter-spacing:-.5px}
   .bnav a:hover{text-decoration:none;color:var(--ac)}
   .bnav i{font-size:18px}
 }
+
+.poster img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .35s}
+.poster img.on{opacity:1}
+.pn{z-index:1;background:rgba(0,0,0,.62)}
+.gchips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.gchip{color:var(--ac);border-color:rgba(255,143,177,.3)}
+.ainfo{margin-top:10px}
+.syn{margin-top:10px;font-size:13.5px;line-height:1.55;color:var(--tx2);max-width:70ch}
+.syn small{display:block;margin-top:4px;color:var(--tx3);font-size:11.5px}
+.foot{max-width:1180px;margin:0 auto;padding:0 16px 28px;color:var(--tx3);font-size:12.5px}
+@media (max-width:720px){
+  .feat{flex-direction:row;flex-wrap:wrap;align-items:flex-start;gap:14px;padding:14px}
+  .fposter{width:36%}
+  .fposter .poster{aspect-ratio:3/4}
+  .fposter .pl{font-size:80px;bottom:-8px}
+  .ftext{flex:1 1 0;padding:0}
+  .ftext h1{font-size:22px;margin:6px 0 10px}
+  .facts .btn{flex:1 1 100%;justify-content:center}
+}
+
+/* ===== kompakt yoğunluk: tüm ölçüleri küçültür ===== */
+/* İnce ayar: --zoom tüm siteyi ölçekler (1 = normal, 0.9 = %10 küçük, 0.8 = %20 küçük) */
+:root{--zoom:.9}
+html{zoom:var(--zoom)}
+html,body{font-size:14px;line-height:1.5}
+.poster{container-type:inline-size;border-radius:10px}
+.pl,.fposter .pl,.aposter .pl{font-size:56px;font-size:56cqw;letter-spacing:-.05em;left:6cqw;bottom:-8cqw}
+.pn{top:6px;left:6px;padding:1px 8px;font-size:10.5px}
+.logo{font-size:17px;gap:8px}
+.logo i{font-size:20px}
+.searchbox{height:38px;padding:0 14px}
+#q{font-size:14px}
+.ibtn{width:38px;height:38px;font-size:14px}
+.kbd{font-size:10.5px}
+.crumb{font-size:12.5px;margin-bottom:12px;gap:5px}
+.btn{padding:6px 14px;min-height:34px;font-size:13px;gap:6px}
+.btn.sm{padding:4px 11px;min-height:28px;font-size:12px}
+.stats{gap:6px;margin:8px 0 4px}
+.stat{padding:2px 10px;font-size:12px}
+.pchip{font-size:11px;padding:1px 7px}
+.players-chips{gap:5px;margin-top:6px}
+.count-line{font-size:12.5px;margin:2px 0 12px}
+.card{gap:5px}
+.ct{font-size:12.5px;line-height:1.3}
+.cs{font-size:11px}
+.rail{gap:12px}
+.flabel{font-size:12.5px}
+.fmeta span{font-size:12px;padding:3px 10px}
+.facts{margin-top:14px;gap:8px}
+.gchips{margin-top:10px;gap:5px}
+.kats{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.kat{padding:12px 14px;min-height:80px;border-radius:12px}
+.kat i{font-size:17px}
+.kat b{font-size:14px}
+.kat small{font-size:11.5px}
+.az{gap:6px}
+.az a{width:34px;height:34px;font-size:12.5px;border-radius:8px}
+.controls{margin:12px 0;gap:8px}
+.tgl{padding:5px 10px;font-size:12px}
+.ep{padding:6px 12px;min-height:44px;margin-bottom:5px;border-radius:9px;gap:10px}
+.ep .no{font-size:12px;min-width:46px;padding:2px 6px}
+.ep .ea{font-size:13.5px}
+.opt{padding:9px 12px;margin-bottom:6px;border-radius:10px;gap:10px}
+.opt .pname{font-size:13.5px}
+.opt .fansub{font-size:12px}
+.tag{font-size:10.5px;padding:1px 6px}
+.badge{font-size:10.5px;padding:1px 8px}
+.fchip{padding:3px 11px;font-size:12px}
+.chiprow{margin:8px 0 2px;gap:6px}
+.chiprow .lbl{font-size:11.5px;min-width:56px}
+.fansub-chips{margin:8px 0;gap:6px}
+.pager{margin:14px 0;gap:5px}
+.pager button{min-width:34px;height:34px;font-size:12.5px}
+.jump{font-size:12.5px}
+.src{padding:8px 12px;gap:8px;margin-top:8px;font-size:12.5px}
+.copybtn{padding:4px 10px;font-size:11.5px}
+.mini{padding:3px 9px;min-height:28px;font-size:11px}
+.note,.errbox{padding:9px 12px;font-size:12.5px;margin:10px 0}
+.note-soft{font-size:12px;padding:6px 10px}
+.pmeta{font-size:12.5px;margin:10px 0 4px}
+.pmeta .pname{font-size:15px}
+.syn{font-size:12.5px;margin-top:8px}
+.empty{padding:30px 16px}
+.foot{font-size:11.5px;padding-bottom:20px}
+@media (min-width:721px){
+  .wrap,.top-in{max-width:1120px}
+  .top-in{padding:8px 16px;gap:10px}
+  main{padding:18px 0 50px}
+  h1.anime-title{font-size:22px}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:16px 12px}
+  .rail .card{width:124px}
+  .feat{gap:22px;padding:18px;border-radius:18px}
+  .fposter{width:150px}
+  .ftext h1{font-size:clamp(22px,3vw,32px);margin:6px 0 10px}
+  .sh{margin:28px 0 10px}
+  .sh h2{font-size:17px}
+  .aposter{width:110px}
+  .ahead{gap:14px}
+}
+@media (max-width:720px){
+  body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
+  .searchbox{height:40px}
+  #q{font-size:16px}
+  main{padding:14px 0 40px}
+  h1.anime-title{font-size:19px}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:14px 10px}
+  .rail .card{width:108px}
+  .feat{gap:12px;padding:12px}
+  .fposter{width:32%}
+  .ftext h1{font-size:19px;margin:4px 0 8px}
+  .btn{min-height:40px}
+  .mini{min-height:32px}
+  .pager button{min-width:38px;height:38px}
+  .sh{margin:22px 0 8px}
+  .sh h2{font-size:16px}
+  .aposter{width:80px}
+  .ahead{gap:12px}
+  .bnav a,.bnav button{padding:7px 0 6px;font-size:10.5px}
+  .bnav i{font-size:16px}
+}
+@media (max-width:720px){
+  #q{font-size:18px}
+  .btn{min-height:44px}
+  .mini{min-height:36px}
+  .pager button{min-width:42px;height:42px}
+  .ibtn{width:42px;height:42px}
+}
 </style>
 </head>
 <body>
@@ -261,7 +413,8 @@ h1.anime-title{font-family:var(--fd);font-size:28px;letter-spacing:-.5px}
   </div>
 </header>
 
-<div class="wrap"><main id="app"></main></div>
+<div class="wrap"><main id="app"><h1 class="anime-title">TürkAnime Arşiv</h1><p class="count-line">Anime bölümleri ve oynatma linkleri yükleniyor…</p></main></div>
+<footer class="foot">Kapak görselleri ve tür bilgileri <a href="https://anilist.co" target="_blank" rel="noopener">AniList</a> üzerinden alınır.</footer>
 <nav class="bnav" aria-label="Alt menü">
   <a href="#/ara"><i class="fa-solid fa-house"></i>Ana sayfa</a>
   <button id="bSearch"><i class="fa-solid fa-magnifying-glass"></i>Ara</button>
@@ -612,7 +765,7 @@ function hueOf(s){ let h=0; for (let i=0;i<s.length;i++) h=(h*31+s.charCodeAt(i)
 function initials(t){ const w=String(t||'?').replace(/[^\p{L}\p{N} ]/gu,' ').trim().split(/\s+/); return ((w[0]||'?')[0]+((w[1]||'')[0]||'')).toUpperCase(); }
 function poster(a){
   const h = hueOf(a.slug), t = a.baslik||a.slug;
-  return `<div class="poster" style="--h:${h};--g:${(h+35)%360}"><span class="pl">${esc(initials(t))}</span>${a.eps!=null?`<span class="pn">${a.eps} bölüm</span>`:''}</div>`;
+  return `<div class="poster" data-slug="${esc(a.slug)}" style="--h:${h};--g:${(h+35)%360}"><span class="pl">${esc(initials(t))}</span>${a.eps!=null?`<span class="pn">${a.eps} bölüm</span>`:''}</div>`;
 }
 function card(a){
   return `<a class="card" href="#/anime/${encodeURIComponent(a.slug)}">${poster(a)}<span class="ct">${esc(a.baslik||a.slug)}</span><span class="cs">${esc(a.top.slice(0,2).join(', ')||'kaynak yok')}</span></a>`;
@@ -669,6 +822,11 @@ function landingHtml(){
 function bindLanding(){
   const d = $('#dailyNext'); if (d) d.onclick = ()=>{ dailyShift++; renderHome(); };
   const r = $('#recNext'); if (r) r.onclick = ()=>{ recShift++; renderHome(); };
+  const hp = document.querySelector('.fposter .poster');
+  if (hp) alDetail(hp.dataset.slug).then(m=>{
+    const f = document.querySelector('.feat .fmeta');
+    if (m && f && document.querySelector('.fposter .poster')===hp && !document.querySelector('.feat .gchips')) f.insertAdjacentHTML('afterend', gchipsHtml(m));
+  });
 }
 let listPage = 1, listKey = '';
 function renderList(type, val){
@@ -686,6 +844,7 @@ function renderList(type, val){
   const pages = Math.max(1, Math.ceil(arr.length/PAGE)); if (listPage>pages) listPage = pages;
   const slice = arr.slice((listPage-1)*PAGE, listPage*PAGE);
   document.title = ad+' — TürkAnime Arşiv';
+  metaSet(`${ad} kategorisindeki animeleri izle: bölümler ve oynatma linkleri TürkAnime Arşiv'de.`);
   appEl().innerHTML = `
     <div class="crumb"><a href="#/ara">Ana sayfa</a><span class="sep"><i class="fa-solid fa-chevron-right"></i></span><span>${esc(ad)}</span></div>
     <h1 class="anime-title">${esc(ad)}</h1>
@@ -694,6 +853,113 @@ function renderList(type, val){
   appEl().querySelectorAll('.pager button[data-pg]').forEach(b=>{
     b.onclick = ()=>{ listPage = +b.dataset.pg; renderList(type, val); window.scrollTo(0,0); };
   });
+}
+
+/* ============ AniList: kapak, tür, puan (public GraphQL API, anahtar gerekmez) ============ */
+const DEF_TITLE = document.title;
+const DEF_DESC = document.querySelector('meta[name="description"]').content;
+const OG_IMG = document.querySelector('meta[property="og:image"]').content;
+function metaSet(desc, img){
+  const set = (sel, v)=>{ const m = document.querySelector(sel); if (m && v) m.setAttribute('content', v); };
+  set('meta[name="description"]', desc); set('meta[property="og:description"]', desc); set('meta[name="twitter:description"]', desc);
+  set('meta[property="og:image"]', img); set('meta[name="twitter:image"]', img);
+}
+function ldSet(o){
+  let e = document.getElementById('ld-dyn');
+  if (!o){ if (e) e.remove(); return; }
+  if (!e){ e = document.createElement('script'); e.type = 'application/ld+json'; e.id = 'ld-dyn'; document.head.appendChild(e); }
+  e.textContent = JSON.stringify(o);
+}
+const AL_URL = 'https://graphql.anilist.co', AL_KEY = 'tk_al1';
+let AL = {}, alCool = 0, alTok = 0, infoFor = null;
+const alPending = new Set(), DETAIL = new Map(), ANIME_BY = new Map();
+try{ AL = JSON.parse(localStorage.getItem(AL_KEY)||'{}') || {}; }catch(e){ AL = {}; }
+const alSave = debounce(()=>{ try{ localStorage.setItem(AL_KEY, JSON.stringify(AL)); }catch(e){ try{ localStorage.removeItem(AL_KEY); }catch(_){} } }, 800);
+function titleOf(slug){
+  if (!ANIME_BY.size) ANIME.forEach(a=>ANIME_BY.set(a.slug, a));
+  const a = ANIME_BY.get(slug);
+  return (a && a.baslik) || String(slug).replace(/-/g,' ');
+}
+const alPost = (query, variables)=> fetch(AL_URL, {method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body:JSON.stringify({query, variables})});
+/* kapaklar: 10 başlığı tek istekte (alias) sorgular; sonuç localStorage'da kalır */
+async function alBatch(slugs){
+  const vars = {}, parts = [];
+  slugs.forEach((s,i)=>{ vars['s'+i] = titleOf(s); parts.push(`m${i}: Media(search:$s${i}, type:ANIME, isAdult:false){id coverImage{large color}}`); });
+  const r = await alPost(`query(${slugs.map((_,i)=>`$s${i}:String`).join(',')}){${parts.join(' ')}}`, vars);
+  if (r.status===429){ alCool = Date.now()+((+r.headers.get('Retry-After')||60)*1000); throw new Error('limit'); }
+  const j = await r.json();
+  if (!j.data) throw new Error('yanıt yok');
+  slugs.forEach((s,i)=>{ const m = j.data['m'+i]; AL[s] = m && m.coverImage ? [m.coverImage.large, m.coverImage.color||'', m.id] : 0; });
+  alSave();
+}
+async function alDetail(slug){
+  if (DETAIL.has(slug)) return DETAIL.get(slug);
+  const p = (async()=>{
+    const r = await alPost('query($s:String){Media(search:$s,type:ANIME,isAdult:false){id genres averageScore seasonYear description(asHtml:false) coverImage{large extraLarge color}}}', {s:titleOf(slug)});
+    const j = await r.json(), m = j.data && j.data.Media;
+    if (m && m.coverImage && !AL[slug]){ AL[slug] = [m.coverImage.large, m.coverImage.color||'', m.id]; alSave(); }
+    return m || null;
+  })().catch(()=>null);
+  DETAIL.set(slug, p);
+  return p;
+}
+const GTR = {Action:'Aksiyon',Adventure:'Macera',Comedy:'Komedi',Drama:'Drama',Fantasy:'Fantastik',Horror:'Korku','Mahou Shoujo':'Büyülü kız',Mecha:'Mecha',Music:'Müzik',Mystery:'Gizem',Psychological:'Psikolojik',Romance:'Romantik','Sci-Fi':'Bilim kurgu','Slice of Life':'Günlük yaşam',Sports:'Spor',Supernatural:'Doğaüstü',Thriller:'Gerilim',Ecchi:'Ecchi'};
+function gchipsHtml(m){
+  const c = [];
+  if (m.averageScore) c.push(`<span class="pchip gchip"><i class="fa-solid fa-star"></i> ${(m.averageScore/10).toFixed(1)}</span>`);
+  if (m.seasonYear) c.push(`<span class="pchip gchip">${m.seasonYear}</span>`);
+  (m.genres||[]).slice(0,4).forEach(g=>c.push(`<span class="pchip gchip">${esc(GTR[g]||g)}</span>`));
+  return c.length ? `<div class="gchips">${c.join('')}</div>` : '';
+}
+function synText(m){ const t = String(m.description||'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim(); return t.length>340 ? t.slice(0,337)+'…' : t; }
+function alPaint(){
+  document.querySelectorAll('.poster[data-slug]:not([data-i])').forEach(p=>{
+    const e = AL[p.dataset.slug]; if (!e) return;
+    p.dataset.i = 1;
+    const img = new Image();
+    img.alt = ''; img.decoding = 'async'; img.referrerPolicy = 'no-referrer';
+    img.onload = ()=> img.classList.add('on'); img.onerror = ()=> img.remove();
+    img.src = e[0]; p.appendChild(img);
+  });
+  const at = document.querySelector('.atxt');
+  if (at && infoFor && !at.querySelector('.ainfo') && (location.hash||'').startsWith('#/anime/'+encodeURIComponent(infoFor.slug))){
+    const t = synText(infoFor.m);
+    at.insertAdjacentHTML('beforeend', `<div class="ainfo">${gchipsHtml(infoFor.m)}${t?`<p class="syn">${esc(t)}<small>Özet: AniList (İngilizce)</small></p>`:''}</div>`);
+  }
+}
+async function alHydrate(){
+  alPaint();
+  const tok = ++alTok;
+  if (Date.now()<alCool) return;
+  const need = [...new Set([...document.querySelectorAll('.poster[data-slug]:not([data-i])')].map(p=>p.dataset.slug))]
+    .filter(s=> !(s in AL) && !alPending.has(s));
+  for (let i=0; i<need.length; i+=10){
+    if (tok!==alTok) return;
+    const grp = need.slice(i, i+10);
+    grp.forEach(x=>alPending.add(x));
+    try{ await alBatch(grp); }catch(e){ alCool = Math.max(alCool, Date.now()+30000); return; }
+    finally{ grp.forEach(x=>alPending.delete(x)); }
+    alPaint();
+    await new Promise(r=>setTimeout(r, 600));
+  }
+}
+async function enrichAnime(slug){
+  const t = titleOf(slug), a = ANIME_BY.get(slug), n = a ? a.eps : 0;
+  document.title = `${t} izle — TürkAnime Arşiv`;
+  metaSet(`${t} animesini izle: ${n?n+' bölüm, ':''}oynatma linkleri ve indirme komutları TürkAnime Arşiv'de.`);
+  const m = await alDetail(slug);
+  if (!m || !(location.hash||'').startsWith('#/anime/'+encodeURIComponent(slug))) return;
+  infoFor = {slug, m};
+  const syn = synText(m), g = (m.genres||[]).map(x=>GTR[x]||x);
+  const img = m.coverImage && (m.coverImage.extraLarge || m.coverImage.large);
+  metaSet(`${t}${g.length?' ('+g.slice(0,3).join(', ')+')':''} animesini izle: ${n?n+' bölüm, ':''}oynatma linkleri ve indirme komutları.`, img);
+  ldSet({'@context':'https://schema.org','@type':'TVSeries', name:t, numberOfEpisodes:n||undefined, genre:m.genres, image:img, description:syn||undefined, inLanguage:'ja'});
+  alPaint();
+}
+function initAniList(){
+  new MutationObserver(debounce(alHydrate, 120)).observe(appEl(), {childList:true});
+  new MutationObserver(()=>{ document.querySelectorAll('meta[property="og:title"],meta[name="twitter:title"]').forEach(m=>m.setAttribute('content', document.title)); })
+    .observe(document.querySelector('title'), {childList:true});
 }
 
 /* ============ anime sayfası ============ */
@@ -1055,7 +1321,7 @@ function showLoading(msg){
 function route(){
   const tok = ++routeToken;
   const h = location.hash||'';
-  document.title = 'TürkAnime Arşiv — İzle';
+  document.title = DEF_TITLE; metaSet(DEF_DESC, OG_IMG); ldSet(null);
   window.scrollTo(0,0);
   const mk = h.match(/^#\/(kategori|harf)\/([^/]+)/);
   if (mk){ renderList(mk[1], decodeURIComponent(mk[2])); return; }
@@ -1073,7 +1339,7 @@ function route(){
     if (tok!==routeToken) return;
     if (bolumId && player) renderPlayer(slug, data, bolumId, player, idx);
     else if (bolumId) renderOptions(slug, data, bolumId);
-    else { epPage = 1; renderAnime(slug, data); }
+    else { epPage = 1; renderAnime(slug, data); enrichAnime(slug); }
   }).catch(err=>{
     if (tok!==routeToken) return;
     appEl().innerHTML = `<div class="errbox"><b>${esc(slug)}</b> verisi yüklenemedi: ${esc(err.message)}<br>b/${esc(slug)}.js dosyası siteyle aynı klasörde olmalı.</div>`;
@@ -1102,6 +1368,7 @@ function randomAnime(){ const a = ANIME[Math.floor(Math.random()*ANIME.length)];
 document.querySelectorAll('.rnd').forEach(b=>{ b.onclick = randomAnime; });
 const bSearch = document.getElementById('bSearch');
 if (bSearch) bSearch.onclick = ()=>{ const h = location.hash||''; if (h && h!=='#' && h!=='#/' && !h.startsWith('#/ara')) location.hash = '#/ara'; window.scrollTo(0,0); qEl.focus(); };
+initAniList();
 route();
 pingServer();  // M7b: yardımcı sunucu varsa "çöz" butonları görünür olur
 </script>
