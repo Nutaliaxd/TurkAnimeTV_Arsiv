@@ -458,7 +458,7 @@ function hueOf(s){ let h=0; for (let i=0;i<s.length;i++) h=(h*31+s.charCodeAt(i)
 function initials(t){ const w=String(t||'?').replace(/[^\p{L}\p{N} ]/gu,' ').trim().split(/\s+/); return ((w[0]||'?')[0]+((w[1]||'')[0]||'')).toUpperCase(); }
 function poster(a){
   const h = hueOf(a.slug), t = a.baslik||a.slug;
-  return `<div class="poster" data-slug="${esc(a.slug)}" style="--h:${h};--g:${(h+35)%360}"><span class="pl">${esc(initials(t))}</span>${a.eps!=null?`<span class="pn">${a.eps} bölüm</span>`:''}<img alt="" loading="lazy" decoding="async" onload="this.classList.add('on')" onerror="this.remove()"></div>`;
+  return `<div class="poster" data-slug="${esc(a.slug)}" style="--h:${h};--g:${(h+35)%360}"><span class="pl">${esc(initials(t))}</span>${a.eps!=null?`<span class="pn">${a.eps} bölüm</span>`:''}</div>`;
 }
 function card(a){
   return `<a class="card" href="${animeUrl(a.slug)}">${poster(a)}<span class="ct">${esc(a.baslik||a.slug)}</span><span class="cs">${esc(a.top.slice(0,2).join(', ')||'kaynak yok')}</span></a>`;
@@ -492,72 +492,95 @@ function ldSet(o){
   if (!e){ e = document.createElement('script'); e.type = 'application/ld+json'; e.id = 'ld-dyn'; document.head.appendChild(e); }
   e.textContent = JSON.stringify(o);
 }
-/* AniList'ten kapak/tür/puan/özet doğrudan tarayıcıdan, canlı olarak istenir
-   (public GraphQL API, anahtar gerekmez). Build-time indirme/çevirme/AVIF
-   dönüştürme yok — sonuçlar yalnızca bu oturum için bellekte tutulur. */
-const AL_URL = 'https://graphql.anilist.co';
-const AL_QUERY = `query($s:String){ Media(search:$s, type:ANIME, isAdult:false){
-  averageScore seasonYear genres description(asHtml:false)
-  coverImage{ large extraLarge }
-} }`;
-const DETAIL = new Map(), ANIME_BY = new Map();
+const AL_URL = 'https://graphql.anilist.co', AL_KEY = 'tk_al1';
+let AL = {}, alCool = 0, alTok = 0, infoFor = null;
+const alPending = new Set(), DETAIL = new Map(), ANIME_BY = new Map();
+try{ AL = JSON.parse(localStorage.getItem(AL_KEY)||'{}') || {}; }catch(e){ AL = {}; }
+const alSave = debounce(()=>{ try{ localStorage.setItem(AL_KEY, JSON.stringify(AL)); }catch(e){ try{ localStorage.removeItem(AL_KEY); }catch(_){} } }, 800);
 function titleOf(slug){
   if (!ANIME_BY.size) ANIME.forEach(a=>ANIME_BY.set(a.slug, a));
   const a = ANIME_BY.get(slug);
   return (a && a.baslik) || String(slug).replace(/-/g,' ');
 }
+const alPost = (query, variables)=> fetch(AL_URL, {method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body:JSON.stringify({query, variables})});
+/* kapaklar: 10 başlığı tek istekte (alias) sorgular; sonuç localStorage'da kalır */
+async function alBatch(slugs){
+  const vars = {}, parts = [];
+  slugs.forEach((s,i)=>{ vars['s'+i] = titleOf(s); parts.push(`m${i}: Media(search:$s${i}, type:ANIME, isAdult:false){id coverImage{large color}}`); });
+  const r = await alPost(`query(${slugs.map((_,i)=>`$s${i}:String`).join(',')}){${parts.join(' ')}}`, vars);
+  if (r.status===429){ alCool = Date.now()+((+r.headers.get('Retry-After')||60)*1000); throw new Error('limit'); }
+  const j = await r.json();
+  if (!j.data) throw new Error('yanıt yok');
+  slugs.forEach((s,i)=>{ const m = j.data['m'+i]; AL[s] = m && m.coverImage ? [m.coverImage.large, m.coverImage.color||'', m.id] : 0; });
+  alSave();
+}
 async function alDetail(slug){
   if (DETAIL.has(slug)) return DETAIL.get(slug);
-  const p = fetch(AL_URL, {
-    method: 'POST',
-    headers: {'Content-Type':'application/json', 'Accept':'application/json'},
-    body: JSON.stringify({query: AL_QUERY, variables: {s: titleOf(slug)}})
-  }).then(r=> r.ok ? r.json() : null)
-    .then(j=> (j && j.data && j.data.Media) || null)
-    .catch(()=>null);
+  const p = (async()=>{
+    const r = await alPost('query($s:String){Media(search:$s,type:ANIME,isAdult:false){id genres averageScore seasonYear description(asHtml:false) coverImage{large extraLarge color}}}', {s:titleOf(slug)});
+    const j = await r.json(), m = j.data && j.data.Media;
+    if (m && m.coverImage && !AL[slug]){ AL[slug] = [m.coverImage.large, m.coverImage.color||'', m.id]; alSave(); }
+    return m || null;
+  })().catch(()=>null);
   DETAIL.set(slug, p);
   return p;
 }
-function coverOf(m){ return m && m.coverImage && (m.coverImage.large || m.coverImage.extraLarge) || null; }
-function loadCoverFor(posterEl){
-  const slug = posterEl.dataset.slug, img = posterEl.querySelector('img');
-  if (!img || img.src) return;
-  alDetail(slug).then(m=>{ const u = coverOf(m); if (u) img.src = u; });
-}
-function watchCovers(root){
-  (root||document).querySelectorAll('.poster[data-slug]').forEach(loadCoverFor);
-}
-new MutationObserver(muts=>{
-  for (const mu of muts) mu.addedNodes.forEach(n=>{
-    if (n.nodeType!==1) return;
-    if (n.matches && n.matches('.poster[data-slug]')) loadCoverFor(n);
-    if (n.querySelectorAll) n.querySelectorAll('.poster[data-slug]').forEach(loadCoverFor);
-  });
-}).observe(document.documentElement, {childList:true, subtree:true});
+const GTR = {Action:'Aksiyon',Adventure:'Macera',Comedy:'Komedi',Drama:'Drama',Fantasy:'Fantastik',Horror:'Korku','Mahou Shoujo':'Büyülü kız',Mecha:'Mecha',Music:'Müzik',Mystery:'Gizem',Psychological:'Psikolojik',Romance:'Romantik','Sci-Fi':'Bilim kurgu','Slice of Life':'Günlük yaşam',Sports:'Spor',Supernatural:'Doğaüstü',Thriller:'Gerilim',Ecchi:'Ecchi'};
 function gchipsHtml(m){
   const c = [];
   if (m.averageScore) c.push(`<span class="pchip gchip"><i class="fa-solid fa-star"></i> ${(m.averageScore/10).toFixed(1)}</span>`);
   if (m.seasonYear) c.push(`<span class="pchip gchip">${m.seasonYear}</span>`);
-  (m.genres||[]).slice(0,4).forEach(g=>c.push(`<span class="pchip gchip">${esc(g)}</span>`));
+  (m.genres||[]).slice(0,4).forEach(g=>c.push(`<span class="pchip gchip">${esc(GTR[g]||g)}</span>`));
   return c.length ? `<div class="gchips">${c.join('')}</div>` : '';
 }
-function synText(m){ const t = String(m.description||'').replace(/\s+/g,' ').trim(); return t.length>340 ? t.slice(0,337)+'…' : t; }
+function synText(m){ const t = String(m.description||'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim(); return t.length>340 ? t.slice(0,337)+'…' : t; }
+function alPaint(){
+  document.querySelectorAll('.poster[data-slug]:not([data-i])').forEach(p=>{
+    const e = AL[p.dataset.slug]; if (!e) return;
+    p.dataset.i = 1;
+    const img = new Image();
+    img.alt = ''; img.decoding = 'async'; img.referrerPolicy = 'no-referrer';
+    img.onload = ()=> img.classList.add('on'); img.onerror = ()=> img.remove();
+    img.src = e[0]; p.appendChild(img);
+  });
+  const at = document.querySelector('.atxt');
+  if (at && infoFor && !at.querySelector('.ainfo') && (window.CUR_SLUG||'')===infoFor.slug){
+    const t = synText(infoFor.m);
+    at.insertAdjacentHTML('beforeend', `<div class="ainfo">${gchipsHtml(infoFor.m)}${t?`<p class="syn">${esc(t)}<small>Özet: AniList (İngilizce)</small></p>`:''}</div>`);
+  }
+}
+async function alHydrate(){
+  alPaint();
+  const tok = ++alTok;
+  if (Date.now()<alCool) return;
+  const need = [...new Set([...document.querySelectorAll('.poster[data-slug]:not([data-i])')].map(p=>p.dataset.slug))]
+    .filter(s=> !(s in AL) && !alPending.has(s));
+  const BATCH = 24;
+  for (let i=0; i<need.length; i+=BATCH){
+    if (tok!==alTok) return;
+    const grp = need.slice(i, i+BATCH);
+    grp.forEach(x=>alPending.add(x));
+    try{ await alBatch(grp); }catch(e){ alCool = Math.max(alCool, Date.now()+30000); return; }
+    finally{ grp.forEach(x=>alPending.delete(x)); }
+    alPaint();
+    if (i+BATCH < need.length) await new Promise(r=>setTimeout(r, 350));
+  }
+}
 async function enrichAnime(slug){
   const t = titleOf(slug), a = ANIME_BY.get(slug), n = a ? a.eps : 0;
   document.title = `${t} izle — tüm bölümler | TürkAnime Arşiv`;
   metaSet(`${t} animesini izle: ${n?n+' bölüm, ':''}oynatma linkleri ve indirme komutları TürkAnime Arşiv'de.`);
   const m = await alDetail(slug);
   if (!m || (window.CUR_SLUG||'')!==slug) return;
-  const syn = synText(m), g = m.genres || [];
-  const img = coverOf(m) || OG_IMG;
+  infoFor = {slug, m};
+  const syn = synText(m), g = (m.genres||[]).map(x=>GTR[x]||x);
+  const img = m.coverImage && (m.coverImage.extraLarge || m.coverImage.large);
   metaSet(`${t}${g.length?' ('+g.slice(0,3).join(', ')+')':''} animesini izle: ${n?n+' bölüm, ':''}oynatma linkleri ve indirme komutları.`, img);
   ldSet({'@context':'https://schema.org','@type':'TVSeries', name:t, numberOfEpisodes:n||undefined, genre:m.genres, image:img, description:syn||undefined, inLanguage:'ja'});
-  const at = document.querySelector('.atxt');
-  if (at && !at.querySelector('.ainfo')){
-    at.insertAdjacentHTML('beforeend', `<div class="ainfo">${gchipsHtml(m)}${syn?`<p class="syn">${esc(syn)}<small>Özet: AniList</small></p>`:''}</div>`);
-  }
+  alPaint();
 }
 function initAniList(){
+  new MutationObserver(debounce(alHydrate, 120)).observe(appEl(), {childList:true});
   new MutationObserver(()=>{ document.querySelectorAll('meta[property="og:title"],meta[name="twitter:title"]').forEach(m=>m.setAttribute('content', document.title)); })
     .observe(document.querySelector('title'), {childList:true});
 }
