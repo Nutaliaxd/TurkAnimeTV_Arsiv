@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Yönlendiriliyor… — TürkAnime Arşiv</title>
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://anime.kerim.qzz.io/index.html">
+<script>
+/* Eski tek sayfalı sürümün #/... adreslerini yeni sayfalara taşır. */
+(function(){
+  var h = location.hash || '', t = 'index.html';
+  var m;
+  if ((m = h.match(/^#\/anime\/([^/]+)\/([^/]+)(?:\/([^/]+))?(?:\/([^/]+))?/))){
+    t = 'bolum.html?seri=' + m[1] + '&bolum=' + m[2] + (m[3] ? '&player=' + m[3] : '') + (m[4] ? '&kaynak=' + m[4] : '');
+  } else if ((m = h.match(/^#\/anime\/([^/]+)/))){
+    t = 'anime.html?seri=' + m[1];
+  } else if ((m = h.match(/^#\/kategori\/([^/]+)/))){
+    t = 'kategori.html?k=' + m[1];
+  } else if ((m = h.match(/^#\/harf\/([^/]+)/))){
+    t = 'animeler.html?harf=' + m[1];
+  }
+  location.replace(t);
+})();
+</script>
+<meta http-equiv="refresh" content="0;url=index.html">
+</head>
+<body><p>Site yeni adrese taşındı: <a href="index.html">Ana sayfa</a></p></body>
+</html>
