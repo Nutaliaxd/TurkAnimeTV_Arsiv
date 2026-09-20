@@ -41,6 +41,44 @@ Tek sayfalık `search.html` yapısı, her biri kendi adresi/başlığı/açıkla
   (yaklaşık 78.000 adres; 45.000'i aşınca otomatik parçalanır ve `sitemap.xml` indeks dosyasına dönüşür)
 - Yayına almadan önce `anime.kerim.qzz.io` yazan yerleri gerçek alan adınla değiştir: `robots.txt`, `sitemap.xml` ve sayfaların `<link rel="canonical">` / `og:url` satırları.
 
+## AniList verisi (kapak, tür, puan, özet) — artık build-time
+
+Eskiden her ziyaretçinin tarayıcısı sayfa açıldıkça AniList'in genel GraphQL
+API'sine canlı istek atıyordu (kapak görseli + tür/puan/özet için). Bu hem
+riskliydi (çok sayıda ziyaretçi = AniList'e sürekli istek, rate-limit'e takılma
+ihtimali) hem de özetler İngilizceydi.
+
+Artık bu iş **build-time**'a taşındı:
+
+- `scripts/fetch_anilist.py` — `assets/data.js`'deki her anime için AniList'ten
+  kapak/tür/puan/yıl/özet çeker, özeti Google Translate'in ücretsiz uç noktasıyla
+  Türkçeye çevirir, kapağı [AVIF](https://caniuse.com/avif)'e dönüştürür ve şu
+  dosyaları yazar:
+  - `assets/covers/<slug>.avif` — kapak görseli
+  - `assets/anilist/<slug>.json` — `{"averageScore":78,"seasonYear":2013,"genres":["Aksiyon","Macera"],"description":"Türkçe özet..."}`
+- `.github/workflows/anilist-sync.yml` — bu betiği GitHub Actions üzerinde
+  çalıştırıp üretilen dosyaları repoya commit'ler. Üç tetikleyicisi var:
+  haftalık zamanlanmış çalışma, `assets/data.js` değiştiğinde otomatik, ve
+  Actions sekmesinden elle ("Run workflow" — test için `limit` girilebilir,
+  hepsini yeniden indirmek için `force` işaretlenebilir).
+- `assets/core.js` artık AniList'e hiç istek atmıyor: `alDetail()`
+  `assets/anilist/<slug>.json`'ı okuyor. Kapaklar için aşağıdaki "Kapak görselleri"
+  bölümüne bak (seri sayfası hariç her yerde Jikan kullanılıyor).
+
+Elle çalıştırmak istersen (repo kökünden):
+```
+pip install -r scripts/requirements.txt
+python scripts/fetch_anilist.py            # eksikleri tamamlar
+python scripts/fetch_anilist.py --limit 30 # sadece ilk 30 anime (test)
+python scripts/fetch_anilist.py --force    # hepsini yeniden indirir
+```
+İlk çalıştırma 6.107 anime için ~15-25 dakika sürer (AniList'in düşürülmüş
+rate-limitine göre ayarlı bir gecikme var); sonraki çalıştırmalar sadece yeni
+eklenen animeleri işlediği için birkaç saniyede biter.
+
+`assets/covers/` ve `assets/anilist/` klasörleri repoya commit'lenmeli (statik
+dosyalar — sunucu tarafında hiçbir işlem gerektirmiyor, olduğu gibi yayınlanır).
+
 ## İsteğe bağlı: temiz adresler
 
 Sunucuda yönlendirme kurabiliyorsan `/anime/<slug>` ve `/bolum/<slug>/<no>` adresleri de çalışır (sayfa kodu bu yolu zaten okuyor).
@@ -57,3 +95,28 @@ Netlify (`_redirects`):
 /bolum/:slug/:bolum    /bolum.html   200
 ```
 Bu durumda `assets/core.js` içindeki `animeUrl`/`bolumUrl` fonksiyonlarını temiz biçime çevirmen yeterli; gerisi kendiliğinden uyar.
+
+## Kapak görselleri: önce AniList (yerel dosya), olmazsa Jikan
+
+`poster(a, opts)` (assets/core.js) her yerde aynı zinciri işletir — ana sayfa, animeler, kategori,
+arama, arama kutusu açılır listesi ve seri sayfası:
+
+1. `assets/covers/<slug>.avif` (build-time AniList kapağı; statik dosya, limit yok, anında)
+2. Dosya yoksa ya da yüklenmezse → [Jikan API](https://jikan.moe) (MyAnimeList kapakları)
+3. İkisi de olmazsa → renkli baş harf kutusu
+
+Yerel dosyası olmayan seri `localStorage`'a (`jk_lm1`) yazılır ve 1 gün boyunca tekrar denenmez
+(haftalık AniList senkronu kapakları doldurdukça Jikan ihtiyacı kendiliğinden azalır).
+
+Jikan tarafı (`JK` bloğu, core.js):
+
+- `GET https://api.jikan.moe/v4/anime?q=<başlık>&limit=5&sfw=true` — dönen 5 sonuçtan başlığı
+  birebir tutan seçilir, yoksa ilk sonuç.
+- Jikan limiti 3 istek/sn ve 60 istek/dk. İstekler tek sıradan, 400 ms arayla ve dakikada en
+  fazla 50 olacak şekilde gider; 429 gelirse 3 sn beklenip tekrar denenir.
+- Sadece ekrana yaklaşan kapaklar sorgulanır (IntersectionObserver). Sayfa değişmişse ya da
+  açılır liste kapanmışsa o kapak için istek atılmaz.
+- Bulunan adres `localStorage`'a (`jk_ok1`) yazılır; ikinci ziyarette ve aynı seri başka yerde
+  göründüğünde istek atılmaz. Jikan'da bulunamayanlar (`jk_no1`) 3 gün tekrar sorgulanmaz.
+  Ağ/sunucu hatası önbelleğe yazılmaz.
+- Öne çıkan kapak (ana sayfadaki "Günün önerisi") büyük boy (`…l.jpg`), diğerleri normal boy.
