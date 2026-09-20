@@ -1,0 +1,73 @@
+[
+ {
+  "player": "AMATERASU(BETA)",
+  "path": "ajax/videosec&b=S3JWalJsNlhrTWtzTHNWSkJ4OFdZUT09OjpPclczWWxqVGwxS2xrazV0&v=QnJTS2lJdGhiMVZRMlhabTc1aUJtQT09OjpGSGhSRGQxdDNfWmN1SEdE&f=UkNBR2lFR09WTkJiTHk4V0l3TnJIUT09OjppQ3ViU1NyTUdqY2dQcGY1",
+  "fansub": "AnimeOU",
+  "mask": "/player/aDJBY0lkeUdWcVdPNWE3OTkzY2dZTktaY1FvZEdCd3RMWmZRNFF3bHFETT06OkxNZ2NRWVpTYS1ZZ3c0NHY"
+ },
+ {
+  "player": "BANKAI(BETA)",
+  "path": "ajax/videosec&b=dFhNZUpKOFlsTmJNU0pUSSs3dDg2Zz09Ojo2SkJpV2xFNm13ZHJpdzdJ&v=b05EUUNCMWtpWmcrdFlWMnBrQm9kUT09Ojp2RFpDZEU0RG5jZjRNSklq&f=N3kxd3QwOUIrK3k2ZVJFUTNYTzJIQT09OjppSGxRTHIyVG5iZUFaVjM2",
+  "fansub": "AnimeOU",
+  "mask": "/player/L2pyZkZ6TlhBR2NKVUZWMkVKSFZSVXBCQm9Qc2FjUFN1SlJYVVJvTGkrM0taOEsrd3lweGl6ZmdDMWd6azArcDo6V3JKbXdKd2prMl9fTlZVMw"
+ },
+ {
+  "player": "GDRIVE",
+  "path": "ajax/videosec&b=Y20rM3Z2SXZwVmVEcTIxTGhYN2tXUT09Ojp5Vkw0aTRMb0d2alByam1P&v=N3hnN3RUcm00R055ZHNreUsvNWlmUT09Ojo2bEhJa0JuakVDUXRoc1ZL&f=dmM0dzBlL0tVbEppZ0xqdkN4RnNWQT09Ojp4NEtleUY0YU84V3NCLVlZ",
+  "fansub": "AnimeOU",
+  "url": "https://drive.google.com/file/d/1_goKqqsfPMvtyLJGyZeyQWY1pfgIeh6c/preview"
+ },
+ {
+  "player": "MAIL",
+  "path": "ajax/videosec&b=U3lWZGpOMUZMaWVDRW9CUjBMTGxDdz09OjpVX0YzR3hEWk9td3BYSXo0&v=Sm1UZlY4bWc3MVprUVVKZUZ6TXNadz09OjppZjJqS1l5TzItYzVJUmdR&f=VzJ6MjFGUTZzd0NpcjRURUxLeFBQQT09OjpISEducEZISnZyVURHWmZ3",
+  "fansub": "AnimeOU",
+  "url": "https://my.mail.ru/video/embed/7370103204933015550"
+ },
+ {
+  "player": "MAIL",
+  "path": "ajax/videosec&b=amNLVVNDT0I5UXB5MlVieFRrMGx4Zz09OjpXX1dtMmN3SU1UOVp6RDBE&v=d25yWHpzREdhOXBOend4TVBNNDY1Zz09Ojpyc3lnQ0l1STVybi1JTV9m&f=QkpZYmUxeFRDS0ZrakJQZGgwdTdXUT09OjpuYmFJOVYtZEY0MGI1emkx",
+  "fansub": "AnimeOU",
+  "url": "https://videoapi.my.mail.ru/videos/embed/mail/sweetparade/_myvideo/782.html"
+ },
+ {
+  "player": "ODNOKLASSNIKI",
+  "path": "ajax/videosec&b=c01HZHR4RXRiWlZ6d09DY2lRUzZsQT09OjpVTDFLMXhIUWdyS0hZcjhq&v=WVpWemRGMVkxWVBLbnZnMkxrWnJJZz09Ojo3ME9za2puRnpIMzZaSHJS&f=a1lrRXRFUFphc1JETlo1a09LOU1wZz09Ojpkcnd1eEtLSXdjcGZ3UHgz",
+  "fansub": "AnimeOU",
+  "url": "https://odnoklassniki.ru/videoembed/228541663826"
+ },
+ {
+  "player": "ODNOKLASSNIKI",
+  "path": "ajax/videosec&b=dGVaQkg2MjZ3Qk1VTVlKbkJJWjFXdz09Ojp1eHFZcVdYLWlQcm5Qd1Uy&v=N2lMRWFGcVo2RFdQZnBkUWltTmtpZz09Ojo0V0FsTks5bkg0OTVVcVNs&f=bzhyRGpJLzJaWkhrVGFyQ29IdkMrUT09OjpFOGkxTEVYdDFuUDNTbWNN",
+  "fansub": "AnimeOU",
+  "url": "https://odnoklassniki.ru/videoembed/2433865288413"
+ },
+ {
+  "player": "SIBNET",
+  "path": "ajax/videosec&b=VTFyU3FTQ3ovbTd3VU1CSFNQeG4wZz09OjpYM2JPUGNESHEwTnFMaXJO&v=b3JLSjRScko1dk9vTzMwYUc5YjRuZz09OjpRU01wQy1GWHJkTEhPS1Nt&f=c3BBVEZKdE91WU5UNjlQcWRSTUxoUT09OjpDWWNXVHAxQkliOUljNE9P",
+  "fansub": "AnimeOU",
+  "url": "https://video.sibnet.ru/shell.php?videoid=2786623"
+ },
+ {
+  "player": "CLONE",
+  "path": "ajax/videosec&b=TDRjeE5KVXBURi8xeWRWODkzTitpdz09OjpWQzhJXzBVQ2kxS21sc3Fl&v=bW9lWUlWRkVGVmpvQldjVU40MDRRUT09Ojp1NjR6ZWI0ajZSNUd6U0xi&f=bVNkVjNJSHU5UmxTb1RJZDNjRnlrdz09OjpaU1R0ZHlNX2M1Mk11ZVVj",
+  "fansub": "AnimeOU",
+  "url": "https://short.icu/?v=12tpccPS9"
+ },
+ {
+  "player": "UQLOAD",
+  "path": "ajax/videosec&b=NFR0ZWFhUVo4K3dVd2lFNG5mbTZqZz09Ojp5LUhFbkc3cFkwUFpHaXND&v=MUxaRmlKekdHYTloYlJnczJXNGdoQT09OjpKM2lxQ3Y2Nkwycm1yRW51&f=S1E5U1QveHIybDMyQWZvckpmWFNtZz09Ojp0Mk9mNjRiWUszVnFtdW1E",
+  "fansub": "AnimeOU",
+  "url": "https://uqload.com/embed-0fei6nmnawc7.html"
+ },
+ {
+  "player": "VUDEA",
+  "path": "ajax/videosec&b=Mi9WWWVxR3dheU9MckVzU2JESUlLZz09OjpIbTZ6SzU2ZVhhdkdUZHlo&v=SDQ5YmZMN2d2UitxblY3ZlZNMXFFUT09OjpjVnZPNnpwdVBuMWZsQmto&f=RUp2bmxZc3loZlQzY25PeFp5ckk4QT09OjpOMExUMlJQdlFYWkYxazlZ",
+  "fansub": "AnimeOU",
+  "url": "https://vudeo.io/embed-c40uyxjhgif4.html"
+ },
+ {
+  "player": "ALUCARD(BETA)",
+  "fansub": "AnimeOU",
+  "mask": "/player/SWRPTmFpbEx3RHpaNFlTazlRMk1EcTdoc2YzbkJmdnVvTXFUNlZlOWdjdz06OlVkMXRGNERvMnhPTHY5Qm4"
+ }
+]
