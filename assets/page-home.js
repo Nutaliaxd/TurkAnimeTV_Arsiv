@@ -10,7 +10,7 @@ function landingHtml(){
   const href = animeUrl(d.slug);
   return `
     <section class="feat" style="--h:${hueOf(d.slug)};--g:${(hueOf(d.slug)+35)%360}">
-      <a class="fposter" href="${href}" aria-label="${esc(d.baslik)}">${poster(d,{big:true})}</a>
+      <a class="fposter" href="${href}" aria-label="${esc(d.baslik)}">${poster(d)}</a>
       <div class="ftext">
         <span class="flabel"><i class="fa-solid fa-sun"></i> Günün önerisi</span>
         <h1>${esc(d.baslik)}</h1>

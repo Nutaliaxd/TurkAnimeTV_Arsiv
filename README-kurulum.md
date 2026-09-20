@@ -61,9 +61,10 @@ Artık bu iş **build-time**'a taşındı:
   haftalık zamanlanmış çalışma, `assets/data.js` değiştiğinde otomatik, ve
   Actions sekmesinden elle ("Run workflow" — test için `limit` girilebilir,
   hepsini yeniden indirmek için `force` işaretlenebilir).
-- `assets/core.js` artık AniList'e hiç istek atmıyor: `alDetail()`
-  `assets/anilist/<slug>.json`'ı okuyor. Kapaklar için aşağıdaki "Kapak görselleri"
-  bölümüne bak (seri sayfası hariç her yerde Jikan kullanılıyor).
+- `assets/core.js` artık AniList'e hiç istek atmıyor: `poster()` doğrudan
+  `assets/covers/<slug>.avif` dosyasına bakan bir `<img>` üretiyor (dosya yoksa
+  `onerror` ile sessizce gizlenip yerini renkli baş harf kutusu alıyor),
+  `alDetail()` de `assets/anilist/<slug>.json`'ı okuyor.
 
 Elle çalıştırmak istersen (repo kökünden):
 ```
@@ -95,28 +96,3 @@ Netlify (`_redirects`):
 /bolum/:slug/:bolum    /bolum.html   200
 ```
 Bu durumda `assets/core.js` içindeki `animeUrl`/`bolumUrl` fonksiyonlarını temiz biçime çevirmen yeterli; gerisi kendiliğinden uyar.
-
-## Kapak görselleri: önce AniList (yerel dosya), olmazsa Jikan
-
-`poster(a, opts)` (assets/core.js) her yerde aynı zinciri işletir — ana sayfa, animeler, kategori,
-arama, arama kutusu açılır listesi ve seri sayfası:
-
-1. `assets/covers/<slug>.avif` (build-time AniList kapağı; statik dosya, limit yok, anında)
-2. Dosya yoksa ya da yüklenmezse → [Jikan API](https://jikan.moe) (MyAnimeList kapakları)
-3. İkisi de olmazsa → renkli baş harf kutusu
-
-Yerel dosyası olmayan seri `localStorage`'a (`jk_lm1`) yazılır ve 1 gün boyunca tekrar denenmez
-(haftalık AniList senkronu kapakları doldurdukça Jikan ihtiyacı kendiliğinden azalır).
-
-Jikan tarafı (`JK` bloğu, core.js):
-
-- `GET https://api.jikan.moe/v4/anime?q=<başlık>&limit=5&sfw=true` — dönen 5 sonuçtan başlığı
-  birebir tutan seçilir, yoksa ilk sonuç.
-- Jikan limiti 3 istek/sn ve 60 istek/dk. İstekler tek sıradan, 400 ms arayla ve dakikada en
-  fazla 50 olacak şekilde gider; 429 gelirse 3 sn beklenip tekrar denenir.
-- Sadece ekrana yaklaşan kapaklar sorgulanır (IntersectionObserver). Sayfa değişmişse ya da
-  açılır liste kapanmışsa o kapak için istek atılmaz.
-- Bulunan adres `localStorage`'a (`jk_ok1`) yazılır; ikinci ziyarette ve aynı seri başka yerde
-  göründüğünde istek atılmaz. Jikan'da bulunamayanlar (`jk_no1`) 3 gün tekrar sorgulanmaz.
-  Ağ/sunucu hatası önbelleğe yazılmaz.
-- Öne çıkan kapak (ana sayfadaki "Günün önerisi") büyük boy (`…l.jpg`), diğerleri normal boy.
