@@ -8,7 +8,7 @@ import json, re, sys, os, datetime, html
 
 ARGS = [a for a in sys.argv[1:] if not a.startswith("--")]
 BOLUMLER = "--bolumler" in sys.argv
-KOK = (ARGS[0] if ARGS else "https://SITE-ADRESIN.com").rstrip("/") + "/"
+KOK = (ARGS[0] if ARGS else "https://anime.kerim.qzz.io").rstrip("/") + "/"
 BUGUN = datetime.date.today().isoformat()
 PARCA = 45000  # tek dosyadaki azami URL
 
