@@ -35,366 +35,248 @@
 <meta name="twitter:image" content="https://SITE-ADRESIN.com/og-image.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"TürkAnime Arşiv","url":"https://SITE-ADRESIN.com/search.html","inLanguage":"tr","description":"6.000'den fazla animenin bölümlerini ve oynatma linklerini tek yerde bul. Ara, kategorilere göz at, günün önerisini keşfet."}</script>
 <style>
-:root{--bg:#0d1315;--bg2:#121b1e;--card:#162226;--card2:#1e2f34;--line:#2a3e44;--tx:#eef4f2;--tx2:#a1b3b1;--tx3:#6f8582;--ac:#ff8fb1;--ac2:#ffc2d4;--ok:#57d9a3;--bad:#ff6b7a;--warn:#ffcb5c;--rad:14px;--fd:"Bricolage Grotesque",system-ui,sans-serif}
+:root{
+  --bg:#0d1315;--bg2:#121b1e;--card:#162226;--card2:#1e2f34;--line:#2a3e44;
+  --tx:#eef4f2;--tx2:#a1b3b1;--tx3:#6f8582;
+  --ac:#ff8fb1;--ac2:#ffc2d4;--ac-ink:#2b0f19;
+  --ok:#57d9a3;--bad:#ff6b7a;--warn:#ffcb5c;
+  --rad:14px;--rad-sm:10px;--rad-pill:999px;
+  --fd:"Bricolage Grotesque",system-ui,sans-serif;
+  --ff:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  /* tek boyut ölçeği: her aralık buradan türetilir, ayrı ayrı elle küçültülmez */
+  --sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:24px;--sp-6:32px;
+  --btn-h:40px;--btn-h-sm:32px;--chip-h:32px;
+  --container:1180px;
+}
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{background:var(--bg);color:var(--tx);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+html{scroll-padding-top:76px}
+html,body{background:var(--bg);color:var(--tx);font:15px/1.55 var(--ff);-webkit-text-size-adjust:100%}
 a{color:var(--ac2);text-decoration:none}
 a:hover{text-decoration:underline}
 button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
 input{font:inherit;color:inherit}
-.wrap{max-width:1000px;margin:0 auto;padding:0 16px}
-header.top{position:sticky;top:0;z-index:50;background:rgba(11,15,23,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.top-in{display:flex;align-items:center;gap:14px;padding:10px 16px;max-width:1000px;margin:0 auto}
-.logo{font-weight:800;font-size:19px;letter-spacing:.3px;background:linear-gradient(90deg,var(--ac),var(--ac2));-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap;cursor:pointer}
-.searchbox{flex:1;display:flex;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:0 12px}
+:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 var(--sp-4)}
+
+/* ===== üst çubuk ===== */
+header.top{position:sticky;top:0;z-index:50;background:rgba(13,19,21,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.top-in{display:flex;align-items:center;gap:var(--sp-3);padding:var(--sp-2) var(--sp-4);max-width:var(--container);margin:0 auto}
+.logo{display:flex;align-items:center;gap:var(--sp-2);font:800 19px var(--fd);letter-spacing:-.3px;color:var(--tx);white-space:nowrap;cursor:pointer}
+.logo:hover{text-decoration:none}
+.logo i{color:var(--ac);font-size:22px}
+.logo b{font-weight:600;color:var(--tx2);margin-left:4px}
+.searchbox{flex:1;height:42px;display:flex;align-items:center;gap:var(--sp-2);background:var(--card);border:1px solid var(--line);border-radius:var(--rad-pill);padding:0 var(--sp-4)}
 .searchbox:focus-within{border-color:var(--ac)}
-.searchbox svg{flex:none;opacity:.5}
-#q{flex:1;background:none;border:none;outline:none;padding:9px 10px;font-size:15px}
+.searchbox i,.searchbox svg{flex:none;opacity:.55;color:var(--tx3)}
+#q{flex:1;min-width:0;background:none;border:none;outline:none;font-size:15px;-webkit-appearance:none}
 #q::placeholder{color:var(--tx3)}
+#q::-webkit-search-cancel-button{-webkit-appearance:none}
 .kbd{flex:none;font-size:11px;color:var(--tx3);border:1px solid var(--line);border-radius:5px;padding:1px 6px}
-main{padding:20px 0 60px}
-.crumb{color:var(--tx2);font-size:13px;margin-bottom:14px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-.crumb .sep{color:var(--tx3)}
+.ibtn{flex:none;width:42px;height:42px;border-radius:50%;background:var(--card);border:1px solid var(--line);color:var(--tx2);font-size:15px;display:grid;place-items:center}
+.ibtn:hover{color:var(--ac);border-color:var(--ac)}
+
+main{padding:var(--sp-5) 0 60px}
+.foot{max-width:var(--container);margin:0 auto;padding:0 var(--sp-4) 28px;color:var(--tx3);font-size:12.5px}
+
+/* ===== metin / kırıntı ===== */
+.crumb{color:var(--tx2);font-size:13px;margin-bottom:var(--sp-3);display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.crumb .sep{color:var(--tx3);font-size:9px}
 .crumb a{color:var(--tx2)}
 .crumb a:hover{color:var(--ac2)}
-h1.anime-title{font-size:24px;font-weight:800;line-height:1.25;margin-bottom:8px}
-.stats{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 4px}
-.stat{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:3px 12px;font-size:12.5px;color:var(--tx2)}
-.stat b{color:var(--tx)}
-.players-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
-.pchip{font-size:11.5px;color:var(--tx2);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:2px 8px}
-.ep{display:flex;align-items:center;gap:12px;padding:9px 14px;background:var(--card);border:1px solid var(--line);border-radius:10px;margin-bottom:7px;cursor:pointer;transition:border-color .12s}
-.ep:hover{border-color:var(--ac)}
-.ep .no{flex:none;min-width:52px;text-align:center;font-weight:800;font-size:13px;color:var(--ac2);background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.25);border-radius:8px;padding:3px 8px}
-.ep .ea{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.ep .meta{flex:none;font-size:12px;color:var(--tx2);display:flex;gap:6px;align-items:center}
-.dot{width:8px;height:8px;border-radius:50%;display:inline-block}
-.dot.ok{background:var(--ok)}.dot.bad{background:var(--bad)}.dot.warn{background:var(--warn)}.dot.n{background:#3a4a68}
-.opt{display:flex;align-items:center;gap:12px;padding:12px 16px;background:var(--card);border:1px solid var(--line);border-radius:var(--rad);margin-bottom:9px;cursor:pointer;transition:border-color .12s}
-.opt:hover{border-color:var(--ac)}
-.opt .pname{font-weight:800;font-size:15px;flex:none;max-width:40%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.opt .fansub{color:var(--tx2);font-size:13px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.tag{font-size:10.5px;font-weight:700;letter-spacing:.4px;border-radius:5px;padding:2px 7px;text-transform:uppercase;flex:none}
-.tag.url{color:#7ee2ff;background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.3)}
-.tag.mask{color:#c9b7ff;background:rgba(124,92,255,.12);border:1px solid rgba(124,92,255,.35)}
-.tag.diger{color:var(--tx2);background:var(--card2);border:1px solid var(--line)}
-.badge{font-size:11px;font-weight:700;border-radius:999px;padding:2px 9px;flex:none}
-.badge.calisiyor{color:#0e2b1c;background:var(--ok)}
-.badge.olu{color:#3b0b12;background:var(--bad)}
-.badge.supheli{color:#332600;background:var(--warn)}
-.badge.n{color:var(--tx2);background:var(--card2);border:1px solid var(--line)}
-.player-box{background:#000;border:1px solid var(--line);border-radius:var(--rad);overflow:hidden}
-.player-box iframe{display:block;width:100%;aspect-ratio:16/9;border:0;background:#000}
-.pmeta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:12px 0 6px;font-size:13px;color:var(--tx2)}
-.pmeta .pname{font-weight:800;font-size:16px;color:var(--tx)}
-.src{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:10px;padding:11px 14px;background:var(--card);border:1px solid var(--line);border-radius:var(--rad)}
-.src .lbl{color:var(--tx2);font-size:13px;flex:none}
-.src a{word-break:break-all;font-size:13px}
-.copybtn{margin-left:auto;flex:none;background:var(--card2);border:1px solid var(--line);color:var(--tx2);border-radius:8px;padding:6px 12px;font-size:12.5px;font-family:ui-monospace,Consolas,monospace;transition:all .12s}
-.copybtn:hover{color:var(--ac2);border-color:var(--ac2)}
-.copybtn.done{color:var(--ok);border-color:var(--ok)}
-.fansub-chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
-.fchip{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px 14px;font-size:13px;color:var(--tx2);display:flex;gap:8px;align-items:center}
-.fchip.on{border-color:var(--ac);color:var(--tx);background:rgba(124,92,255,.12)}
-.note{background:rgba(255,201,77,.07);border:1px solid rgba(255,201,77,.3);color:#ffe2a0;border-radius:var(--rad);padding:12px 16px;font-size:13.5px;margin:12px 0}
-.errbox{background:rgba(255,92,108,.08);border:1px solid rgba(255,92,108,.35);color:#ffb9c1;border-radius:var(--rad);padding:14px 16px;font-size:14px;margin:12px 0}
-.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:14px 0}
-.tgl{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--tx2);background:var(--card);border:1px solid var(--line);border-radius:10px;padding:7px 12px;cursor:pointer;user-select:none}
-.tgl input{accent-color:var(--bad)}
-.pager{display:flex;flex-wrap:wrap;gap:6px;align-items:center;justify-content:center;margin:18px 0}
-.pager button{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:6px 12px;font-size:13px;color:var(--tx2)}
-.pager button:hover{border-color:var(--ac);color:var(--tx)}
-.pager button.on{background:var(--ac);border-color:var(--ac);color:#fff;font-weight:700}
-.pager button:disabled{opacity:.35;cursor:default}
-.pager .dots{color:var(--tx3);padding:0 2px}
-.jump{display:flex;gap:8px;align-items:center;justify-content:center;margin:10px 0 0;font-size:13px;color:var(--tx2)}
-.jump input{width:80px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:6px 10px;outline:none;text-align:center}
-.jump input:focus{border-color:var(--ac)}
-.jump button{background:var(--card2);border:1px solid var(--line);border-radius:8px;padding:6px 12px;color:var(--tx2)}
-.count-line{color:var(--tx2);font-size:13px;margin:4px 0 14px}
-.empty{padding:40px 20px;text-align:center;color:var(--tx2)}
-.empty .big{font-size:40px;margin-bottom:10px}
-.loading{display:flex;flex-direction:column;align-items:center;gap:14px;padding:60px 0;color:var(--tx2)}
-.spinner{width:38px;height:38px;border:3px solid var(--line);border-top-color:var(--ac);border-radius:50%;animation:spin .8s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-.note-soft{margin-top:8px;font-size:12.5px;color:var(--tx2);background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 12px}
-.note-soft b{color:var(--tx)}
-.chiprow{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 4px;align-items:center}
-.chiprow .lbl{font-size:12px;color:var(--tx3);flex:none;min-width:66px;text-transform:uppercase;letter-spacing:.4px}
-.fchip b{font-weight:800;color:var(--ac2);font-size:11.5px}
-.fchip.on b{color:var(--tx)}
-.fchip.temizle{border-style:dashed;color:var(--bad)}
-.mini{flex:none;font-size:11px;border:1px solid var(--line);background:var(--card2);color:var(--tx2);border-radius:7px;padding:3px 8px;transition:all .12s}
+h1.anime-title{font:800 26px/1.25 var(--fd);letter-spacing:-.4px;margin-bottom:var(--sp-2)}
+
+/* ===== buton / çip ölçek sistemi: tüm boyutlar burada tanımlanır ===== */
+.btn{display:inline-flex;align-items:center;gap:7px;height:var(--btn-h);padding:0 var(--sp-4);border-radius:var(--rad-pill);background:var(--ac);color:var(--ac-ink);font-size:13.5px;font-weight:700;transition:filter .12s}
+.btn:hover{filter:brightness(1.12)}
+.btn.ghost{background:var(--card2);color:var(--tx2);border:1px solid var(--line);font-weight:600}
+.btn.ghost:hover{color:var(--ac2);border-color:var(--ac2);filter:none}
+.btn.done{background:var(--ok);color:#0e2b1c}
+.btn.sm{height:var(--btn-h-sm);padding:0 var(--sp-3);font-size:12.5px}
+.mini{flex:none;height:30px;padding:0 var(--sp-3);font-size:11.5px;border:1px solid var(--line);background:var(--card2);color:var(--tx2);border-radius:8px;display:inline-flex;align-items:center;transition:all .12s}
 .mini:hover{color:var(--ac2);border-color:var(--ac2)}
 .mini.x:hover{color:var(--bad);border-color:var(--bad)}
 .mini.done{color:var(--ok);border-color:var(--ok)}
 .mini[disabled]{opacity:.5;cursor:wait}
-.optacts{margin-left:auto;flex:none;display:flex;gap:5px;align-items:center}
-.opt .tag,.opt .badge{flex:none}
-.btn{background:var(--ac);color:#fff;border-radius:10px;padding:8px 14px;font-size:13.5px;font-weight:700;display:inline-flex;gap:7px;align-items:center;transition:filter .12s}
-.btn:hover{filter:brightness(1.15)}
-.btn.ghost{background:var(--card2);color:var(--tx2);border:1px solid var(--line);font-weight:600}
-.btn.ghost:hover{color:var(--ac2);border-color:var(--ac2);filter:none}
-.btn.done{background:var(--ok)}
-.src .grp{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
-.src .grp .copybtn{margin-left:0}
-.resolvebox{margin:10px 0;padding:12px 14px;background:var(--card);border:1px solid rgba(34,211,238,.35);border-radius:var(--rad);font-size:13px}
-.resolvebox .rurl{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:7px 0 0}
-.resolvebox code{background:#000;border:1px solid var(--line);border-radius:7px;padding:6px 9px;font-size:12px;color:var(--ac2);font-family:ui-monospace,Consolas,monospace;word-break:break-all;flex:1;min-width:200px}
-@media (max-width:640px){
-  .top-in{padding:8px 10px;gap:8px}
-  .logo{font-size:16px}
-  .kbd{display:none}
-  .ep .meta{display:none}
-  h1.anime-title{font-size:20px}
-  .hero{padding:30px 6px 20px}
-  .hero h1{font-size:24px}
-  .opt .fansub{font-size:12px}
-}
+.copybtn{height:30px;padding:0 var(--sp-3);background:var(--card2);border:1px solid var(--line);color:var(--tx2);border-radius:8px;font-size:12px;font-family:ui-monospace,Consolas,monospace;transition:all .12s;display:inline-flex;align-items:center}
+.copybtn:hover{color:var(--ac2);border-color:var(--ac2)}
+.copybtn.done{color:var(--ok);border-color:var(--ok)}
 
-/* ===== tema: petrol yeşili zemin, sakura vurgu, yazı posterleri ===== */
-html,body{font-family:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-text-size-adjust:100%}
-html{scroll-padding-top:76px}
-a{color:var(--ac2)}
-:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
-.wrap{max-width:1180px}
-header.top{background:rgba(13,19,21,.94);padding-top:env(safe-area-inset-top,0px)}
-.top-in{max-width:1180px;padding:10px 16px;gap:12px}
-.logo{display:flex;align-items:center;gap:9px;font:800 20px var(--fd);letter-spacing:-.3px;background:none;color:var(--tx)}
-.logo:hover{text-decoration:none}
-.logo i{color:var(--ac);font-size:24px}
-.logo b{font-weight:600;color:var(--tx2);margin-left:5px}
-.searchbox{height:44px;border-radius:999px;padding:0 16px;gap:10px}
-.searchbox i{color:var(--tx3)}
-#q{padding:0;font-size:16px;min-width:0;-webkit-appearance:none}
-#q::-webkit-search-cancel-button{-webkit-appearance:none}
-.ibtn{flex:none;width:44px;height:44px;border-radius:50%;background:var(--card);border:1px solid var(--line);color:var(--tx2);font-size:16px}
-.ibtn:hover{color:var(--ac);border-color:var(--ac)}
-main{padding:22px 0 70px}
-h1.anime-title{font-family:var(--fd);font-size:28px;letter-spacing:-.5px}
-.btn{background:var(--ac);color:#2b0f19;border-radius:999px;padding:10px 20px;min-height:42px}
-.btn.ghost{color:var(--tx2)}
-.btn.sm{padding:6px 14px;min-height:34px;font-size:12.5px}
-.btn.done{color:#0e2b1c}
-.tag{text-transform:none;letter-spacing:0;font-size:11.5px}
-.tag.url{color:#9be7c7;background:rgba(87,217,163,.1);border-color:rgba(87,217,163,.3)}
-.tag.mask{color:#ffd28a;background:rgba(255,203,92,.1);border-color:rgba(255,203,92,.3)}
-.ep .no{color:var(--ac);background:rgba(255,143,177,.1);border-color:rgba(255,143,177,.3)}
-.ep{min-height:54px}
-.fchip.on{background:rgba(255,143,177,.12)}
-.fchip b{color:var(--ac)}
-.chiprow .lbl{text-transform:none;letter-spacing:0}
-.resolvebox code{color:var(--ac2)}
-.pager button{min-width:40px;height:40px;border-radius:10px}
-.pager button.on{color:#2b0f19}
-.mini{padding:6px 12px;min-height:34px;font-size:12px}
-.empty .big{font-size:34px;color:var(--tx3)}
+.fchip{display:inline-flex;align-items:center;gap:7px;height:var(--chip-h);padding:0 var(--sp-3);background:var(--card);border:1px solid var(--line);border-radius:var(--rad-pill);font-size:12.5px;color:var(--tx2);text-decoration:none}
+.fchip:hover{text-decoration:none;border-color:var(--ac2)}
+.fchip.on{border-color:var(--ac);color:var(--tx);background:rgba(255,143,177,.12)}
+.fchip b{font-weight:800;color:var(--ac2);font-size:11px}
+.fchip.on b{color:var(--tx)}
+.fchip.temizle{border-style:dashed;color:var(--bad)}
+.chiprow{display:flex;flex-wrap:wrap;gap:var(--sp-2);margin:var(--sp-3) 0;align-items:center}
+.chiprow .lbl{font-size:11.5px;color:var(--tx3);flex:none;min-width:64px;text-transform:uppercase;letter-spacing:.4px}
+
+.tag{font-size:10.5px;font-weight:700;letter-spacing:.3px;border-radius:6px;padding:2px 7px;flex:none}
+.tag.url{color:#9be7c7;background:rgba(87,217,163,.1);border:1px solid rgba(87,217,163,.3)}
+.tag.mask{color:#ffd28a;background:rgba(255,203,92,.1);border:1px solid rgba(255,203,92,.3)}
+.tag.diger{color:var(--tx2);background:var(--card2);border:1px solid var(--line)}
+.badge{font-size:11px;font-weight:700;border-radius:var(--rad-pill);padding:2px 9px;flex:none}
+.badge.calisiyor{color:#0e2b1c;background:var(--ok)}
+.badge.olu{color:#3b0b12;background:var(--bad)}
+.badge.supheli{color:#332600;background:var(--warn)}
+.badge.n{color:var(--tx2);background:var(--card2);border:1px solid var(--line)}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+.dot.ok{background:var(--ok)}.dot.bad{background:var(--bad)}.dot.warn{background:var(--warn)}.dot.n{background:#3a4a68}
+.stats{display:flex;flex-wrap:wrap;gap:var(--sp-2);margin:var(--sp-3) 0 4px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--rad-pill);padding:4px 13px;font-size:12.5px;color:var(--tx2)}
+.stat b{color:var(--tx)}
 .stat i{color:var(--ac);margin-right:6px}
-.crumb .sep{font-size:9px}
-/* poster kartları */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:22px 14px}
+.pchip{font-size:11.5px;color:var(--tx2);background:var(--card);border:1px solid var(--line);border-radius:7px;padding:2px 9px}
+.players-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:var(--sp-2)}
+
+/* ===== poster kartları / grid ===== */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:var(--sp-4) var(--sp-3)}
 .card{display:flex;flex-direction:column;gap:7px;min-width:0;color:var(--tx)}
 .card:hover{text-decoration:none}
-.poster{position:relative;aspect-ratio:3/4;border-radius:12px;overflow:hidden;background:linear-gradient(160deg,hsl(var(--h),42%,30%),hsl(var(--g),45%,14%));outline:2px solid transparent;outline-offset:2px}
+.poster{position:relative;aspect-ratio:3/4;border-radius:12px;overflow:hidden;container-type:inline-size;background:linear-gradient(160deg,hsl(var(--h),42%,30%),hsl(var(--g),45%,14%));outline:2px solid transparent;outline-offset:2px}
 .card:hover .poster,.card:focus-visible .poster{outline-color:var(--ac)}
-.pl{position:absolute;left:8px;bottom:-12px;font:800 88px/1 var(--fd);letter-spacing:-5px;color:rgba(255,255,255,.17)}
-.pn{position:absolute;top:8px;left:8px;background:rgba(0,0,0,.55);border-radius:999px;padding:2px 10px;font-size:11.5px;font-weight:700;color:#fff}
-.ct{font-weight:700;font-size:14px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.cs{font-size:12px;color:var(--tx3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x proximity;padding:2px 16px 12px;margin:0 -16px;scrollbar-width:none}
+.poster img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .3s}
+.poster img.on{opacity:1}
+.pl{position:absolute;left:6cqw;bottom:-8cqw;font:800 56cqw/1 var(--fd);letter-spacing:-.05em;color:rgba(255,255,255,.17)}
+.pn{z-index:1;position:absolute;top:8px;left:8px;background:rgba(0,0,0,.62);border-radius:var(--rad-pill);padding:2px 9px;font-size:11px;font-weight:700;color:#fff}
+.ct{font-weight:700;font-size:13.5px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.cs{font-size:11.5px;color:var(--tx3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rail{display:flex;gap:var(--sp-3);overflow-x:auto;scroll-snap-type:x proximity;padding:2px var(--sp-4) var(--sp-3);margin:0 calc(var(--sp-4)*-1);scrollbar-width:none}
 .rail::-webkit-scrollbar{display:none}
-.rail .card{flex:none;width:148px;scroll-snap-align:start}
-/* ana sayfa */
-.feat{display:flex;gap:30px;align-items:center;padding:24px;border-radius:22px;background:hsl(var(--h),28%,15%)}
-.fposter{flex:none;width:210px}
-.fposter .pl{font-size:120px}
+.rail .card{flex:none;width:130px;scroll-snap-align:start}
+
+/* ===== ana sayfa: öne çıkan, kategoriler ===== */
+.feat{display:flex;gap:var(--sp-5);align-items:center;padding:var(--sp-5);border-radius:20px;background:hsl(var(--h),28%,15%)}
+.fposter{flex:none;width:180px}
+.fposter .pl{font-size:96cqw}
 .ftext{min-width:0;flex:1}
-.flabel{display:inline-flex;gap:8px;align-items:center;color:var(--ac);font-weight:700;font-size:14px}
-.ftext h1{font:800 clamp(26px,4.4vw,44px)/1.08 var(--fd);letter-spacing:-.8px;margin:10px 0 14px}
-.fmeta{display:flex;flex-wrap:wrap;gap:8px}
-.fmeta span{background:rgba(255,255,255,.08);border-radius:999px;padding:4px 13px;font-size:13px}
-.fmeta i{margin-right:7px;color:var(--ac)}
-.facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
-.sh{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:36px 0 14px}
-.sh h2{font:700 22px var(--fd);letter-spacing:-.3px}
-.kats{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px}
-.kat{display:flex;flex-direction:column;gap:2px;padding:16px;min-height:104px;border-radius:14px;background:hsl(var(--h),30%,16%);color:var(--tx)}
+.flabel{display:inline-flex;gap:var(--sp-2);align-items:center;color:var(--ac);font-weight:700;font-size:13px}
+.ftext h1{font:800 clamp(24px,4vw,38px)/1.1 var(--fd);letter-spacing:-.6px;margin:var(--sp-2) 0 var(--sp-3)}
+.fmeta{display:flex;flex-wrap:wrap;gap:var(--sp-2)}
+.fmeta span{background:rgba(255,255,255,.08);border-radius:var(--rad-pill);padding:4px 13px;font-size:12.5px}
+.fmeta i{margin-right:6px;color:var(--ac)}
+.gchips{display:flex;flex-wrap:wrap;gap:6px;margin-top:var(--sp-3)}
+.gchip{color:var(--ac);border-color:rgba(255,143,177,.3)}
+.facts{display:flex;flex-wrap:wrap;gap:var(--sp-2);margin-top:var(--sp-4)}
+.sh{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-2);margin:30px 0 var(--sp-3)}
+.sh h2{font:700 18px var(--fd);letter-spacing:-.2px}
+.kats{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:var(--sp-3)}
+.kat{display:flex;flex-direction:column;gap:3px;padding:var(--sp-3) var(--sp-4);min-height:86px;border-radius:13px;background:hsl(var(--h),30%,16%);color:var(--tx)}
 .kat:hover{text-decoration:none;background:hsl(var(--h),30%,21%)}
-.kat i{font-size:20px;margin-bottom:auto;color:hsl(var(--h),75%,74%)}
-.kat b{font:700 15px var(--fd)}
-.kat small{color:var(--tx2);font-size:12.5px}
-.az{display:flex;flex-wrap:wrap;gap:8px}
-.az a{width:42px;height:42px;display:grid;place-items:center;border-radius:10px;background:var(--card);border:1px solid var(--line);color:var(--tx2);font-weight:700}
+.kat i{font-size:18px;margin-bottom:auto;color:hsl(var(--h),75%,74%)}
+.kat b{font:700 14px var(--fd)}
+.kat small{color:var(--tx2);font-size:11.5px}
+.az{display:flex;flex-wrap:wrap;gap:var(--sp-2)}
+.az a{width:36px;height:36px;display:grid;place-items:center;border-radius:9px;background:var(--card);border:1px solid var(--line);color:var(--tx2);font-weight:700;font-size:13px}
 .az a:hover{border-color:var(--ac);color:var(--ac);text-decoration:none}
-.ahead{display:flex;gap:16px;align-items:flex-start;margin-bottom:6px}
-.aposter{flex:none;width:130px}
-.aposter .pl{font-size:60px}
+.count-line{color:var(--tx2);font-size:12.5px;margin:2px 0 var(--sp-3)}
+.empty{padding:40px var(--sp-4);text-align:center;color:var(--tx2)}
+.empty .big{font-size:36px;margin-bottom:var(--sp-2);color:var(--tx3)}
+.loading{display:flex;flex-direction:column;align-items:center;gap:var(--sp-3);padding:60px 0;color:var(--tx2)}
+.spinner{width:36px;height:36px;border:3px solid var(--line);border-top-color:var(--ac);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.pager{display:flex;flex-wrap:wrap;gap:6px;align-items:center;justify-content:center;margin:var(--sp-4) 0}
+.pager button{min-width:38px;height:38px;background:var(--card);border:1px solid var(--line);border-radius:9px;font-size:12.5px;color:var(--tx2)}
+.pager button:hover{border-color:var(--ac);color:var(--tx)}
+.pager button.on{background:var(--ac);border-color:var(--ac);color:var(--ac-ink);font-weight:700}
+.pager button:disabled{opacity:.35;cursor:default}
+.pager .dots{color:var(--tx3);padding:0 2px}
+.jump{display:flex;gap:var(--sp-2);align-items:center;justify-content:center;margin:var(--sp-3) 0 0;font-size:12.5px;color:var(--tx2)}
+.jump input{width:76px;height:var(--btn-h-sm);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:0 var(--sp-2);outline:none;text-align:center}
+.jump input:focus{border-color:var(--ac)}
+.jump button{height:var(--btn-h-sm);background:var(--card2);border:1px solid var(--line);border-radius:8px;padding:0 var(--sp-3);color:var(--tx2)}
+
+/* ===== anime bölüm listesi ===== */
+.ahead{display:flex;gap:var(--sp-4);align-items:flex-start;margin-bottom:6px}
+.aposter{flex:none;width:120px}
+.aposter .pl{font-size:60cqw}
 .atxt{min-width:0;flex:1}
+.ainfo{margin-top:var(--sp-2)}
+.syn{margin-top:var(--sp-2);font-size:13px;line-height:1.55;color:var(--tx2);max-width:70ch}
+.syn small{display:block;margin-top:4px;color:var(--tx3);font-size:11.5px}
+.controls{display:flex;flex-wrap:wrap;gap:var(--sp-2);align-items:center;margin:var(--sp-4) 0}
+.tgl{display:flex;align-items:center;gap:var(--sp-2);height:var(--btn-h);font-size:12.5px;color:var(--tx2);background:var(--card);border:1px solid var(--line);border-radius:var(--rad-sm);padding:0 var(--sp-3);cursor:pointer;user-select:none}
+.tgl input{accent-color:var(--bad)}
+.ep{display:flex;align-items:center;gap:var(--sp-3);min-height:50px;padding:8px var(--sp-4);background:var(--card);border:1px solid var(--line);border-radius:var(--rad-sm);margin-bottom:6px;cursor:pointer;transition:border-color .12s}
+.ep:hover{border-color:var(--ac)}
+.ep .no{flex:none;min-width:48px;text-align:center;font-weight:800;font-size:12.5px;color:var(--ac);background:rgba(255,143,177,.1);border:1px solid rgba(255,143,177,.3);border-radius:8px;padding:3px 7px}
+.ep .ea{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13.5px}
+.ep .meta{flex:none;font-size:12px;color:var(--tx2);display:flex;gap:6px;align-items:center}
+
+/* ===== bölüm/oynatıcı sayfası ===== */
+.opt{display:flex;flex-wrap:wrap;row-gap:var(--sp-2);align-items:center;gap:var(--sp-3);padding:10px var(--sp-4);background:var(--card);border:1px solid var(--line);border-radius:var(--rad);margin-bottom:8px;cursor:pointer;transition:border-color .12s}
+.opt:hover{border-color:var(--ac)}
+.opt .pname{font-weight:800;font-size:14px;flex:none;max-width:40%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.opt .fansub{color:var(--tx2);font-size:12.5px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.opt .tag,.opt .badge{flex:none}
+.optacts{margin-left:auto;flex:none;display:flex;gap:5px;align-items:center}
+
+.player-box{position:relative;background:#000;border:1px solid var(--line);border-radius:var(--rad);overflow:hidden;display:flex;justify-content:center}
+.player-box iframe{display:block;width:100%;aspect-ratio:16/9;max-width:min(100%,calc(78vh * 16 / 9));border:0;background:#000}
+.note-soft{margin-top:var(--sp-2);font-size:12px;color:var(--tx2);background:var(--card);border:1px solid var(--line);border-radius:var(--rad-sm);padding:8px var(--sp-3)}
+.note-soft b{color:var(--tx)}
+.note{background:rgba(255,201,77,.07);border:1px solid rgba(255,201,77,.3);color:#ffe2a0;border-radius:var(--rad);padding:12px var(--sp-4);font-size:13px;margin:var(--sp-3) 0}
+.errbox{background:rgba(255,92,108,.08);border:1px solid rgba(255,92,108,.35);color:#ffb9c1;border-radius:var(--rad);padding:14px var(--sp-4);font-size:13.5px;margin:var(--sp-3) 0}
+.pmeta{display:flex;flex-wrap:wrap;gap:var(--sp-2);align-items:center;margin:var(--sp-3) 0 4px;font-size:12.5px;color:var(--tx2)}
+.pmeta .pname{font-weight:800;font-size:15px;color:var(--tx)}
+.src{display:flex;flex-wrap:wrap;gap:var(--sp-2);align-items:center;margin-top:var(--sp-2);padding:10px var(--sp-4);background:var(--card);border:1px solid var(--line);border-radius:var(--rad)}
+.src .lbl{color:var(--tx2);font-size:12.5px;flex:none}
+.src a{word-break:break-all;font-size:12.5px}
+.src .grp{margin-left:auto;display:flex;gap:var(--sp-2);flex-wrap:wrap}
+.src .grp .copybtn{margin-left:0}
+.resolvebox{margin:var(--sp-3) 0;padding:12px var(--sp-4);background:var(--card);border:1px solid rgba(87,217,163,.35);border-radius:var(--rad);font-size:12.5px}
+.resolvebox .rurl{display:flex;gap:var(--sp-2);align-items:center;flex-wrap:wrap;margin:7px 0 0}
+.resolvebox code{background:#000;border:1px solid var(--line);border-radius:7px;padding:6px 9px;font-size:12px;color:var(--ac2);font-family:ui-monospace,Consolas,monospace;word-break:break-all;flex:1;min-width:200px}
+
+.advanced{margin-top:var(--sp-5);border-top:1px solid var(--line);padding-top:var(--sp-3)}
+.advanced summary{cursor:pointer;font-size:13px;color:var(--tx2);font-weight:700;list-style:none;display:flex;align-items:center;gap:6px}
+.advanced summary::before{content:"▸";display:inline-block;transition:transform .12s;color:var(--tx3)}
+.advanced[open] summary::before{transform:rotate(90deg)}
+.advanced summary::-webkit-details-marker{display:none}
+.advanced[open] summary{margin-bottom:var(--sp-3)}
+
+/* ===== alt gezinme (mobil) ===== */
 .bnav{display:none}
-/* mobil */
+
+/* ===== mobil ===== */
 @media (max-width:720px){
-  body{padding-bottom:calc(66px + env(safe-area-inset-bottom,0px))}
-  .top-in{padding:8px 12px;gap:8px}
+  body{padding-bottom:calc(60px + env(safe-area-inset-bottom,0px))}
+  .top-in{padding:var(--sp-2) var(--sp-3);gap:var(--sp-2)}
   .logo span{display:none}
+  .logo{font-size:17px}
+  .kbd{display:none}
   .top .rnd{display:none}
-  main{padding-top:16px}
-  h1.anime-title{font-size:22px}
-  .grid{grid-template-columns:repeat(2,1fr);gap:18px 12px}
-  .rail .card{width:132px}
-  .feat{flex-direction:column;align-items:stretch;padding:12px 12px 18px;gap:16px}
-  .fposter{width:100%}
-  .fposter .poster{aspect-ratio:16/9}
-  .fposter .pl{font-size:150px;bottom:-30px}
-  .ftext{padding:0 4px}
-  .facts .btn{flex:1;justify-content:center}
-  .sh{margin-top:28px}
-  .sh h2{font-size:19px}
-  .aposter{width:92px}
-  .aposter .pl{font-size:42px}
+  main{padding:var(--sp-4) 0 40px}
+  h1.anime-title{font-size:20px}
+  .ep .meta{display:none}
+  .grid{grid-template-columns:repeat(2,1fr);gap:var(--sp-4) var(--sp-3)}
+  .rail .card{width:118px}
+  .feat{flex-direction:row;flex-wrap:wrap;align-items:flex-start;gap:var(--sp-3);padding:var(--sp-3)}
+  .fposter{width:36%}
+  .fposter .poster{aspect-ratio:3/4}
+  .ftext{flex:1 1 0;min-width:180px}
+  .ftext h1{font-size:21px;margin:6px 0 var(--sp-2)}
+  .facts .btn{flex:1 1 100%;justify-content:center}
+  .sh{margin-top:26px}
+  .sh h2{font-size:16px}
+  .aposter{width:88px}
   .crumb{flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
   .controls .btn,.controls .tgl{flex:1 1 auto;justify-content:center}
-  .opt{flex-wrap:wrap;row-gap:8px}
   .opt .pname{max-width:55%}
   .optacts{width:100%;margin-left:0;justify-content:flex-end}
   .src{flex-direction:column;align-items:stretch}
   .src .grp{margin-left:0}
   .copybtn{max-width:100%;white-space:normal;word-break:break-all;text-align:left}
-  .chiprow,.fansub-chips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
-  .chiprow .fchip,.fansub-chips .fchip{flex:none;white-space:nowrap}
+  .chiprow{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+  .chiprow .fchip{flex:none;white-space:nowrap}
   .chiprow .lbl{min-width:0}
-  .player-box{margin:0 -16px;border-radius:0;border-left:0;border-right:0}
+  .player-box{margin:0 calc(var(--sp-4)*-1);border-radius:0;border-left:0;border-right:0}
+  .player-box iframe{max-width:none}
   .jump input{font-size:16px}
-  .bnav{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(13,19,21,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
-  .bnav a,.bnav button{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:9px 0 8px;font-size:11px;color:var(--tx2)}
-  .bnav a:hover{text-decoration:none;color:var(--ac)}
-  .bnav i{font-size:18px}
-}
-
-.poster img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .35s}
-.poster img.on{opacity:1}
-.pn{z-index:1;background:rgba(0,0,0,.62)}
-.gchips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
-.gchip{color:var(--ac);border-color:rgba(255,143,177,.3)}
-.ainfo{margin-top:10px}
-.syn{margin-top:10px;font-size:13.5px;line-height:1.55;color:var(--tx2);max-width:70ch}
-.syn small{display:block;margin-top:4px;color:var(--tx3);font-size:11.5px}
-.foot{max-width:1180px;margin:0 auto;padding:0 16px 28px;color:var(--tx3);font-size:12.5px}
-@media (max-width:720px){
-  .feat{flex-direction:row;flex-wrap:wrap;align-items:flex-start;gap:14px;padding:14px}
-  .fposter{width:36%}
-  .fposter .poster{aspect-ratio:3/4}
-  .fposter .pl{font-size:80px;bottom:-8px}
-  .ftext{flex:1 1 0;padding:0}
-  .ftext h1{font-size:22px;margin:6px 0 10px}
-  .facts .btn{flex:1 1 100%;justify-content:center}
-}
-
-/* ===== kompakt yoğunluk: tüm ölçüleri küçültür ===== */
-/* İnce ayar: --zoom tüm siteyi ölçekler (1 = normal, 0.9 = %10 küçük, 0.8 = %20 küçük) */
-:root{--zoom:.9}
-html{zoom:var(--zoom)}
-html,body{font-size:14px;line-height:1.5}
-.poster{container-type:inline-size;border-radius:10px}
-.pl,.fposter .pl,.aposter .pl{font-size:56px;font-size:56cqw;letter-spacing:-.05em;left:6cqw;bottom:-8cqw}
-.pn{top:6px;left:6px;padding:1px 8px;font-size:10.5px}
-.logo{font-size:17px;gap:8px}
-.logo i{font-size:20px}
-.searchbox{height:38px;padding:0 14px}
-#q{font-size:14px}
-.ibtn{width:38px;height:38px;font-size:14px}
-.kbd{font-size:10.5px}
-.crumb{font-size:12.5px;margin-bottom:12px;gap:5px}
-.btn{padding:6px 14px;min-height:34px;font-size:13px;gap:6px}
-.btn.sm{padding:4px 11px;min-height:28px;font-size:12px}
-.stats{gap:6px;margin:8px 0 4px}
-.stat{padding:2px 10px;font-size:12px}
-.pchip{font-size:11px;padding:1px 7px}
-.players-chips{gap:5px;margin-top:6px}
-.count-line{font-size:12.5px;margin:2px 0 12px}
-.card{gap:5px}
-.ct{font-size:12.5px;line-height:1.3}
-.cs{font-size:11px}
-.rail{gap:12px}
-.flabel{font-size:12.5px}
-.fmeta span{font-size:12px;padding:3px 10px}
-.facts{margin-top:14px;gap:8px}
-.gchips{margin-top:10px;gap:5px}
-.kats{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
-.kat{padding:12px 14px;min-height:80px;border-radius:12px}
-.kat i{font-size:17px}
-.kat b{font-size:14px}
-.kat small{font-size:11.5px}
-.az{gap:6px}
-.az a{width:34px;height:34px;font-size:12.5px;border-radius:8px}
-.controls{margin:12px 0;gap:8px}
-.tgl{padding:5px 10px;font-size:12px}
-.ep{padding:6px 12px;min-height:44px;margin-bottom:5px;border-radius:9px;gap:10px}
-.ep .no{font-size:12px;min-width:46px;padding:2px 6px}
-.ep .ea{font-size:13.5px}
-.opt{padding:9px 12px;margin-bottom:6px;border-radius:10px;gap:10px}
-.opt .pname{font-size:13.5px}
-.opt .fansub{font-size:12px}
-.tag{font-size:10.5px;padding:1px 6px}
-.badge{font-size:10.5px;padding:1px 8px}
-.fchip{padding:3px 11px;font-size:12px}
-.chiprow{margin:8px 0 2px;gap:6px}
-.chiprow .lbl{font-size:11.5px;min-width:56px}
-.fansub-chips{margin:8px 0;gap:6px}
-.pager{margin:14px 0;gap:5px}
-.pager button{min-width:34px;height:34px;font-size:12.5px}
-.jump{font-size:12.5px}
-.src{padding:8px 12px;gap:8px;margin-top:8px;font-size:12.5px}
-.copybtn{padding:4px 10px;font-size:11.5px}
-.mini{padding:3px 9px;min-height:28px;font-size:11px}
-.note,.errbox{padding:9px 12px;font-size:12.5px;margin:10px 0}
-.note-soft{font-size:12px;padding:6px 10px}
-.pmeta{font-size:12.5px;margin:10px 0 4px}
-.pmeta .pname{font-size:15px}
-.syn{font-size:12.5px;margin-top:8px}
-.empty{padding:30px 16px}
-.foot{font-size:11.5px;padding-bottom:20px}
-@media (min-width:721px){
-  .wrap,.top-in{max-width:1120px}
-  .top-in{padding:8px 16px;gap:10px}
-  main{padding:18px 0 50px}
-  h1.anime-title{font-size:22px}
-  .grid{grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:16px 12px}
-  .rail .card{width:124px}
-  .feat{gap:22px;padding:18px;border-radius:18px}
-  .fposter{width:150px}
-  .ftext h1{font-size:clamp(22px,3vw,32px);margin:6px 0 10px}
-  .sh{margin:28px 0 10px}
-  .sh h2{font-size:17px}
-  .aposter{width:110px}
-  .ahead{gap:14px}
-}
-@media (max-width:720px){
-  body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
-  .searchbox{height:40px}
   #q{font-size:16px}
-  main{padding:14px 0 40px}
-  h1.anime-title{font-size:19px}
-  .grid{grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:14px 10px}
-  .rail .card{width:108px}
-  .feat{gap:12px;padding:12px}
-  .fposter{width:32%}
-  .ftext h1{font-size:19px;margin:4px 0 8px}
-  .btn{min-height:40px}
-  .mini{min-height:32px}
-  .pager button{min-width:38px;height:38px}
-  .sh{margin:22px 0 8px}
-  .sh h2{font-size:16px}
-  .aposter{width:80px}
-  .ahead{gap:12px}
-  .bnav a,.bnav button{padding:7px 0 6px;font-size:10.5px}
-  .bnav i{font-size:16px}
-}
-@media (max-width:720px){
-  #q{font-size:18px}
-  .btn{min-height:44px}
-  .mini{min-height:36px}
-  .pager button{min-width:42px;height:42px}
-  .ibtn{width:42px;height:42px}
+  .bnav{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(13,19,21,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+  .bnav a,.bnav button{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 0 7px;font-size:10.5px;color:var(--tx2)}
+  .bnav a:hover{text-decoration:none;color:var(--ac)}
+  .bnav i{font-size:17px}
 }
 </style>
 </head>
@@ -933,14 +815,15 @@ async function alHydrate(){
   if (Date.now()<alCool) return;
   const need = [...new Set([...document.querySelectorAll('.poster[data-slug]:not([data-i])')].map(p=>p.dataset.slug))]
     .filter(s=> !(s in AL) && !alPending.has(s));
-  for (let i=0; i<need.length; i+=10){
+  const BATCH = 24;
+  for (let i=0; i<need.length; i+=BATCH){
     if (tok!==alTok) return;
-    const grp = need.slice(i, i+10);
+    const grp = need.slice(i, i+BATCH);
     grp.forEach(x=>alPending.add(x));
     try{ await alBatch(grp); }catch(e){ alCool = Math.max(alCool, Date.now()+30000); return; }
     finally{ grp.forEach(x=>alPending.delete(x)); }
     alPaint();
-    await new Promise(r=>setTimeout(r, 600));
+    if (i+BATCH < need.length) await new Promise(r=>setTimeout(r, 350));
   }
 }
 async function enrichAnime(slug){
@@ -1109,127 +992,84 @@ function optRowHtml(x, num){
   </div>`;
 }
 
-function renderOptions(slug, data, bolumId){
+function pickBest(items){
+  if (!items || !items.length) return null;
+  const score = x=> (x.l.tip==='url'?0:10) + (x.l.durum==='calisiyor'?0:x.l.durum==='supheli'?1:x.l.durum==='olu'?3:2);
+  let best = items[0];
+  for (const x of items) if (score(x) < score(best)) best = x;
+  return best;
+}
+
+function renderEpisode(slug, data, bolumId, playerName, idxStr){
   const ep = findEp(data, bolumId);
   if (!ep){ appEl().innerHTML = `<div class="errbox">Bölüm bulunamadı: ${esc(bolumId)}</div>`; return; }
   const okey = slug+'|'+bolumId;
   if (optKey !== okey){ optKey = okey; optSelPlayers = new Set(); optSelFansubs = new Set(); }
   const meta = ANIME.find(a=>a.slug===slug) || {baslik:slug};
   const num = ep.no!=null?String(ep.no):ep.slug;
-  const gorsel = optionsFor(ep).filter(x=> !kaldirilanSet().has(x.l.url));  // M2
   const olu = oluGoster.get();
+  const gorsel = optionsFor(ep).filter(x=> !kaldirilanSet().has(x.l.url));   // M2
   const canli = gorsel.filter(x=> olu || x.l.durum!=='olu');
   const deadCount = gorsel.length - canli.length;
-  /* M3/M4: player + fansub çipleri (OR içinde, boyutlar arası AND/kesişim) */
-  const pCount = new Map(), fCount = new Map();
-  for (const x of gorsel){
-    pCount.set(x.l.player, (pCount.get(x.l.player)||0)+1);
-    fCount.set(x.l.fansub, (fCount.get(x.l.fansub)||0)+1);
-  }
-  const shown = canli
-    .filter(x=> !optSelPlayers.size || optSelPlayers.has(x.l.player))
-    .filter(x=> !optSelFansubs.size || optSelFansubs.has(x.l.fansub));
-  const filtreli = optSelPlayers.size || optSelFansubs.size;
   const cmd = `turkanime_ara.py ${slug} --bolum ${num}`;
   const ilkUrl = firstUrlLink(ep);
-  appEl().innerHTML = `
-    <div class="crumb">
+  const crumb = `<div class="crumb">
       <a href="#/ara">Arama</a><span class="sep"><i class="fa-solid fa-chevron-right"></i></span>
       <a href="#/anime/${encodeURIComponent(slug)}">${esc(meta.baslik)}</a><span class="sep"><i class="fa-solid fa-chevron-right"></i></span>
       <span>${esc(ep.ad)}</span>
-    </div>
-    <h1 class="anime-title" style="font-size:20px">${esc(ep.ad)}</h1>
-    <div class="controls">
-      <button class="btn" id="epIndir"><i class="fa-solid fa-download"></i> Bu bölümü indir</button>
-      <label class="tgl"><input type="checkbox" id="oluTgl" ${olu?'checked':''}> ölüleri göster</label>
-      <span style="color:var(--tx3);font-size:13px">${shown.length} seçenek${deadCount?` · ${deadCount} ölü gizli`:''}${filtreli?' · filtreli':''}</span>
-      ${ADMIN&&_geriAl.length?`<button class="btn ghost" id="geriBtn" title="son kaldırdığın linki geri getir"><i class="fa-solid fa-rotate-left"></i> geri al (${_geriAl.length})</button>`:''}
-      ${ADMIN&&kaldirilanSay()?`<button class="btn ghost" id="exportBtn" title="henüz repoya eklenmemiş kaldırmaları el_degisiklikleri.json olarak indir"><i class="fa-solid fa-file-export"></i> değişiklikleri dışa aktar (${kaldirilanSay()})</button>`:''}
-    </div>
-    ${chipRowHtml('Player', pCount, optSelPlayers, 'p')}
-    ${chipRowHtml('Fansub', fCount, optSelFansubs, 'f')}
-    <div id="optlist">
-    ${shown.length? shown.map(x=>optRowHtml(x, num)).join('')
-    : `<div class="empty"><div class="big"><i class="fa-solid fa-ban"></i></div>Görünür seçenek yok.${!olu?' Ölüleri açmayı dene.':filtreli?' Filtreleri temizle.':''}</div>`}
-    </div>
-    <div class="src">
-      <span class="lbl">Konsol komutu:</span>
-      <button class="copybtn" data-cmd="${esc(cmd)}">${esc(cmd)}</button>
-    </div>
-  `;
+    </div>`;
   document.title = `${meta.baslik} — ${ep.ad} | TürkAnime Arşiv`;
-  const tgl = $('#oluTgl');
-  if (tgl) tgl.onchange = ()=>{ oluGoster.set(tgl.checked); renderOptions(slug, data, bolumId); };
-  const ei = $('#epIndir');
-  if (ei) ei.onclick = ()=>{
-    if (!ilkUrl){ alert('Bu bölümde indirilebilir url linki yok.'); return; }
-    copyText(ytCmd(ilkUrl.url, num+'. Bolum.mp4')).then(()=> flashDone(ei,'kopyalandı ✓',1500,'<i class="fa-solid fa-download"></i> Bu bölümü indir'));
-  };
-  const gb = $('#geriBtn');
-  if (gb) gb.onclick = ()=>{ linkGeriAl(); renderOptions(slug, data, bolumId); };
-  const ex = $('#exportBtn');
-  if (ex) ex.onclick = ()=>{
-    const payload = {kaldirilan_url: bekleyenKaldirilan(), tarih: new Date().toISOString()};
-    indirFile('el_degisiklikleri.json', JSON.stringify(payload, null, 2), 'application/json');
-    flashDone(ex, 'indirildi ✓', 1500);
-  };
-  /* M3/M4 çip tıklama */
-  appEl().querySelectorAll('.fchip[data-dim]').forEach(b=>{
-    b.onclick = ()=>{
-      const dim = b.dataset.dim, val = b.dataset.val;
-      const set = dim==='p' ? optSelPlayers : optSelFansubs;
-      if (set.has(val)) set.delete(val); else set.add(val);
-      renderOptions(slug, data, bolumId);
-    };
-  });
-  appEl().querySelectorAll('.fchip[data-temizle]').forEach(b=>{
-    b.onclick = ()=>{
-      if (b.dataset.temizle==='p') optSelPlayers = new Set();
-      else optSelFansubs = new Set();
-      renderOptions(slug, data, bolumId);
-    };
-  });
-  appEl().querySelectorAll('.opt').forEach(el=>{
-    el.onclick = (ev)=>{
-      if (ev.target.closest('.mini')) return;
-      location.hash = `#/anime/${encodeURIComponent(slug)}/${bolumId}/${el.dataset.pl}/${el.dataset.i}`;
-    };
-  });
-  appEl().querySelectorAll('.mini').forEach(b=>{
-    b.onclick = (ev)=>{
-      ev.stopPropagation();
-      const act = b.dataset.act, u = b.dataset.url;
-      if (act==='kaldir'){
-        linkKaldir(u);
-        renderOptions(slug, data, bolumId);
-        return;
-      }
-      if (act==='dl-mp4'){ copyText(ytCmd(u, num+'. Bolum.mp4')).then(()=> flashDone(b,'✓')); return; }
-      if (act==='dl-g'){ copyText('yt-dlp -g "'+safeArg(u)+'"').then(()=> flashDone(b,'✓')); return; }
-      if (act==='resolve'){ showResolve(b, u); return; }
-    };
-  });
-  bindCopy();
-}
 
-/* ============ player görünümü ============ */
-function renderPlayer(slug, data, bolumId, playerName, idxStr){
-  const ep = findEp(data, bolumId);
-  if (!ep){ appEl().innerHTML = `<div class="errbox">Bölüm bulunamadı: ${esc(bolumId)}</div>`; return; }
-  const meta = ANIME.find(a=>a.slug===slug) || {baslik:slug};
-  let pName;
-  try { pName = decodeURIComponent(playerName); } catch(e){ pName = playerName; }
-  const kaldi = kaldirilanSet();
-  const cands = [];
-  ep.links.forEach((l,i)=>{ if (l.player===pName && !kaldi.has(l.url)) cands.push({l,i}); });
-  if (!cands.length){ appEl().innerHTML = `<div class="errbox">Player bulunamadı: ${esc(pName)}</div>`; return; }
-  const idxRaw = parseInt(idxStr||'0',10)||0;
-  let idx = cands.findIndex(c=>c.i===idxRaw);          // satırın gerçek linki
-  if (idx===-1) idx = Math.min(Math.max(0, idxRaw), cands.length-1);
-  const cur = cands[idx];
-  const olu = oluGoster.get();
-  const num = ep.no!=null?String(ep.no):ep.slug;
-  const cmd = `turkanime_ara.py ${slug} --bolum ${num}`;
+  if (!canli.length){
+    appEl().innerHTML = `${crumb}
+      <h1 class="anime-title" style="font-size:20px">${esc(ep.ad)}</h1>
+      <div class="controls">
+        <label class="tgl"><input type="checkbox" id="oluTgl" ${olu?'checked':''}> ölüleri göster</label>
+      </div>
+      <div class="empty"><div class="big"><i class="fa-solid fa-ban"></i></div>Görünür seçenek yok.${!olu?' Ölüleri açmayı dene.':''}</div>`;
+    const tgl0 = $('#oluTgl');
+    if (tgl0) tgl0.onchange = ()=>{ oluGoster.set(tgl0.checked); renderEpisode(slug, data, bolumId, playerName, idxStr); };
+    return;
+  }
+
+  /* ---- seçim: URL'de player/idx varsa onu kullan, yoksa en iyi seçeneği otomatik seç ---- */
+  let pName = null;
+  if (playerName){ try{ pName = decodeURIComponent(playerName); } catch(e){ pName = playerName; } }
+  let cur = null;
+  if (pName){
+    const cands = canli.filter(x=> x.l.player===pName);
+    const idxRaw = parseInt(idxStr||'',10);
+    cur = (!isNaN(idxRaw) && cands.find(c=>c.i===idxRaw)) || pickBest(cands);
+  }
+  if (!cur) cur = pickBest(canli);
+  const curPName = cur.l.player, curIdx = cur.i;
+  const hrefFor = (pl,i)=> `#/anime/${encodeURIComponent(slug)}/${bolumId}/${encodeURIComponent(pl)}/${i}`;
+
+  /* ---- çevirmen (fansub) grupları: üstte gösterilir ---- */
+  const fansubMap = new Map();
+  for (const x of canli){ if (!fansubMap.has(x.l.fansub)) fansubMap.set(x.l.fansub, []); fansubMap.get(x.l.fansub).push(x); }
+  const fansubList = [...fansubMap.entries()].sort((a,b)=> b[1].length-a[1].length || String(a[0]).localeCompare(String(b[0]),'tr'));
+  const fansubRow = `<div class="chiprow">
+    <span class="lbl">Çevirmen</span>
+    ${fansubList.map(([fs,items])=>{
+      const on = fs===cur.l.fansub;
+      const tgt = on ? cur : pickBest(items);
+      return `<a class="fchip ${on?'on':''}" href="${hrefFor(tgt.l.player, tgt.i)}">${esc(fs)} <b>${items.length}</b></a>`;
+    }).join('')}
+  </div>`;
+
+  /* ---- aynı çevirmenin alternatif kaynakları (host/player): altta gösterilir ---- */
+  const hostAlts = (fansubMap.get(cur.l.fansub)||[]).slice().sort((a,b)=>{
+    const as=(a.l.tip==='url'?0:1), bs=(b.l.tip==='url'?0:1);
+    if (as!==bs) return as-bs;
+    return String(a.l.player).localeCompare(String(b.l.player),'tr');
+  });
+  const hostRow = hostAlts.length>1 ? `<div class="chiprow">
+    <span class="lbl">Kaynak</span>
+    ${hostAlts.map(x=>`<a class="fchip ${x.i===cur.i?'on':''}" href="${hrefFor(x.l.player,x.i)}">${esc(x.l.player)} ${dot(x.l.durum)}</a>`).join('')}
+  </div>` : '';
+
+  /* ---- oynatıcı gömme (eski renderPlayer mantığı) ---- */
   const emb = embedUrl(cur.l.url, cur.l.tip);
   const src = srcLink(cur.l.url, cur.l.tip);
   const rawUrl = String(cur.l.url||'');
@@ -1243,25 +1083,44 @@ function renderPlayer(slug, data, bolumId, playerName, idxStr){
         <button class="copybtn" data-cmd="${esc('yt-dlp -g "'+safeArg(rawUrl)+'"')}" title="-g doğrudan akış/m3u8 linkini verir">m3u8 (yt-dlp -g)</button>
         ${SERVER_OK?`<button class="copybtn" data-act="resolve" data-url="${esc(rawUrl)}">akışı çöz (m3u8/mp4)</button>`:''}
       </span>` : '';
-  appEl().innerHTML = `
-    <div class="crumb">
-      <a href="#/ara">Arama</a><span class="sep"><i class="fa-solid fa-chevron-right"></i></span>
-      <a href="#/anime/${encodeURIComponent(slug)}">${esc(meta.baslik)}</a><span class="sep"><i class="fa-solid fa-chevron-right"></i></span>
-      <a href="#/anime/${encodeURIComponent(slug)}/${bolumId}">${esc(ep.ad)}</a><span class="sep"><i class="fa-solid fa-chevron-right"></i></span>
-      <span>${esc(pName)}</span>
+
+  /* ---- gelişmiş: tüm bağlantılar (eski tam liste, isteğe bağlı açılır) ---- */
+  const pCount = new Map(), fCount = new Map();
+  for (const x of canli){
+    pCount.set(x.l.player, (pCount.get(x.l.player)||0)+1);
+    fCount.set(x.l.fansub, (fCount.get(x.l.fansub)||0)+1);
+  }
+  const advShown = canli
+    .filter(x=> !optSelPlayers.size || optSelPlayers.has(x.l.player))
+    .filter(x=> !optSelFansubs.size || optSelFansubs.has(x.l.fansub));
+  const filtreli = optSelPlayers.size || optSelFansubs.size;
+  const advancedHtml = `<details class="advanced">
+    <summary>Tüm bağlantılar <span class="pchip" style="border:none;padding:0 0 0 4px">${canli.length}${deadCount?` · ${deadCount} ölü gizli`:''}</span></summary>
+    ${chipRowHtml('Player', pCount, optSelPlayers, 'p')}
+    ${chipRowHtml('Fansub', fCount, optSelFansubs, 'f')}
+    <div id="optlist">
+    ${advShown.length? advShown.map(x=>optRowHtml(x, num)).join('')
+    : `<div class="empty"><div class="big"><i class="fa-solid fa-ban"></i></div>Görünür seçenek yok.${filtreli?' Filtreleri temizle.':''}</div>`}
     </div>
+  </details>`;
+
+  appEl().innerHTML = `${crumb}
+    <h1 class="anime-title" style="font-size:20px">${esc(ep.ad)}</h1>
+    <div class="controls">
+      <button class="btn" id="epIndir"><i class="fa-solid fa-download"></i> Bu bölümü indir</button>
+      <label class="tgl"><input type="checkbox" id="oluTgl" ${olu?'checked':''}> ölüleri göster</label>
+      ${ADMIN&&_geriAl.length?`<button class="btn ghost" id="geriBtn" title="son kaldırdığın linki geri getir"><i class="fa-solid fa-rotate-left"></i> geri al (${_geriAl.length})</button>`:''}
+      ${ADMIN&&kaldirilanSay()?`<button class="btn ghost" id="exportBtn" title="henüz repoya eklenmemiş kaldırmaları el_degisiklikleri.json olarak indir"><i class="fa-solid fa-file-export"></i> değişiklikleri dışa aktar (${kaldirilanSay()})</button>`:''}
+    </div>
+    ${fansubRow}
     ${iframeHtml}
     <div class="note-soft">Player açılmadıysa (üçüncü parti host engelleyebilir) <b>kaynak linkini</b> kullan ya da yt-dlp komutuyla indir.</div>
+    ${hostRow}
     <div class="pmeta">
-      <span class="pname">${esc(pName)}</span>
+      <span class="pname">${esc(cur.l.player)}</span>
       ${badge(cur.l.durum)}
       <span class="tag ${tipClass(cur.l.tip)}">${esc(cur.l.tip)}</span>
-      <span>${esc(cur.l.fansub)}</span>
     </div>
-    ${cands.length>1?`<div class="fansub-chips">${cands.map((c,ci)=>`
-      <button class="fchip ${ci===idx?'on':''}" data-ci="${c.i}">
-        ${esc(c.l.fansub)} ${dot(c.l.durum)} <span class="tag ${tipClass(c.l.tip)}">${esc(c.l.tip)}</span>
-      </button>`).join('')}</div>`:''}
     ${src?`<div class="src"><span class="lbl">Kaynak:</span><a href="${esc(src)}" target="_blank" rel="noopener noreferrer">${esc(src)}</a></div>`:''}
     ${dlGrp?`<div class="src"><span class="lbl">İndir:</span>${dlGrp}</div>`:''}
     ${ADMIN?`<div class="src"><span class="lbl">Yönetici:</span><button class="btn ghost" id="oluBtn"><i class="fa-solid fa-skull"></i> Bu link ölü — gizle</button><span style="color:var(--tx3);font-size:12px">bu tarayıcıda gizler; herkese açmak için bölüm sayfasından dışa aktar</span></div>`:''}
@@ -1269,23 +1128,64 @@ function renderPlayer(slug, data, bolumId, playerName, idxStr){
       <span class="lbl">Konsol komutu:</span>
       <button class="copybtn" data-cmd="${esc(cmd)}">${esc(cmd)}</button>
     </div>
+    ${advancedHtml}
   `;
-  document.title = `${meta.baslik}${ep.no!=null?' #'+ep.no:''} — ${pName} | TürkAnime Arşiv`;
-  appEl().querySelectorAll('.fchip').forEach(b=>{
-    b.onclick = ()=>{
-      location.hash = `#/anime/${encodeURIComponent(slug)}/${bolumId}/${playerName}/${b.dataset.ci}`;
-    };
-  });
+
+  const tgl = $('#oluTgl');
+  if (tgl) tgl.onchange = ()=>{ oluGoster.set(tgl.checked); renderEpisode(slug, data, bolumId, curPName, String(curIdx)); };
+  const ei = $('#epIndir');
+  if (ei) ei.onclick = ()=>{
+    if (!ilkUrl){ alert('Bu bölümde indirilebilir url linki yok.'); return; }
+    copyText(ytCmd(ilkUrl.url, num+'. Bolum.mp4')).then(()=> flashDone(ei,'kopyalandı ✓',1500,'<i class="fa-solid fa-download"></i> Bu bölümü indir'));
+  };
+  const gb = $('#geriBtn');
+  if (gb) gb.onclick = ()=>{ linkGeriAl(); renderEpisode(slug, data, bolumId, curPName, String(curIdx)); };
+  const ex = $('#exportBtn');
+  if (ex) ex.onclick = ()=>{
+    const payload = {kaldirilan_url: bekleyenKaldirilan(), tarih: new Date().toISOString()};
+    indirFile('el_degisiklikleri.json', JSON.stringify(payload, null, 2), 'application/json');
+    flashDone(ex, 'indirildi ✓', 1500);
+  };
   const rv = appEl().querySelector('[data-act="resolve"]');
   if (rv) rv.onclick = ()=> showResolve(rv, rv.dataset.url);
   const ob = $('#oluBtn');
   if (ob) ob.onclick = ()=>{
     linkKaldir(rawUrl);
-    const kalan = cands.filter(c=> c.l.url!==rawUrl);   // aynı player'da başka aday varsa ona geç
-    location.hash = kalan.length
-      ? `#/anime/${encodeURIComponent(slug)}/${bolumId}/${playerName}/${kalan[0].i}`
-      : `#/anime/${encodeURIComponent(slug)}/${bolumId}`;
+    const kalan = (fansubMap.get(cur.l.fansub)||[]).filter(c=> c.l.url!==rawUrl);
+    location.hash = kalan.length ? hrefFor(kalan[0].l.player, kalan[0].i) : `#/anime/${encodeURIComponent(slug)}/${bolumId}`;
   };
+  /* gelişmiş liste: filtre çipleri + satırlar */
+  appEl().querySelectorAll('.fchip[data-dim]').forEach(b=>{
+    b.onclick = ()=>{
+      const dim = b.dataset.dim, val = b.dataset.val;
+      const set = dim==='p' ? optSelPlayers : optSelFansubs;
+      if (set.has(val)) set.delete(val); else set.add(val);
+      renderEpisode(slug, data, bolumId, curPName, String(curIdx));
+    };
+  });
+  appEl().querySelectorAll('.fchip[data-temizle]').forEach(b=>{
+    b.onclick = ()=>{
+      if (b.dataset.temizle==='p') optSelPlayers = new Set();
+      else optSelFansubs = new Set();
+      renderEpisode(slug, data, bolumId, curPName, String(curIdx));
+    };
+  });
+  appEl().querySelectorAll('#optlist .opt').forEach(el=>{
+    el.onclick = (ev)=>{
+      if (ev.target.closest('.mini')) return;
+      location.hash = hrefFor(decodeURIComponent(el.dataset.pl), el.dataset.i);
+    };
+  });
+  appEl().querySelectorAll('#optlist .mini').forEach(b=>{
+    b.onclick = (ev)=>{
+      ev.stopPropagation();
+      const act = b.dataset.act, u = b.dataset.url;
+      if (act==='kaldir'){ linkKaldir(u); renderEpisode(slug, data, bolumId, curPName, String(curIdx)); return; }
+      if (act==='dl-mp4'){ copyText(ytCmd(u, num+'. Bolum.mp4')).then(()=> flashDone(b,'✓')); return; }
+      if (act==='dl-g'){ copyText('yt-dlp -g "'+safeArg(u)+'"').then(()=> flashDone(b,'✓')); return; }
+      if (act==='resolve'){ showResolve(b, u); return; }
+    };
+  });
   bindCopy();
 }
 
@@ -1337,8 +1237,7 @@ function route(){
   showLoading('Bölümler yükleniyor...');
   loadAnime(slug).then(data=>{
     if (tok!==routeToken) return;
-    if (bolumId && player) renderPlayer(slug, data, bolumId, player, idx);
-    else if (bolumId) renderOptions(slug, data, bolumId);
+    if (bolumId) renderEpisode(slug, data, bolumId, player, idx);
     else { epPage = 1; renderAnime(slug, data); enrichAnime(slug); }
   }).catch(err=>{
     if (tok!==routeToken) return;
