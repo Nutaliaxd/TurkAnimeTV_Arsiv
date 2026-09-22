@@ -15,7 +15,7 @@
   
 🔗 [**Canlı site**](https://nutaliaxd.github.io/TurkAnimeTV_Arsiv/)
 
-🔗 [**Database dosyalarını indirmek için tıkla**](https://nutaliaxd.github.io/TurkAnimeTV_Arsiv/)
+🔗 [**Database dosyalarını indirmek için tıkla**](https://github.com/Nutaliaxd/TurkAnimeTV_Arsiv/releases/tag/Turkanime.db)
 
 
 </div>
