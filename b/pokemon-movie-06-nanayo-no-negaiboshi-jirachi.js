@@ -1,1 +1,1 @@
-window.__TKA__=window.__TKA__||{};window.__TKA__["pokemon-movie-06-nanayo-no-negaiboshi-jirachi"]=[{"no":null,"ad":"Pokemon Movie 6 - Jirachi Whismaker","slug":"pokemon-movie-6-jirachi-whismaker","links":[{"player":"?","fansub":"-","tip":"url","url":null}]}];
+window.__TKA__=window.__TKA__||{};window.__TKA__["pokemon-movie-06-nanayo-no-negaiboshi-jirachi"]=[{"no":null,"ad":"Pokemon Movie 6 - Jirachi Whismaker","slug":"pokemon-movie-6-jirachi-whismaker","links":[]}];

@@ -1,1 +1,1 @@
-window.__TKA__=window.__TKA__||{};window.__TKA__["zombieland-saga-movie-yumeginga-paradise"]=[];
+window.__TKA__=window.__TKA__||{};window.__TKA__["zombieland-saga-movie-yumeginga-paradise"]=[{"no":1,"ad":"Zombieland Saga Movie: Yumeginga Paradise 1. Bölüm Final","slug":"zombieland-saga-movie-yumeginga-paradise-1-bolum-final","links":[]},{"no":2,"ad":"Zombieland Saga Movie: Yumeginga Paradise 2. Bölüm","slug":"zombieland-saga-movie-yumeginga-paradise-2-bolum","links":[]}];

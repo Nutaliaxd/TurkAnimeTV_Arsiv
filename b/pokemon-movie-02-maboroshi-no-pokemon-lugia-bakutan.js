@@ -1,1 +1,1 @@
-window.__TKA__=window.__TKA__||{};window.__TKA__["pokemon-movie-02-maboroshi-no-pokemon-lugia-bakutan"]=[{"no":null,"ad":"Pokemon Movie 2 - The Power of One","slug":"pokemon-movie-2-the-power-of-one","links":[{"player":"?","fansub":"-","tip":"url","url":null}]}];
+window.__TKA__=window.__TKA__||{};window.__TKA__["pokemon-movie-02-maboroshi-no-pokemon-lugia-bakutan"]=[{"no":null,"ad":"Pokemon Movie 2 - The Power of One","slug":"pokemon-movie-2-the-power-of-one","links":[]}];

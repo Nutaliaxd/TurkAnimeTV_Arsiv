@@ -1,1 +1,1 @@
-window.__TKA__=window.__TKA__||{};window.__TKA__["silent-mobius-the-motion-picture"]=[{"no":null,"ad":"Silent Mobius Movie: The Motion Picture","slug":"silent-mobius-movie-the-motion-picture","links":[{"player":"?","fansub":"-","tip":"url","url":null}]}];
+window.__TKA__=window.__TKA__||{};window.__TKA__["silent-mobius-the-motion-picture"]=[{"no":null,"ad":"Silent Mobius Movie: The Motion Picture","slug":"silent-mobius-movie-the-motion-picture","links":[]}];

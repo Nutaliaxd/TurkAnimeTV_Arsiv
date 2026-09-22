@@ -1,1 +1,1 @@
-window.__TKA__=window.__TKA__||{};window.__TKA__["pokemon-movie-07-rekkuu-no-houmonsha-deoxys"]=[{"no":null,"ad":"Pokemon Movie 7 - Destiny Deoxys","slug":"pokemon-movie-7-destiny-deoxys","links":[{"player":"?","fansub":"-","tip":"url","url":null}]}];
+window.__TKA__=window.__TKA__||{};window.__TKA__["pokemon-movie-07-rekkuu-no-houmonsha-deoxys"]=[{"no":null,"ad":"Pokemon Movie 7 - Destiny Deoxys","slug":"pokemon-movie-7-destiny-deoxys","links":[]}];

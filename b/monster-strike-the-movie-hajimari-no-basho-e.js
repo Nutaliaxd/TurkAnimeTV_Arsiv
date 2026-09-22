@@ -1,1 +1,1 @@
-window.__TKA__=window.__TKA__||{};window.__TKA__["monster-strike-the-movie-hajimari-no-basho-e"]=[{"no":null,"ad":"Monster Strike The Movie: Hajimari no Basho e","slug":"monster-strike-the-movie-hajimari-no-basho-e","links":[{"player":"?","fansub":"-","tip":"url","url":null}]}];
+window.__TKA__=window.__TKA__||{};window.__TKA__["monster-strike-the-movie-hajimari-no-basho-e"]=[{"no":null,"ad":"Monster Strike The Movie: Hajimari no Basho e","slug":"monster-strike-the-movie-hajimari-no-basho-e","links":[]}];

@@ -1,1 +1,1 @@
-window.__TKA__=window.__TKA__||{};window.__TKA__["pokemon-movie-14-black-victini-to-shiroki-eiyuu-reshiram"]=[{"no":null,"ad":"Pokémon Movie 14 - Black - Victini ve Reshiram","slug":"pokemon-movie-14-black-victini-ve-reshiram","links":[{"player":"?","fansub":"-","tip":"url","url":null}]}];
+window.__TKA__=window.__TKA__||{};window.__TKA__["pokemon-movie-14-black-victini-to-shiroki-eiyuu-reshiram"]=[{"no":null,"ad":"Pokémon Movie 14 - Black - Victini ve Reshiram","slug":"pokemon-movie-14-black-victini-ve-reshiram","links":[]}];

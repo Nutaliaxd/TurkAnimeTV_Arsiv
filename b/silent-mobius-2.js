@@ -1,1 +1,1 @@
-window.__TKA__=window.__TKA__||{};window.__TKA__["silent-mobius-2"]=[{"no":null,"ad":"Silent Möbius Movie 2","slug":"silent-mobius-movie-2","links":[{"player":"?","fansub":"-","tip":"url","url":null}]}];
+window.__TKA__=window.__TKA__||{};window.__TKA__["silent-mobius-2"]=[{"no":null,"ad":"Silent Möbius Movie 2","slug":"silent-mobius-movie-2","links":[]}];

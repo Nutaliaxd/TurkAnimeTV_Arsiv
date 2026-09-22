@@ -1,1 +1,1 @@
-window.__TKA__=window.__TKA__||{};window.__TKA__["pokemon-movie-10-dialga-vs-palkia-vs-darkrai"]=[{"no":null,"ad":"Pokemon Movie 10 - The Rise of Darkrai","slug":"pokemon-movie-10-the-rise-of-darkrai","links":[{"player":"?","fansub":"-","tip":"url","url":null}]}];
+window.__TKA__=window.__TKA__||{};window.__TKA__["pokemon-movie-10-dialga-vs-palkia-vs-darkrai"]=[{"no":null,"ad":"Pokemon Movie 10 - The Rise of Darkrai","slug":"pokemon-movie-10-the-rise-of-darkrai","links":[]}];

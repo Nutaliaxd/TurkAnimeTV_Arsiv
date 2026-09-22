@@ -1,1 +1,1 @@
-window.__TKA__=window.__TKA__||{};window.__TKA__["pokemon-movie-08-mew-to-hadou-no-yuusha-lucario"]=[{"no":null,"ad":"Pokemon Movie 8 - Lucario and Mystery of Mew","slug":"pokemon-movie-8-lucario-and-mystery-of-mew","links":[{"player":"?","fansub":"-","tip":"url","url":null}]}];
+window.__TKA__=window.__TKA__||{};window.__TKA__["pokemon-movie-08-mew-to-hadou-no-yuusha-lucario"]=[{"no":null,"ad":"Pokemon Movie 8 - Lucario and Mystery of Mew","slug":"pokemon-movie-8-lucario-and-mystery-of-mew","links":[]}];

@@ -1,0 +1,27 @@
+__pycache__/
+*.pyc
+
+# Yerel veritabanları — ASLA commit edilmez (~145 MB)
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+
+# Kontrol aracı çıktıları (turkanime_tum_kontrol.py)
+kontrol_progress.json
+kontrol.log
+url_durum.csv
+
+# Yerel araç yapılandırması
+.zcodeignore
+
+# Python ortamları
+.venv/
+venv/
+env/
+
+# Betikler repoya EKLENMEZ — github sayfası yalnızca site dosyaları
+*.py
+*.ps1

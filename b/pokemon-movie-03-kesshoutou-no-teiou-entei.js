@@ -1,1 +1,1 @@
-window.__TKA__=window.__TKA__||{};window.__TKA__["pokemon-movie-03-kesshoutou-no-teiou-entei"]=[{"no":null,"ad":"Pokemon Movie 3 - Spell of The Unown","slug":"pokemon-movie-3-spell-of-the-unown","links":[{"player":"?","fansub":"-","tip":"url","url":null}]}];
+window.__TKA__=window.__TKA__||{};window.__TKA__["pokemon-movie-03-kesshoutou-no-teiou-entei"]=[{"no":null,"ad":"Pokemon Movie 3 - Spell of The Unown","slug":"pokemon-movie-3-spell-of-the-unown","links":[]}];
