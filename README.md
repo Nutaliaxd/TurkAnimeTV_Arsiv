@@ -85,6 +85,7 @@ Yakında düzenlenecek.
 
 - [Kebablord](https://github.com/KebabLord)'un geçmişte yaptığı [turkanime projesi](https://github.com/KebabLord/turkanime-indirici) olmasa bugün bu arşive erişebilir miydik bilmiyorum ama benim bu projeyi yapmam da çok yardımcı oldu. o7
 - [Ayruki](https://x.com/ayruki), kendisi 1.6M link bulunan database'i temizlemekte çok yardımcı oldu. Kendisinin paylaşmış olduğu [Silinen linkler](https://github.com/ayruki/turkanime-silinenler) projesi olmasa ben halen daha uğraşıyor olacaktım.
+- [roxyrekt](https://github.com/roxyrekt), kendileri bizden önce davranarak database'in karmaşık yapısını ve bir kaç eksikliğini kapatmıştı ve kendisinden kullanabilmek için rica ettiğimiz de izin verdi. Çok büyük adamasın. Elden geçirdiği database'i şu anda [kendi projesinde kullanıyor](https://github.com/roxyrekt/Migurdex) ve baya başarılı.
 - [Kerim demirkaynak](https://x.com/KDxOFFICIAL), github page sayfasını yapmam da yardımcı oldu, projemizi insanlara [duyurarak](https://eksisozluk.com/entry/186545960) haberdar olmalarını sağladı.
 - Anonim, bu kişi ismini vermek istemediği için Anonim olarak bahsedeceğim. Kendisi 2025 yılında, turkanime.net sitesinden bütün bölümlerin fansub (çevirmenlerin) bilgilerini çekip bize sunan kişidir.
 - [Openanime](https://github.com/OpenAnime), kendileri projemizi insanlara duyurup daha fazla insanın haberinin olmasını sağladı.
