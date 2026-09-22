@@ -1,3 +1,6 @@
+<img width="1280" height="640" alt="github-pfp-2" src="https://github.com/user-attachments/assets/e81e3b2c-1c20-41ec-9b98-69ceaf3f24e0" />
+
+
 <div align="center">
 
 # TurkAnimeTV Arşiv
